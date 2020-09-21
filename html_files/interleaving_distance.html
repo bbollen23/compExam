@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style type="text/css" media="print">
+      @page {
+          size: letter;   /* auto is the initial value */
+          margin: 0;  /* this affects the margin in the printer settings */
+      }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto|Montserrat|Open+Sans&display=swap" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        },
+        tex:{
+          tags: 'ams'
+        }
+      });
+    </script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page">
+        <div class="header" style="margin-bottom:30px;">
+          <div style="font-size:2.0em;font-weight:500;margin-bottom:30px;">Interleaving Distance between Scalar Fields</div>
+          <!-- <div style="font-size:1.3em;font-weight:300;margin-bottom:30px">Sections 2.1 - 2.4</div>           -->
+          <!-- <div style="font-size:1.3em;font-weight:300;">Math 122B</div>
+          <div style="font-size:1.3em;font-weight:300;">Spring 2020</div>     -->
+        </div>
+        <div class="section"><div class="title">The Category of Scalar Fields</div></div>
+        <div>
+          Our goal in this section is to define some preliminary definitions and content. We hope to give a general overview of the cateory theoretic approach, while not getting too invovled in details that do not immediately concern the scalar fields that we are looking into. 
+        </div>
+        <!-- <div class="def"> 
+          A smooth, real-valued function on a manifold $\mathbb{M}$ is a <i>Morse Function</i> if it has no degenerate critical points. A critical point is said to be degenerate if the matrix of second partial derivatives (the Hessian Matrix) is singular (non-invertible). Another interpretation of this is that every critical point $b$ of our function is locally quadratic. <note>See the Morse Theory article from Wikipedia.org for more details.</note> 
+        </div> -->
+        <div class="def">
+          Suppose we have a topological space $X$ equipped with a continuous map $f : X \rightarrow \mathbb{R}$. We call this a <i>scalar field</i> and denote it as $(X,f)$.
+        </div>
+
+        <!-- <div>
+          In our work, we often use the example of a compact, differentiable, 2-manifold as our topological space and our function $f$ is a morse function. This case creates a specific scalar field which is easier to work with than just general scalar fields
+        </div> -->
+
+        <div class="def">
+          The category of scalar fields is denoted $\mathbb{R}-\textbf{Top}$ and a morphism between scalar fields $\varphi: (X,f) \rightarrow (Y,g)$ is a continuous map $\varphi :X \rightarrow Y$ such that the following diagram commutes:
+          <div style="display:flex;justify-content: center;">
+            <img src="./dgm_2.png" width="600">
+          </div>      
+          We call this function $\varphi$ a <i>function preserving map</i>. 
+        </div>
+
+        <div class="def">
+          The point-preimage $f^{-1}(a)$ is called a <i>levelset</i> or a <i>fiber</i> of our scalar field. More specifically, we can call $f^{-1}(a)$ an $a$-fiber of $f$. Since $\varphi$ is a function preserving map, it must carry $a$-fibers of $f$ to $a$-fibers of $g$. In other words, it "preserves levelsets". 
+        </div>
+      </div>
+      <div class="page">
+
+        <div style="margin-bottom:0px">
+
+          We will now restrict this category to a subcategory of scalar fields where each of these new scalar fields are well-behaved. Let $S = \{a_1,\ldots,a_n\}$ be a finite set of real numbers, called "critical points". Then, we define a <i>critical fiber</i>, $\mathbb{V}_i$, for each $0 \leq i \leq n$ and a <i>non-critical fiber</i>, $\mathbb{E}_i$, for each $0 \leq i \leq n-1$. Each critical and non-critical fiber is defined to be a locally path-connected, compact space.
+
+        </div>
+        <div>
+          Now we define continuous attaching maps $l_i: \mathbb{E}_i \to \mathbb{V}_i$ and $r_i: \mathbb{E}_i \to \mathbb{V}_i$ for each $0 \leq i \leq n-1$. Finally, we let $X$ be the quotient space obtained by the disjoint union of $\mathbb{V}_i$ and $\mathbb{E}_i \times [a_i,a_i+1]$ by making the identifiactions $(l_i(x),a_i) \sim (x,a_i)$ and $(r_i(x),a_{i+1}) \sim (x,a_i+1)$ for all $i$ and for all $x \in \mathbb{E}_i$.
+        </div>
+        <div>
+          The intuition here is that the each non-critical fiber has a way of mapping to the critical fibers on either side in a continuous way. Now that we have a topological space $X$, we define the function $f$ as being a projection onto the second coordinate, making the pair $(X,f)$ a scalar field.
+        </div>
+        <div>Any scalar field that is isomorphic to scalar field constructed in this way is called a <i>constructible scalar field</i>. The category of constructible scalar fields, denoted as $\mathbb{R}-\textbf{Top}^{\textbf{C}}$, is a subcategory of $\mathbb{R}-\textbf{Top}$, implying that morphisms in $\mathbb{R}-\textbf{Top}^{\textbf{C}}$ are the same as morphisms in $\mathbb{R}-\textbf{Top}$</div>
+          <!-- Our definition of the category of scalar fields does not have much restriction on the types of scalar fields that we can deal with. For example there is so far no gaurantee that there restrict us to only well-behaved scalar fields which is desired. We can define a subcategory of $\mathbb{R}-\textbf{Top}$ called <i>constructible scalar fields</i>, denoted by $\mathbb{R}-\textbf{Top}^{\textbf{C}}$, which will only consist of  An object in this category is any scalar field that is isomorphic to another scalar field $(X,f)$ which is constructed in the following way: First, let there be a finite set $S = \{a_1,\ldots,a_n\}$ of "critical points". We use the term "critical points" here because in our example (two-manifold with a morsefunction), that is exactly what these points will be (maxima, minima, and saddles). Then:
+          <ul>
+            <li>For $0\leq i \leq n$ we have a locally path-connected compact space $\mathbb{V}_i$ (critical fiber)</li>
+            <li>For $0\leq i \leq n-1$ we have a locally path-connected compact space $\mathbb{E}_i$ (non-critical fiber)</li>
+            <li>For $0\leq i \leq n-1$ we have continuous maps $\mathbb{l}_i : \mathbb{E}_i \rightarrow \mathbb{V}_i$ and $\mathbb{r}_i : \mathbb{E}_i \rightarrow \mathbb{V}_{i+1}$ (attaching maps)</li>
+          </ul>
+          Now we let $X$ be the quotient space obtained by the disjoint union of spaces $\mathbb{V}_i \times \{a_i\}$ and $\mathbb{E_i} \times [a_i,a_{i+1}]$ by making the identifiactions $(\mathbb{l}_i(x),a_i) \sim (x,a_i)$ and $(\mathbb{r}_i(x),a_{i+1}) \sim (x,a_{i+1})$ for all $i$ and for all $x \in \mathbb{E}_i$.  -->
+        <div>
+          Let's consider the example where our topological space is a 2-manifold $\mathbb{M}$ that is compact and differentiable at every point, and that the function $f$ is a morse function. We can think of this as being a hilly landscape, where the manifold is the base and the height of the peaks tell us what $f$ does to each point of the manifold. Furthemore, suppose there are no critical points that are shared. On the intervals between critical points, we select a single $a$-fiber, $a \in (a_i,a_{i+1})$ for every $0 \leq i \leq n-1$ and call it $\mathbb{E}_i$, the non-critical fiber of $i$. Now, for every critical point $a_i$ we look at the critical $a_i$-fibers and label them as $\mathbb{V}_i$. Critical points in this case are exactly minima, maxima, and saddles. Since $f$ is a morse function, we don't have any monkey saddles or higher order critical points. <note>just double check this</note>. Now, we should be able to construct a new scalar field from these fibers by elongating the non-critical fibers across the interval $[a_i,a_{i+1}]$ and then assigning the attaching maps above. What we are essentially achieving are homotopy equivalences between the non-critical fibers $\mathbb{E}_i$ and $f^{-1}(a_i,a_i+1)$. <note>Go into more detail about why this creates a homotopy equivalence</note>
+        </div>
+      </div>
+      <!-- <div class="page">
+        <div class="def">
+          A constructible scalar field such that each of the spaces $\mathbb{V}_i$ and $\mathbb{E}_i$ are all 0-dimensional is called a <i>Reeb Graph</i> and is an object of the category $\textbf{Reeb}$. We can think of these spaces $\mathbb{V}_i$ and $\mathbb{E}_i$ as vertices and edges, respectively. <note>Go into detail about morphisms</note>
+        </div>
+        <div>
+          <note>You can probably go more in depth about notation.</note> Given a constructible scalar field, we can construct the corresponding Reeb Graph by assigning $V_i = \pi_0(\mathbb{V}_i)$ to be the vertices of the Reeb graph and $E_i = \pi_0(\mathbb{E}_i)$ to be the edges, where $\pi_0$ maps a topological space to its set of path-connected components.
+        </div>
+      </div> -->
+      <div class="page">
+        <div class="section"><div class="title">The Category of Reeb Graphs and The Reeb Functor</div></div>
+        <div>
+          Geometrically, there is a notion of what a Reeb graph of a scalar field is. It is a topological structure which preserves changes in path-connected components as we move across (or up) a scalar field, while removing features such as the width and shape of these path connected components. We can picture this, as we have done before, with a hilly landscape that is bounded and compact. We can imagine water filling up the landscape, eventually submerging all the of the peaks. As the water levels rise, different peaks become submerged, changing the topology of that specific landscape. At a single water level, there are only certain pieces of the landsacpe that will not be submerged. Standing on one peak, there might be no way to go to another peak without traversing the water, making this a separate path connected component. As the water rises, bridges that connect peaks get submerged and we lose the path-connectedness. The reeb graph attempts to track this change in topology.
+        </div>
+        <div>
+          Given a scalar field $(X,f)$, we can construct its Reeb graph as follows: We first define an equivalence relation between points $x,y \in X$ by stating that $x\sim y$ if $f(x) = f(y)$ (same "height" in our scenario) and only if $x,y$ are in the same path-connected component (accessible from one another without traversing water in our scenario). Then we can define the quotient space $X_f := X/\sim_f$ using this equivalence relation. We then define a new function $\tilde{f}$ as satisfying $\tilde{f}\circ \rho = f$, where $\rho$ is the quotient map $\rho : X \to X_f$. The pair $(X_f, \tilde{f})$ is the <b>Reeb Graph</b>  of the scalar field $(X,f)$.
+        </div>
+        <div>We can construct a new category called $\textbf{Reeb}$ which is the category of Reeb graphs. If we separate the notion that a Reeb graph is constructed from a scalar field, we can still provide a rigorous definition for what an object in $\textbf{Reeb}$ is. Formally, we define the category $\textbf{Reeb}$ to be the subcategory of $\mathbb{R}-\textbf{Top}^{\textbf{C}}$ such that all critical and non-critical fibers are 0-dimensional. <note>There is a ton of stuff you already wrote about this that you can grab from above</note> Because this is a subcategory, morphisms in $\textbf{Reeb}$ are the same as morphisms in $\mathbb{R}-\textbf{Top}^{\textbf{C}}$, which are continuous, function-preserving maps. We want to show that given $(X,f)$ is an object in $\mathbb{R}-\textbf{Top}^{\textbf{C}}$ that its Reeb graph $(X_f,\tilde{f})$ is an object in $\textbf{Reeb}$. The 0-dimensional fiber must be true because we know that an $a$-fiber in $(X,f)$ is a locally path-connected, compact space. So, the corresponding $a$-fiber in $(X_f,\tilde{f})$ is the contraction of each of the path-connected pieces to single point, meaning they are 0-dimensional (and they will still be locally path-connected and compact). Now we need to show that $\tilde{f}$ is a function preserving and a continuous map.</div>
+        <div>
+          <b>Munkres Theorem 22.2</b> Suppose $\rho$ is a quotient map $\rho : X \to Y$. Now suppose there exists another topological space $Z$ and a map $f: Y \to Z$ such that $f$ is constant on all subsets $\rho^{-1}(\{y\})$ for all $y \in Y$. Then there exists a function $f$ such taht $g \circ \rho = f$ and $g$ in continuous if and only if $f$ is continuous.
+        </div>
+        <div>
+          <i>proof:</i> We only need the backwards direction for this work. That is, we need to show that the function $f$ exists and that if $g$ is continuous, $f$ is continuous. Assume that $g$ is constant on point pre-images $\rho^{-1}(\{y\})$ and that $g$ is continuous. Then we know that $f(\rho^{-1}(\{y\}))$ is a single point in $Z$. Denote this point as $f(y)$. Then we have a map $g:X\to Z$ such that for all $x in X$, $(g \circ \rho)(x) = f(x)$. Now, let $V$ be and open set in $Z$. Then $f^{-1}(V)$ is open and $f^{-1}(V) = \rho(g^{-1}(V))$. Since $\rho$ is a quotient map (which means it must be continuous), $\rho^{-1}(U)$ is open when $U$ is open. Thus, $g^{-1}(V)$ must be open which implies that $g$ is continuous.
+        </div>
+        <div>
+          In our scenario, the quotient map is $\rho : X \to X_f$ and our continuous function is $f: X \to \mathbb{R}$. Since $f$ is constant on point pre-images of $X_f$ (by definition of the quotient space $X_f$), there exists a continuous function $g = \tilde{f}$ such that $\tilde{f} \circ \rho = f$. Thus, $\tilde{f}$ is a function-preserving, continous map which shows that $(X_f,\tilde{f})$ is in fact an object in the category $\textbf{Reeb}$.
+        </div>
+      </div>
+      <div class="page">
+        <div>
+          This can be displayed using the commutative diagram below:
+          <div style="display:flex;justify-content: center;">
+            <img src="./dgm_3.png" width="600">
+          </div>      
+        </div>
+        <div>
+          We are now ready to define the Reeb Functor $\mathcal{R}: \mathbb{R}-\textbf{Top}^{\textbf{C}} \to \textbf{Reeb}$. Recall that a functor $F:\textbf{C} \to \textbf{D}$ is defined as a mapping between categories such that for each obect $A \in \textbf{C}$ there exists an object $F(A)$ and for each morphism $\alpha$ in $\textbf{C}$, there exists a morphism $F[\alpha]$. Furthermore, a functor must respect the identity element and composition. That is, $F[\alpha \circ \beta] = F[\alpha] \circ F[\beta]$ and $F[\text{id}_A] = \text{id}_{F(A)}$.
+        </div>
+        <div>
+          We start by defining $\mathcal{R}(X,f) = (X_f,\tilde{f})$. Then, we need to define a formula for how this functor maps a morphism in $\mathbb{R} - \textbf{Top}^{\textbf{C}}$ to a morphism in $\bar{\alpha}$ in $\textbf{Reeb}$. Let $\alpha: (X,f) \to (Y,g)$ be a morphism in $\mathbb{R} - \textbf{Top}^{\textbf{C}}$ and let $\rho_g : (Y,g) \to (Y_g,\tilde{g})$ and $\rho_f : (X,f) \to (X_f,\tilde{f})$ be quotient maps as defined above. Since $\alpha$ preserves level sets  and is continuous (by definition of a morphism in this category), we know that the composition $\rho_g \circ \alpha$ is constant on $\rho_f({z})$ for all $z \in (X_f,\tilde{f})$ . To see this, suppose $x,y$ are in $\rho_f^{-1}({z})$ for some $z \in (X_f,\tilde{f})$. This implies that $x,y$ are in the same $a$-fiber of $X$ and they lie on the same path-connected component. Then, $\alpha(x)$ and $\alpha(y)$ are in the same $a$-fiber of $Y$ and also lie on the same path-connected component because continuous functions carry path-connected sets to path-connected sets. Then $\rho_g(\alpha(x)) = \rho_g(\alpha(y))$ which implies that this composite map is constant over elements of $\rho_f^{-1}({z})$. By Munkres Theorem 22.2, there exists a map $\bar{\alpha}$ such that the following diagram commutes: 
+          <div style="display:flex;justify-content: center;">
+            <img src="./dgm_4.png" width="600">
+          </div>
+          We define $\mathcal{R}[\alpha] = \bar{\alpha}$. Now what is left to show is that this respects the identity morphism and composition. <note>Might or might not have to go into detail here</note>
+        </div>
+      </div>
+      <div class="page">
+        <div class="section"><div class="title">Cosheaves</div></div>
+        <!-- <div class="def">The <i>category of intervals</i> </div> -->
+        <div class="def">
+          Let $\textbf{Int}$ be the category whose objects are open intervals $I \subseteq \mathbb{R}$ and whose morphisms are inclusions $I \subseteq J$. Let the category $\textbf{Set}$ be the category whose objects are sets and whose morphisms are total functions (functions that use ever element in the domain set) from on set to the other.  Then, we define the category $\textbf{Pre} = \textbf{Set}^{\textbf{Int}}$ as being the category of functors $\textbf{Int} \rightarrow \textbf{Set}$. This category is called the <i>category of pre-cosheaves</i>.
+        </div>
+        <div>
+          In other works, similar structures have been created and refered to as "indexed diagrams". For example, we could have the category $\textbf{Top}^{(\mathbb{R},\leq)}$ which is the category of functors $(\mathbb{R},\leq) \rightarrow \textbf{Top}$ where $(R,\leq)$ is the category of elements of the real line whose morphisms are ordering, and $\textbf{Top}$ is the category of topological spaces. While seemingly strange, we can interpret this as topological spaces that are "indexed" by values on the real line. When we think about persistent homology, we think of homology groups that are dependent on some real number (the birth time for a persistence diagram). 
+        </div>
+        <div>
+          We can also talk about other pre-cosheaves, which are just depending on the target category of the functor. For example, we can have the category of pre-cosheaves $\textbf{Pre(Top)}$ which are functors $\textbf{Int} \rightarrow \textbf{Top}$. Then, we can do a post composition of this functor to move the topological spaces to sets. In this work, we consider the elements of $\textbf{Pre}$ to be functors defined as $F(I) = \pi_0(f^{-1}(I))$, where $\pi_0$ is the set of path connected components of the topological space,  and $f$ is the function defined on our scalar field. So, we look at the connected components of the pull back of our scalar field. 
+        </div>
+        <div>
+          Now, we want to convert our Reeb Graphs into these (pre)cosheafs. We define the <i>Reeb Cosheaf functor</i> $\mathcal{C}$ as follows: Let $f = (X,f)$ be a scalar field (technically, in our construction, this can just be the Reeb Graph itself, which is what's desired). Then, $\mathcal{C}(f) = F$ is the pre-cosheaf defined by \[F(I) = \pi_0(f^{-1}(I)), \hspace{15px} F[I\subseteq J] = \pi_0[f^{-1}(I) \subseteq f^{-1}(J)]\] While the definition of cosheaf is pretty simple, it is seemingly useless without a nice geometric realization. If we don't understand how the cosheafs are mapped to each other, we won't know how the Reeb Graphs are being compared. Recall that any morphism of scalar fields $\alpha : (X,f) \rightarrow (Y,g)$ is function preserving, meaning it preserves level sets. So, $\alpha$ automatically maps $f^{-1}(I)$ onto $g^{-1}(I)$. <note>This is extremely important for computation, as well</note>. 
+        </div>
+        <div>
+          Recall that a natural transformation between two functors is a family of maps $\eta_X : F(X) \rightarrow G(X)$  where $X \in \textbf{C}$. Furthermore, it must be true that $\eta_Y \circ F(f) = G(f) \circ \eta_X$ where $f$ maps $X$ to $Y$ (which implies $F(f)$ maps $F(X)$ to $F(Y)$ and $G(f)$ maps $G(X)$ to $G(Y)$) and $\eta_Y$ is the mapping from $F(Y)$ to $G(Y)$. This composition property is referred to as "natural". <note>This can be drawn with a commutative diagram easily</note> Our map $\alpha$ is completely independent of the choice of I. Thus, we can create a natrual transformation between pre-cosheafs $F,G$ by defining the family of maps between $F,G$ to be $\mathcal{C}[\alpha]_I = \pi_0[f^{-1}(I) \rightarrow g^{-1}(I)]$. That is, for every choice of $I$, we already have a map $\alpha$ between $f^{-1}(I)$ and $g^{-1}(I)$. So, applying $\pi_0$ to the map (meaning the map now acts from $\pi_0(f^{-1}(I))$ to $\pi_0(g^{-1}(I))$) moves it to acting on cosheafs. But in this, case, it is now a family of maps (becasue it works for every interval $I$ in the initial category). 
+        </div>
+      </div>
+      <div class="page">
+        <div class="section"><div class="title">Interleaving Distance</div>
+        <div>
+          Recall that a natural transformation between two functors is a family of maps $\eta_X : F(X) \rightarrow G(X)$  where $X \in \textbf{C}$. Furthermore, it must be true that $\eta_Y \circ F(f) = G(f) \circ \eta_X$ where $f$ maps $X$ to $Y$ (which implies $F(f)$ maps $F(X)$ to $F(Y)$ and $G(f)$ maps $G(X)$ to $G(Y)$) and $\eta_Y$ is the mapping from $F(Y)$ to $G(Y)$. This composition property is referred to as "natural".  Let $F,G: \textbf{Int} \rightarrow \textbf{Set}$ be pre-cosheaves. An isomorphism between two functors consists of a family of maps \[\varphi_I: F(I) \rightarrow G(I) \hspace{10px} \text{and} \hspace{10px} \psi_I: G(I) \rightarrow F(I)\] for each $I \subseteq \mathbb{R}$, such that $\varphi_I$ and $\psi_I$ are inverses for each $I$ and are natural with respect to the inclusions $I\subseteq J$. That is, $\varphi_J \circ F[I\subseteq J] = G[I \subseteq J] \circ \varphi_I$.
+        </div>
+        <div class="def">
+          If $I = (a,b)$, then let $I^{\varepsilon} = (a - \varepsilon, b + \varepsilon)$. An <i>$\varepsilon$ - interleaving</i> between $F,G$ is given by two families of maps \[\varphi_I: F(I) \rightarrow G(I^{\epsilon}) \hspace{10px} \text{and} \hspace{10px} \psi_I: G(I) \rightarrow F(I^{\epsilon})\]
+          that are natural with respect ot inclusions $I \subseteq J$ and such that \[\psi_{I^{\varepsilon}} \circ \varphi_I = F[I \subseteq I^{2\varepsilon}] \hspace{10px} \text{and} \hspace{10px} \varphi_{I^{\varepsilon}} \circ \psi_I = G[I \subseteq I^{2\varepsilon}]\] When $\varepsilon = 0$, then this is precisely an isomorphism between $F,G$. 
+        </div>  
+        <div>If we go back to our canonical example, we have a Reeb Graph constructed from our scalar field. At every interval of the real line, we have some pull back on the actual topological space. For two different scalar fields that we are comparing, $f,g$, we are always looking within the same "window". What we seek to find is the value of $\epsilon$ such that mapping from any pullback of $f$ to the pullback of a "thickened" $g$.  </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="section"><div class="title">Computational Methods</div>
+      <div>
+        To be able to compute any of these structures, we first need to introduce some preliminary defitinitions for the spaces that we compute on.
+      </div>
+      <div class="def">
+        A <i>$n$-simplex</i> is the convex hull of $n+1$ geometrically independent (affinely independent) points embedded in $\mathbb{R}^n$.
+      </div>
+      <div class="def">
+        A <i>finite simplicial complex</i> $\mathcal{K}$ in $\mathbb{R}^N$ is a finite collection of simplices such that every face of a simplex $\sigma$ is also in $\mathcal{K}$ and the intersection of two simplices in $\mathcal{K}$ is a face of both of them (or neither of them). We will only refer to finite simplicial complexes in this work (as opposed to infinite simplicial complexes) so we will drop the term "finite" from now on.
+      </div>
+      <div class="def">
+        The underlying space $|\mathcal{K}|$ of a simplicial complex $\mathcal{K}$ is the union all simplices in $\mathcal{K}$ as a space embedded in $\mathbb{R}^N$. This definition drives at the difference between the combinatorial nature of a simplicial complex $\mathcal{K}$ (sometimes called an <i>abstract simplicial complex</i>) in comparison with the actual points it contains when realized in $\mathbb{R}^N$. Thankfully, we can store just the abstract simplicial complex in memory and pull the underlying space from it as we wish.
+      </div>
+      <div class="def">Suppose we have a topological space $\mathbb{X}$. The triangulation $\mathcal{T}$ of $\mathbb{X}$ is a simpilicial complex $\mathcal{K}$ whose underlying space $|\mathcal{K}|$ is homeomorphic to $\mathbb{X}$. Note that in this construction, the underlying space $|\mathcal{K}|$ would relate to the actual physical representation of the space $\mathbb{X}$, while the simplicial complex $\mathcal{K}$ is simply the combinatorial representation of this space.</div>
+      <div>
+        The data sets that we often compute on are pulled from some manifold $\mathbb{M}$. Of course the data cannot be sampled at every point of the manifold, so we introduce the concept of a <i>piecewise-linear manifold</i> which is the triangulation of a manifold $\mathbb{M}$. Thus, a piecweise-linear manifold is a combinatorial representation of the manifold. From this, we can create a <i>piecweise-linear scalar field</i>
+      </div>
+      <div class="def">Let $\mathbb{M}$ be a compact manifold and let $f:\mathbb{M} \to \mathbb{R}$ be a continuous scalar function. Then the pair $(\mathbb{M},f)$ is an object in the category $\mathbb{R}-\textbf{Top}$ <note>hopefully constructible</note>. From this we can create a piecewise linear manifold by taking the triangulation of the manifold $\mathbb{M}$. This induces a new function $\hat{f}$ which is defined as $\hat{f}(x) = \sum^d_{i=0} \alpha_i f(\tau^i_0)$, where $\tau^i_0$ are the 0-dimensional simplices (vertices) of the simplex $\sigma$ such that $x \in \sigma$ and the coefficients $\alpha_i$ are the barycentric coordinates of $x$.</div>
+    </div>
+    <div class="page">
+      <div class="q">
+        <label>How do we deal two scalar fields which don't have the same range?</label>
+        <div>
+          Suppose we have two scalar fields $f$ and $g$ such that they are defined on the same domain (so their scalar functions are the only things discerning them). Now suppose that there exists no point $x \in X$ such that $g(x) = a$ but there exists some subset $U \subseteq X$ such that $f(x) = a$ for all $x\in U$. Then, the $a$-fiber of $f$ is $U$ while the $a$-fiber of $g$ is the empty set. So how does $phi$ work in this case? If there is multiple values of $\mathbb{R}$ such that this situation arises, we run into the problem of $\varphi$ mapping from $U_1$ to the empty set and $U_2$ mapping to the empty set as well, which would break commutativity because $g$ on the empty set cannot map to two differennnt values. Note that this situation can arise even if the domains differ, of course.
+        </div>
+        <div class="sol">I believe that $\varphi$ only needs to really be function preserving on values of $a\in\mathbb{R}$ such that the $a$-fibers of both $f$ and $g$ are non-empty subsets of $X$.</div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
+
+        <!-- <div>
+          Intuitively, this scalar field has a form where between critical points, each fiber is homotopic <note>check this</note> to other fibers in that same area. For example, if we take a torus standing on its end, where the function $f$ just maps to its height, then taking a fiber from the middle would be two circles. Now, as we adjust the value of the fiber (slightly) up or down, as long as we don't cross another critical point, the circles will still be "two circles", albeit closer or farther apart, in a sense. Note that in this scenario, the non-critical fibers can be thought of as two circles that are separated from one another (see disposition on tangent cirlces)  So, if our critical fiber is a figure-eight, then we can map each individual circle to respective circles of the figure-eight. If instead we had a single circle for the non-critical fiber, we'd still have a continuous map to the figure-eight by indentifying a pair of points of the circle that form a diameter as being the same two points. Then we simply have the quotient map (which is continuous) <note> why is this continous again? think about the open subset of a figure-eight and why it HAS to be a ball, not just an interval. It must have to do with the topology that is defined on the figure-eight (which must be the quotient topology)</note>. 
+        </div> -->
+
+
+      <!-- <div class="page">
+        <div> But if we had to map from the figure-eight to the circle or two circles, it would be non-continuous because you'd have to break up that center piece. Critical fibers are the only places where figure-eight like shapes are possible, so mapping to them should be no problem.
+        </div>
+        <div>Depending on the scenario, there are different ways to construct these attaching maps. In the 2-manifold with a Morse function case, our attaching maps can be defined by the <i>gradient flow</i>. For every point $x \in \mathbb{M}$, we have a gradient. A <i>flow</i> is a function $\gamma : \mathbb{M} \times \mathbb{R} \to \mathbb{M}$ such that for all $x \in \mathbb{M}$, $\gamma(x,0) = x$ and $\gamma(\gamma(x,t),s)  = \gamma(x,t+s)$. The gradient shows us which direction to go in, basically. We can imagine a set of vectors on our manifold showing us where the flow lines are. </div>
+      </div> -->
+      <!-- <div class="page">
+        <div class="section"><div class="title">Disposition on Tangent Cylinders</div></div>
+        <div>
+          We can have "tangent cylinders" in this case. The non-critical fibers are simply homotopic to figure eights. At the critical fibers on either side, there <i>must</i> be a figure-eight shape (or more tangent circles) so that we don't have to split up the figure-eight. This is to be expected though, because the critical fibers are points where things join or separate.
+        </div>
+      </div> -->
+      

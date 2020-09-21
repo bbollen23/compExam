@@ -1,0 +1,160 @@
+body{
+  margin:0;
+  font-family:'Roboto',sans-serif;
+  /* font-family: 'Computer Modern Serif', sans-serif; */
+  counter-reset:q section label;
+  font-size:11pt;
+}
+.container{
+  width:8.5in;
+  /* border:1px solid blue; */
+  padding:0in 0.5in;
+}
+
+
+
+div.page{
+  page-break-after: always;
+  width:100%;
+  height:11in;
+  margin:0.5in 0in;
+  display:flex;
+  flex-direction: column;
+
+
+  /* border:1px solid black; */
+  /* justify-content: space-between; */
+}
+
+
+.section{
+  counter-reset:label;
+  counter-reset:subsection;
+  counter-increment:section;
+  margin-bottom:15px;
+}
+
+.section .title{
+  font-size:1.2em;
+  font-weight:600;
+  margin-bottom:0px;
+}
+
+.section .title::before{
+  content: counter(section);
+  margin-right:25px;
+}
+
+
+.sub-section{
+  counter-reset:label;
+  counter-increment:subsection;
+  margin-bottom:15px;
+}
+
+.sub-section .title{
+  font-size:1.1em;
+  font-weight:600;
+  margin-bottom:0px;
+}
+
+.sub-section .title::before{
+  content: counter(section) "." counter(subsection);
+  margin-right:25px;
+}
+
+.lemma,.prop,.thm,.def{
+  counter-increment: label;
+}
+
+.lemma::before,
+.prop::before,
+.thm::before,
+.def::before{
+  font-weight:600;
+  margin-right:5px;
+}
+
+.def::before{
+  content: "Definition " counter(section) "." counter(subsection) "."  counter(label) ":";
+}
+
+.thm::before{
+  content: "Theorem " counter(section) "." counter(subsection) "."  counter(label) ":";
+}
+
+.prop::before{
+  content: "Proposition " counter(section) "." counter(subsection) "."  counter(label) ":";
+}
+
+.lemma::before{
+  content: "Lemma " counter(section) "." counter(subsection) "."  counter(label) ":";
+}
+
+.proof::before{
+  content:"Proof: ";
+  font-style:italic;
+}
+
+.q::before{
+  content:"Question " counter(q) ":";
+  margin-right:5px;
+  font-weight:600;
+}
+
+.q{
+  /* font-family:'Montserrat',sans-serif; */
+  counter-increment: q;
+  border-left:3px solid black;
+  padding:10px 20px;
+  margin-left:3em;
+}
+
+.q label{
+  font-weight:600;
+}
+
+.q div.sol::before{
+  content:"Possible Solution:";
+  margin-right:5px;
+  font-weight:600;
+}
+
+.q div:last-child{
+  margin-bottom:0px;
+}
+
+div{
+  margin:15px 0px;
+}
+
+
+note:before,
+note::after{
+  content:"**";
+  color:red;
+}
+note{
+  color:red;
+
+}
+
+.header{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+ul li{
+  margin-top:10px;
+}
+
+
+/*-------------------------------------*/
+span.func {
+  font-family: 'Baloo Paaji 2', cursive;
+  font-weight: 500;
+  font-size: 1.3em; }
+  
+/*-------------------------------------*/

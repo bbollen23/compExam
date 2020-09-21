@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style type="text/css" media="print">
+      @page {
+          size: letter;   /* auto is the initial value */
+          margin: 0;  /* this affects the margin in the printer settings */
+      }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto|Montserrat|Open+Sans&display=swap" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        },
+        tex:{
+          tags: 'ams'
+        }
+      });
+    </script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+	<body>
+		<div class="page">
+			<div class="section"><div class="title">Paper Outline</div></div>
+			The paper should be focused on providing a thorough text on categorifying Reeb Graphs that arise fields, defining the interleaving distance, explaining computational methods and challenges, and discussing what the interlaving distance can help us with (mapper, other metrics)
+			<ol>
+				<li>Introduction (?)</li>
+				<ol>
+					<li>What is a scalar field</li>
+					<li>Comparing scalar field (geometric, topological)</li>
+					<li>Topological Evolution of a scalar field</li>
+				</ol>
+				<li>Categorifying Reeb Graphs and Scalar Fields</li>
+				<ol>
+					<li>Category Theory Background</li>
+					<ol>
+						<li>Morphisms,Functors, Natural Transformations</li>
+						<li>Indexing Diagrams (needed for cosheafs)</li>
+						<li>Limits and Colimits (needed for cosheafs)</li>
+					</ol>
+					<li>Category of Scalar Fields</li>
+					<ol>
+						<li>Definition</li>
+						<li>Fibers and Constructiblity</li>
+						<li>Homotopy equivalence of cylinders to the non-critical fibers</li>
+					</ol>
+					<li>Category of Reeb Graphs and the Reeb Functor</li>
+					<ol>
+						<li>Theorem: taking the reeb graph induces a endofunctor of R-Top^C</li>
+						<li>Defining the category of Reeb Graphs as 0-dimensional constructible scalar fields</li>
+						<li>Reeb Functor</li>
+					</ol>
+					<li>Pre-Cosheafs and Cosheafs</li>
+					<ol>
+						<li>Definition of Pre-Cosheafs</li>
+						<li>Definition of Cosheafs</li>
+						<li>Cosheaf-ifying of Reeb Graphs and Scalar Fields</li>
+					</ol>
+				</ol>
+				<li>Interleaving Distance</li>
+				<ol>
+					<li>Definition of Interleaving Distance for Cosheafs</li>
+					<li>Smoothing and Thickening functors</li>
+					<li>Equivalence of Smoothing and Thickening Functors</li>
+				</ol>
+				<li>Computational Methods</li>
+				<ol>
+					<li>Triangulation of a Surface</li>
+					<li>Categorification of Triangulated scalar fields (possibly)</li>
+					<li>Computing Reeb Graphs (possibly, probably too much)</li>
+					<li>Computational difficulties of Interleaving distance and labeled merge tree case</li>
+				</ol>
+				<li>Future Directions and Proposed Work</li>
+				<ol>
+					<li>Usefulness in justification of Mapper Graphs</li>
+					<li>Other metrics</li>
+				</ol>
+			</ol>
+		</div>
+		<div class="page">
+			<div class="section"><div class="title">Presentation Outline</div></div>
+			<ol>
+				<li>What is Topological Data Analysis?</li>
+				<ol>
+					<li>How has it been used historically</li>
+					<li>Introduce ideas about topological structures</li>
+					<li>TTK Demo</li>
+				</ol>
+				<li>Formal Background</li>
+				<ol>
+					<li>Reeb Graphs, Contour Trees</li>
+					<li>Distances on Topological Structures (BottleNeck Distance)</li>
+				</ol>
+				<li>Interleaving Distance</li>
+				<ol>
+					<li>Categorification of Reeb Graphs</li>
+					<li>Relation to Cosheaves</li>
+					<li>Definition of Interleaving Distance</li>
+					<li>Smoothing, and Thickening Functors</li>
+					<li>Geometric Intuation of Interleaving Distance</li>
+				</ol>
+				<li>Future Work</li>
+				<ol>
+					<li>Computational Difficulties</li>
+					<li>Pairwise Interleaving Distance: What does it tell us about the underlying scalar fields?</li>
+					<li>Difficulties in definition (pre-optimization of scalar fields to match up might be needed)</li>
+				</ol>
+			</ol>
+		</div>
+	</body>
+</html>
+

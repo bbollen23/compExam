@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style type="text/css" media="print">
+      @page {
+          size: letter;   /* auto is the initial value */
+          margin: 0;  /* this affects the margin in the printer settings */
+      }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+    <script src="http://tikzjax.com/v1/tikzjax.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto|Montserrat|Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        },
+        tex:{
+          tags: 'ams'
+        }
+      });
+    </script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page">
+        <div class="header" style="margin-bottom:30px;">
+          <div style="font-size:2.0em;font-weight:500;margin-bottom:30px;">Interleaving Distance between Scalar Fields</div>
+        </div>
+      </div>
+      $
+        \newcommand{\afunc}[1]{\operatorname{\mathsf{#1}}}
+        \newcommand{\rtop}{\mathbb{R}\text{-}\textbf{Top}}
+        \newcommand{\rtopc}{\mathbb{R}\text{-}\textbf{Top}^{\textbf{C}}}
+        \def\bold#1{{\bf #1}}
+      $
+      <div class="section"><div class="title">Introduction</div></div>
+      <div class="sub-section"><div class="title">What is a Scalar Field?</div></div>
+      <div>Suppose we want to measure the temperature at of the surface of the Earth over a large region. We can think of this region as simply being a two-manifold ignoring the possible changes in height as we sample and only taking into consideration the geographic coordinates. Denote this space as $\mathbb{X}$. Then we also have a function $f:\mathbb{X}\to \mathbb{R}$ mapping from this two-manifold to the real numbers by associating the coordinate pair with the temperature at this point. The pair $(\mathbb{X},f)$ is called a <i>scalar field</i>. We can often visualize well-behaved scalar fields as some sort of mountainous or hilly terrain. Just as we can use contour lines on a map to indicate regions that are the same elevation, we are sometimes interested in a subset $U \in \mathbb{X}$ such that all points in $U$ have the same function value. These are called <i>level sets</i> or <i>fibers</i> of the scalar field <note>Maybe something about our concern with the evolution of the level sets</note></div>
+      <div class="sub-section"><div class="title">Comparing Scalar Fields</div></div>
+      <div class="sub-section"><div class="title">Topological Evolution of a Scalar Field</div></div>
+      <div class="def">Let $(\mathbb{X},f)$ be a scalar field. We can define an equivalence relation on $\mathbb{X}$ by defining $x\sim y$ if $f(x) = f(y) = a$ (they belong to the same $a$-fiber) and if $x,y$ are in the same path connected component of the $a$-fiber. Then, the quotient space $\mathbb{X}_f := \mathbb{X}/\sim_f$ is called the <i>Reeb Graph</i> of the scalar field $(\mathbb{X},f)$. We equip the Reeb Graph with the function $\tilde{f}$ which is defined as $\tilde{f} \circ \rho = f$, where $\rho: \mathbb{X} \to \mathbb{X}_f$ is the quotient map defined by our equivalence relation. The Reeb Graph tracks the evolution of the levelset topology of the scalar field. It shows how the fibers of the scalar field split and merge. </div>
+      <div class="section"><div class="title">Categorifying Reeb Graphs and Scalar Fields</div></div>
+      <div class="sub-section"><div class="title">Category Theory</div></div>
+      <div class="def">A <i>category</i> is a collection $\textbf{C}$ of <i>objects</i> with <i>morphisms</i> (also called <i>maps</i>) that map between these objects. The set of objects in $\textbf{C}$ is denoted as $\mathsf{ob}(\textbf{C})$ and the set of morphisms is denoted as $\mathsf{hom}(\textbf{C})$. When reffering to an object $A$ in a category $\textbf{C}$, we often denote this as $A \in \textbf{C}$ instead of the more precise notation of $A \in \mathsf{ob}(\textbf{C})$ when it is clear from the context that $A$ is an object and not a morphism. Each morphism $\alpha$ has a source $A\in \textbf{C}$ and a target $B\in \textbf{C}$. Morphisms usually represent some sort of "structure" preserving idea, such as isomorphism when considering the category of vector spaces $\textbf{Vect}$, or homomorphisms in the category of groups $\textbf{Grp}$. Every object $A$ in a category $\textbf{C}$ has an identity morphsim $\textbf{id}_A:A \to A$.</div>
+      <div class="def">A <i>functor</i> $\afunc{F}$ is a mapping between two categories $\textbf{C}$ and $\textbf{D}$ that satisfies the following properties:
+      <ul>
+        <li>For each object $A \in \textbf{C}$, there is a corresponding object $\afunc{F}(A) \in \textbf{D}$</li>
+        <li>For each moprhism $\alpha: A \to B$ in $\textbf{C}$, there is a corresponding morphism $\afunc{F}[\alpha]:\afunc{F}(A) \to \afunc{F}(B)$ in $\textbf{D}$.</li>
+        <li>The functors respect composition: $\afunc{F}[\alpha \circ \beta] = \afunc{F}[\alpha] \circ \afunc{F}[\beta]$</li>
+        <li>The functors respect identities: $\afunc{F}[\textbf{id}_A] = \textbf{id}_{\afunc{F}[A]}$</li>
+      </ul>
+      </div>
+      A functor can be thought of as a way to map between categories in the same way that functions map between spaces (vector spaces, groups, etc.)
+      <!-- <div>Let $\eta_A: A \to C$ and $\eta_B: B \to D$ be a pair of maps and let $\alpha: A \to B$ and $\beta: C \to D$ be a pair of morphisms. We say that $eta_A$ and $\eta_B$ are <i>natural with respect to $\alpha$ and $\beta$</i> if the following diagram commutes: </div>
+ -->
+      <div class="def">Let $\mathsf{F},\mathsf{G}:\textbf{A} \to \textbf{B}$ be two functors. Let $\eta: \mathsf{F}(A) \to \mathsf{G}(C)$ and $\theta: \mathsf{F}(B) \to \mathsf{G}(D)$ be two morphisms in $textbf{B}$ and let $\alpha: A \to B$ and $\beta: C \to D$ be two morphisms in $\textbf{A}$. Then we say that $\eta$ and $\theta$ are <i>natural with respect to $\alpha$ and $\beta$</i> if the following diagram commutes:</div>
+      <div style="width:100%;display:flex;justify-content: center;">
+        <img src="./natural.png" width="70%"/>
+      </div>
+      <div class="def">A <i>natural transformation</i> is a map $\eta: \afunc{F} \Rightarrow \afunc{G}$ between two functors, $\afunc{F},\afunc{G}:\textbf{C} \to \textbf{D}$. It consists of a family of morphisms $\eta_A:\afunc{F}(A) \to \afunc{G}(A)$, one for each object $A\in \textbf{C}$, such that for each morphism $\alpha : A \to B$ in $A$, the following diagram commutes:</div>
+        <div style="width:100%;display:flex;justify-content: center;">
+          <img src="./natural_transformation.png" width="70%"/>
+        </div>
+      <div>In other words, we say that the family of maps $\eta$ is natural with respect to every morphism $\alpha$ in $\textbf{A}$.</div>
+      <div class="def">We say that two functors $\mathsf{F},\mathsf{G}:\textbf{A}\to\textbf{B}$ are <i>isomorphic</i> to each other if there exists a pair of natural transformations $\eta := \{\eta_A\}_{A \in \textbf{A}}$ and $\theta := \{\theta_A\}_{A \in \textbf{A}}$ where $\eta_A: \mathsf{F}(A) \to \mathsf{G}(A)$ and $\theta_A: \mathsf{G}(A) \to \mathsf{F}(A)$, such that $\eta_A \circ \theta_A = G[\textbf{id}_A]$ and $\theta_A \circ \eta_A = F[\textbf{id}_A]$. In otherwords, the maps $\eta_A$ and $\theta_A$ are inverses of each other for each $A \in \textbf{A}$.</div>
+      <div class="def">Let $\textbf{C}$ be a category. A <i>subcategory</i> $\textbf{S}$ of $\textbf{C}$ is a category consisting of a subcollection of objects of $\textbf{C}$, denoted as $\mathsf{ob}(\textbf{S})$ and a subcollection of morphisms of C, denoted as $\mathsf{hom}(\textbf{S})$, such that
+      <ul>
+        <li>for every $X$ in $\mathsf{ob}(\textbf{S})$, the identity morphism $\textbf{id}_X$ is in $\mathsf{hom}(\textbf{S})$</li>
+        <li>for every morphism $\alpha: X \to Y$ in $\mathsf{hom}(\textbf{S})$, both the source $X$ and the target $Y$ are in $\mathsf{ob}(\textbf{S})$</li>
+        <li>for every pair of morphisms $\alpha$ and $\beta$ in $\mathsf{hom}(\textbf{S})$, the composite $\alpha \circ \beta$ is in $\mathsf{hom}(\textbf{S})$ (whenever the composition is defined).</li>
+      </ul></div>
+      <div class="def">A <i>class</i> is any collection of objects and a <i>proper class</i> is any collection of objects that is not a set. A proper class is a collection of objects which contradicts one of the axioms of Zermelo–Fraenkel set theory. Informally, we can think of a proper class to be a collection which is 'too big' to be a set itself. For example, consider the collection $\mathsf{S}$ of all sets. Then, every subcollection of $\mathsf{S}$ is also a set and therefore is in $\mathsf{S}$. If we assume $\mathsf{S}$ is a set, then every element of the power set $P(\mathsf{S})$ of $\mathsf{S}$ is also in $\mathsf{S}$. This means that $P(\mathsf{S}) \subseteq \mathsf{S}$  which is a contradiction of Cantor's Theorem which states that the cardinality of the power set is strictly larger than the set itself.</div>
+      <div>Examples of proper classes include the collection of all sets, the collection of all topological spaces, and the collection of all vector spaces. To see this, note that any set can be given the discrete topology. So the collection of all topological spaces includes teh collection of all sets equipped with the discrete topology. Since the collection of all sets is not a set, the collection of all topological spaces is not a set. A similar argument can be made for the collection of all vector spaces.</div>
+      <div class="def">A category $\textbf{C}$ is <i>small</i> if $\mathsf{ob}(\textbf{C})$ is a set rather than a proper class. Likewise, a category $\textbf{D}$ is <i>large</i> if $\mathsf{ob}(\textbf{D})$ is a proper class.</div>
+      <div class="def">Let $\textbf{A},\textbf{B}$ be categories with $\textbf{A}$ being a small category. Then the category of functors from $\textbf{A}$ to $\textbf{B}$ form a category, denoted as $\textbf{B}^{\textbf{A}}$, where the morphisms are natural transformations between the functors. We can think of this category of functors as a way of indexing the objects of $\textbf{B}$. <note>Give short example</note></div>
+      <div></div>
+      <div class="sub-section"><div class="title">Category of Scalar Fields</div></div>
+      <div>We can construct the <i>category of scalar fields</i> (in related work also called the category of $\mathbb{R}$-spaces) denoted as $\rtop$ by stating that each object is a scalar field $(\mathbb{X},f)$ and each morphism $\alpha: (\mathbb{X},f) \to (\mathbb{Y},g)$ is a continuous, <i>function-preserving</i> map $\alpha:\mathbb{X}\to \mathbb{Y}$ between topological spaces. A function preserving map means that $\alpha \circ g = f$. In other words, the following diagram commutes:</div>
+      <div style="width:100%;display:flex;justify-content:center;">
+        <img src="./function_preserving.png" width="70%"/>
+      </div>
+      <div class="def">We call the point pre-images $f^{-1}(a)$ of $\mathbb{X}$ the $a$-<i>levelset</i> or $a$-<i>fiber</i> of $\mathbb{X}$. In this way, we can say that the morphisms in the category of scalar fields preserve $a$-levelsets or $a$-fibers.</div>
+      <div>To make sure that we are dealing with well-behaved scalar fields, we define a new subcategory called the category of <i>constructible</i> scalar fields, denoted as $\rtopc$.</div>
+      <div>Let $S = \{a_1,\ldots,a_n\}$ be a finite set of real numbers, called "critical points". We define a <i>critical fiber</i>, $\mathbb{V}_i$, for each $0\leq i \leq n$ and a <i>non-critical fiber</i>, $\mathbb{E}_i$ for each $0 \leq i \leq n-1$. Each critical and non-critical fiber is defined to a be a locally path-connected, compact space.</div>
+      <div>Now we define continuous attaching maps $l_i:\mathbb{E}_i \to \mathbb{V}_i$ and $r_i:\mathbb{E}_i \to \mathbb{V}_{i-1}$ for each $0 \leq i \leq n-1$. Finally, we define $\hat{\mathbb{X}}$ to be the quotient space obtained by the disjoint union of $\mathbb{V}_i \times \{a_i\}$ and $\mathbb{E}_i \times [a_i,a_{i+1}]$ by making the identifications $(l_i(x),a_i) \sim (x,a_i)$ and $(r_i(x),a_{i+1}) \sim (x,a_{i+1})$ for all $i$ and all $x \in \mathbb{E}_i$. Now, define a function $f$ such that $f(x,a) = a$. We can see that the pair $(\hat{\mathbb{X}},f)$ defines a scalar field since $\hat{\mathbb{X}}$ is a topological space and $\hat{f}$ is simply a projection onto the second factor, which is a continuous function.</div>
+      <div>If $\mathbb{X}$ is isomoprhic to $\hat{\mathbb{X}}$, then $\mathbb{X}$ is a <i>constructible scalar field</i> and we say that $\hat{\mathbb{X}}$ is its <i>constructible base</i>. Note that the choice of constructible base is not unique <note>But I believe all are homotopic</note>. The intuition here is that the scalar fields are "well-behaved" if they have a finite set of critical points and if between critical points, their shap is homotopic to a cylinder. Then at the critical fibers, we have places where the cylindrical structures are able to "merge" or "split". Note again that these attaching maps are always mapping <i>from</i> the non-critical fibers. So if our non-critical fiber has a cylinder that split into two cylinders, there must be a critical fiber which is a figure eight, exactly at the point where they start to split. We can always map a single cylinder to a figure eight or two cylinders to the figure eight. We never have to worry about actually "splitting" the figure eight into two cylinders (which is discontinuous) because the maps only go towards the critical-fibers.</div>
+      <div class="sub-section"><div class="title">Category of Reeb Graphs and Reeb Functor</div></div>
+      
+      <note>Preamble for our motivation here</note>
+
+      <div class="prop">The set of Reeb Graphs created from scalar fields defines a subcategory of $\rtop$.</div>
+      To prove this, we need to show that the Reeb Graphs are scalar fields and that there exists a subcollection of morphisms of $\mathsf{hom}(\rtopc)$ where the source and target are always Reeb Graphs. To help us with the following proofs, we refer to the lemma below:
+      <div class="lemma"><i>(from Munkres, Theorem 22.2)</i> Let $\rho: X \to Y$ be a quotient map. Let $Z$ be a space and let $f: Y \to Z$ be a map that is constant on each set $\rho^{-1}(\{y\})$, for $y \in Y$. Then $f$ induces a map $g:Y \to Z$ such that $g \circ \rho = f$. The induced map $g$ is continuous if and only if $f$ is continuous.</div>
+      <div class="lemma">Let $(\mathbb{X},f)$ be a scalar field and $(\mathbb{X}_f, \tilde{f})$ denote its Reeb Graph. Then $(\mathbb{X}_f, \tilde{f})$ is a scalar field.</div>
+      <div class="proof">By definition $\mathbb{X}_f$ is a topological space. What is left to show is that $\tilde{f}$ is a continuous function. Let $\rho$ be the quotient map from $\mathbb{X}$ to $\mathbb{X}_f$. Since $f$ is constant on point pre-images of $\mathbb{X}_f$, Munkres Theorem 22.2 tells us that there exists a continuous function $g \circ \rho = f$. By definition of a Reeb Graph, we have that $\tilde{f} \circ \rho = f$, so $\tilde{f} = g$ and $(\mathbb{X}_f, \tilde{f})$ is a scalar field. </div>
+      <div class="lemma">Let $(\mathbb{X},f)$ and $(\mathbb{Y},g)$ be scalar fields, let $(\mathbb{X}_f,\tilde{f})$ and $(\mathbb{Y}_g,\tilde{g})$ be their Reeb Graphs resepectively, and let $\rho_f$ and $\rho_g$ be the quotient maps from the scalar fields to the Reeb Graphs. If $\alpha$ is a morphism between $(\mathbb{X},f)$ and $(\mathbb{Y},g)$, then the map $\tilde{\alpha}$ defined by $\rho_g \circ \alpha = \tilde{\alpha} \circ \rho_f$ is a morphism in $\rtop$.</div>
+      <div class="proof">Consider the composition of maps $(\rho_g \circ \alpha): \mathbb{X} \to \mathbb{Y}_g$. This map is continuous since both $\rho_g$ and $\alpha$ are continuous. Now, consider a point pre-image $\rho_f^{-1}(\{y\}) \in \mathbb{X}$ where $\tilde{f}(y) = a$. Then this pre-image is the $a$-fiber of $\mathbb{X}$. Since $\alpha \in \mathsf{hom}(\rtop)$, it preserves level sets, so $\alpha(\rho_f^{-1}(\{y\}))$ is the $a$-fiber of $\mathbb{Y}$. Then, since $\rho_g$ is the quotient map turning all $a$-fibers into a single contracted point in $\mathbb{Y}_g$, the composition of maps $(\rho_g \circ \alpha)$ is constant on pre-images of $\rho_f$. Using Munkres Theorem 22.2 again, we have that the induced map $\tilde{\alpha}$ in the equation $\rho_g \circ \alpha = \tilde{\alpha} \circ \rho_f$ must be continuous, since $\rho_g \circ \alpha$ is continuous and constant on the point pre-images of the quotient map $\rho_f$.</div>
+      <div>To show that $\tilde{\alpha}$ is a function preserving map, we need to show that $\tilde{f} = \tilde{g} \circ \tilde{\alpha}$. We begin with the fact that $f = g \circ \alpha$:
+        \begin{equation}
+          f = g \circ \alpha \hspace{0.1in}
+          \Rightarrow (\tilde{f} \circ \rho_f) =  (\tilde{g} \circ \rho_g) \circ \alpha \hspace{0.1in}
+          \Rightarrow (\tilde{f} \circ \rho_f) =  \tilde{g} \circ (\rho_g \circ \alpha) \hspace{0.1in}
+          \Rightarrow (\tilde{f} \circ \rho_f) =  \tilde{g} \circ (\tilde{\alpha} \circ \rho_f) \hspace{0.1in}
+          \Rightarrow \tilde{f} =  \tilde{g} \circ \tilde{\alpha}
+        \end{equation}
+      </div>
+
+      <note>Put all together to state proof for prop 2.3.1, then define Reeb Functor, then state (with proof) proposition of constructible scalar fields to constructible scalar fields </note>
+      <div><i>Proof of Proposition:</i> Note that the set of Reeb Graphs is a collection of constructible scalar fields and that the maps we defined between Reeb Graphs are morphisms in $\rtop$. Thus, the collection of Reeb Graphs constructed from scalar fields is a subcategory of $\rtop$</div>
+
+      <div class="def">We define the <i>Reeb Functor</i> as the functor $\mathcal{R}: \rtop \to \rtop$ by the formulas $\mathcal{R}(\mathbb{X},f) := (\mathbb{X}_f, \tilde{f})$ and $\mathcal{R}[\alpha] = \tilde{\alpha}$.</div>
+
+      <div class="prop">If $(\mathbb{X},f)$ is constructible, then $\mathcal{R}(\mathbb{X},f)$ is constructible as well. That is, when restricted to constructible scalar fields, the Reeb Functor maps to constructible scalar fields.</div>
+      <div class="proof"> Let $(\mathbb{X},f) \in \rtopc$ and let $(\mathbb{X}_f,\tilde{f})$ be its Reeb Graph. Let $\hat{\mathbb{X}}$ be the constructible base of $(\mathbb{X},f)$ with critical points $\mathcal{S} = \{a_0,\ldots,a_n\}$ and critical  and non-critical fibers, $\mathbb{V}_i$ and $\mathbb{E}_i$. We create a new constructible scalar field $\mathbb{G}$ made up of critical fibers $V_i$ and non-critical fibers $E_i$ by using the following definitions:
+        \[V_i := \pi_0(\mathbb{V}_i) \hspace{0.4in} E_i := \pi_0(\mathbb{E}_i) \hspace{0.4in} l_i:= \pi_0(\mathbb{l}_i) \hspace{0.4in} r_i := \pi_0(\mathbb{r}_i),\]
+      where $\pi_0$ denotes the set of path connected components. $\mathbb{G}$ is then defined as the quotient space of the disjoint union of spaces $V_i \times a_i$, for all $0 \leq i \leq n$ and $E_i \times [a_i,a_{i+1}]$ for all $0 \leq i \leq n-1$ using the identifications $(l_i(x),a_i) \sim (x,a_i)$ and $(r_i(x),a_{i+1}) \sim (x, a_{i+1})$. Note that this is exactly the same construction as in the definition of constructible scalar fields, except the critical and non-critical fibers here are 0-dimensional. Our goal is to show that $\mathbb{G}$ is a valid constructible base for $\mathbb{X}_f$.</div>
+
+
+      <!-- <div><b>Munkres Theorem 22.2</b>Let $\rho: X \to Y$ be a quotient map. Let $Z$ be a space and let $f: Y \to Z$ be a map that is constant on each set $\rho^{-1}(\{y\})$, for $y \in Y$. Then $f$ induces a map $g:Y to Z$ such that $g \circ \rho = f$. The induced map $g$ is continuous if and only if $f$ is continuous.</div>
+      <div><i>proof:</i> We only need the backwards direction for this work. That is, we need to show that the function $g$ exists and that if $f$ is continuous then $g$ is continuous. Assume that $f$ is constant on point pre-images $\rho^{-1}(\{y\})$ and that $f$ is continuous. Then we know that $f(\rho^{-1}(\{y\}))$ is a single point in $Z$. Denote this point as $g(y)$. Then we have a map $f: X\to Z$ such that for all $x \in X$, $(g \circ \rho)(x) = f(x)$. Now, let $V$ be and open set in $Z$. Then $f^{-1}(V)$ is open in $X$ and $f^{-1}(V) = \rho^{-1}(g^{-1}(V))$. Since $\rho$ is a quotient map (which means it must be continuous), $\rho^{-1}(U)$ is open when $U$ is open. Thus, $g^{-1}(V)$ must be open in $Y$ which implies that $g$ is continuous.</div> -->
+
+        
+
+
+      <div class="sub-section"><div class="title">Pre-Cosheafs</div></div>
+      <div>Pre-cosheafs allow us to abstract the data the a Reeb Graph provides us. In this section, we define what a pre-cosheaf is and show how we can describe the pre-cosheaf of a Reeb Graph.</div>
+      <div class="def">Let $\textbf{Open}(\mathcal{X})$ be the cateogry of open sets on the topological space $\mathcal{X}$ where $I \to J$ if $I \subseteq J$. Then a <i>pre-cosheaf</i> is a functor $\mathsf{F}: \textbf{Open}(\mathcal{X}) \to \textbf{D}$ where $D$ is some category. In other words, <b>a pre-cosheaf is an assignment of data to open sets of a topological space $\mathcal{X}$</b>.</div>
+      <div>In this work, our pre-cosheaves will exclusively have the category of intervals on the real line $\textbf{Int}$ as the domain space and the category of sets $\mathbf{Set}$ as the range space. Note that the morphisms in $\textbf{Set}$ are functions between sets.</div>
+      <div class="def">We define the <i>category of pre-cosheaves</i> $\textbf{Pre}$ as functors from $\textbf{Int}$ to $\textbf{Set}$. In other words, $\textbf{Pre} := \textbf{Set}^{\textbf{Int}}$</div>
+      <div class="def">Let $\textbf{Int}$ denote the category of intervals $I\subseteq \mathbb{R}$ where the morphisms between the intervals is inclusion. We usually denote this morphism using the subest notation $I \subseteq J$.<div>
+      <div class="def">Let $\textbf{Set}$ note the category of sets where the morphisms between objects are functions between the sets.</div>
+      <div>A Reeb Graph naturally encodes data about the connected components of the level sets of a scalar field. So, it makes sense to be able to view this as a pre-cosheaf where our domain space are the intervals of the real line and the data attached to these intervals is a set of path-connected components.</div>
+      <div class="def">Let $f = (\mathbb{X},f)$ be a scalar Reeb Graph. The <i>Reeb cosehaf functor $\mathcal{C}$</i> is defined by the formulas
+        \[\mathsf{F}(I) = \pi_0(f^{-1}(I)), \hspace{0.5in} \mathsf{F}[I\subseteq J] = \pi_0[f^{-1}(I) \subseteq f^{-1}(J)].\]
+        This functor converts a Reeb Graph to its pre-cosheaf. Thus, $\mathcal{C}: \textbf{Reeb} \to \textbf{Pre}$.
+      </div>
+      <!-- <div></div> -->
+      
+
+      <div class="section"><div class="title">Interleaving Distance</div></div>
+      <div class="sub-section"><div class="title">Interleaving of Pre-Cosheafs</div></div>
+      <div>The interleaving distance between two pre-cosheaves is a way to gauge how close they are to each other based on "approximate isomorphisms".</div>
+      <div class="def">We say that two pre-cosheafs $\mathsf{F},\mathsf{G}$ are <i>$\varepsilon$-interleaved</i> if there exists a family of morphisms
+      \[\varphi_I:\mathsf{F}(I) \to \mathsf{G}(I^{\varepsilon}), \hspace{0.75in} \psi_I:\mathsf{G}(I) \to \mathsf{F}(I^{\varepsilon}),\]
+      which are natural with respect to the inclusions $I \subseteq J$, such that 
+      \[\psi_{I^{\varepsilon}} \circ \varphi_I = \mathsf{F}[I\subseteq I^{2\varepsilon}], \hspace{0.75in} \varphi_{I^{\varepsilon}} \circ \psi_I = \mathsf{G}[I\subseteq I^{2\varepsilon}]\]
+      Note that when $\varepsilon = 0$, this is exactly an isomorphism between $\mathsf{F}$ and $\mathsf{G}$. When two pre-cosheafs are $\varepsilon$-interleaved, we say that there exists an <i>$\varepsilon$-interleaving</i> between them.</div>
+      <div class="def">The <i>interleaving distance</i> between two pre-cosheafs $\mathsf{F}$ and $\mathsf{G}$ is defined as 
+        \[ d_I(\mathsf{F},\mathsf{G}) = \inf\{\varepsilon \geq 0 | \text{  there exists an } \varepsilon \text{-interleaving between } \mathsf{F},\mathsf{G}\}\]</div>
+      <div class="sub-section"><div class="title">Interleaving of Reeb Graphs</div></div>
+      <div class="def">Let $f = (\mathbb{X},f)$ and $g = (\mathbb{Y},g)$ be two Reeb Graphs. Since we have a notion of distance between two pre-cosheafs, we can define the <i>interleaving distance between $f,g$</i> simply by 
+      \[d_I(f,g) := d_I(\mathcal{C}(f),\mathcal{C}(g))\]
+      </div>
+      <div>Unfortunately, this definition of the interleaving distance is very abstract and requires converting our Reeb Graphs to pre-cosheafs before defining the distance. What we seek to find is a nice geometric realization of this distance.</div>
+      <div class="sub-section"><div class="title">Smoothing Functors</div></div>
+      <div>Even categorically, the interleaving distance between two cosheafs is difficult to describe. Here, we introduce the idea of the <i>Smoothing Functor</i>. Our goal is to be able to construct a map between pre-cosheafs which encompasses the notion of $\varepsilon$-interleaving.</div>
+      <div class="def">The <i>expansion functor</i> by $\varepsilon > 0$, $\Omega_{\varepsilon}$, is described as
+        \[\Omega_{\varepsilon}: \textbf{Int} \to \textbf{Int} ;\hspace{0.1in} I \mapsto I^{\varepsilon}\]
+      </div>
+      <div>This is a well defined functor since when $I \subseteq J$ we have $I^{\varepsilon} \subseteq J^{\varepsilon}$. We say that an pre-cosheaf can be "$\varepsilon$-smoothed" to obtain a new pre-cosheaf by pre-composition of the smoothing functor:
+        \[\mathsf{F}\Omega_{\varepsilon}: \textbf{Int} \to \textbf{Set}; \hspace{0.1in} \mathsf{F}\Omega_{\varepsilon}(I) = \mathsf{F}(I^{\varepsilon})\] </div>
+      <div>Note that since $I \subseteq I^{\varepsilon}$ for all $I$, we can construct a natural transformation $\omega^{\varepsilon} :1_{\textbf{Int}} \Rightarrow \Omega_{\varepsilon}$. That is, the following diagram commutes:</div>
+      <note>Put diagram of this. they gloss over in paper but I think it'll just be easier to see without having a really strong category theory background</note>
+      <div>Because of this, we can compose $\omega^{\varepsilon}$ with the pre-cosheaf $\mathsf{F}$ to get $\sigma^{\varepsilon}_{\mathsf{F}} = \mathsf{F}\omega^{\varepsilon}: \mathsf{F} \Rightarrow \mathsf{F}\Omega_{\varepsilon}$ defined explicitly by $(\sigma_{\mathsf{F}}^{\varepsilon})_I = \mathsf{F}[I \subseteq I^{\varepsilon}]: \mathsf{F}(I) \to \mathsf{F}(I^{\varepsilon})$. From all this heavy lifting, we get the following new definition of the interleaving distance between pre-cosheafs:</div>
+      <div class="def">We say that two pre-cosheafs $\mathsf{F},\mathsf{G}$ are <i>$\varepsilon$-interleaved</i> if there exists a pair of natural transformations $\varphi: \mathsf{F} \Rightarrow \mathsf{G}\Omega_{\varepsilon}$ and $\psi: \mathsf{G}\Rightarrow \mathsf{F}\Omega_{\varepsilon}$ such that the following diagrams commute:</div>
+      <note>Put the natural transformation diagrams here, page 23</note>
+      <div class="sub-section"><div class="title">Thickening Functors</div></div>
+      <div>Here we describe a <i>thickening functor</i> on Reeb Graphs that operates in parallel to the smoothing functors described previously. What we will show is that it is equivalent to work with thickened Reeb Graphs or smoothed pre-cosheafs.</div>
+      <div class="def">For $\varepsilon \geq 0$, we define the thickening functor $\mathcal{T}_{\varepsilon}:\rtop \to \rtop$ as follows:
+        <ul>
+          <li>Let $(\mathbb{X},f)$ be a scalar field, let $\mathbb{X}_{\varepsilon} = \mathbb{X} \times [-\varepsilon,\varepsilon]$, and let $f_{\varepsilon}(x,t) = f(x) + t$. Then $\mathcal{T}_{\varepsilon}(\mathbb{X},f) = (\mathbb{X}_{\varepsilon},f_{\varepsilon})$</li>
+          <li>Let $\alpha:(\mathbb{X},f) \to (\mathbb{Y},g)$ be a morphism in $\rtop$. Then we define $\mathcal{T}_{\varepsilon} : (\mathbb{X}_{\varepsilon},f_{\varepsilon}) \to (\mathbb{Y}_{\varepsilon},g_{\varepsilon})$ by $(x,t) \mapsto (\alpha(x),t)$.</li>
+        </ul>
+      </div>
+
+
+
+      <!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+      <div class="thm">The functors $\mathcal{C}\mathcal{T}_{\varepsilon}$ and $\mathcal{S}_{\varepsilon}\mathcal{C}$ are naturally isomorphic.</div>
+      <note>Need to state the lemma needed for this, prove both (maybe not?)</note>
+
+      <br/>
+      <note>Section 1 should introduce persistence diagrams, perhaps persistence modules, barcodes, etc. (probably just persistence diagrams)</note>
+      <br/>
+      <note>Topological evolution doesn't make much sense for Reeb Graphs, would be a good place for persistence diagrams</note>
+      <br/>
+      <note>New section 4: Results of interleaving distance, definition of bottleneck, wasserstein, and functional distortion, comparison of metrics, examples for what isn't captured by bottleneck distance but it is by interleaving (Morozov paper merge tree example)</note>      
+
+      <div class="section"><div class="title">Computational Methods</div></div>
+      <ul>
+        <li> Definitions and construction
+          <ul>
+            <li>Triangulation of a scalar field</li>
+            <li>Construction of Reeb Graph (?)</li>
+          </ul>
+        </li>
+        <li> Computation of Distances
+          <ul>
+            <li>Computing Bottleneck distance</li>
+            <li>Computing Wasserstein Distance</li>
+            <li>Why does distance boil down to a matching problem?</li>
+            <li>Prose on difficulty of interleaving</li>
+            <li>Graph isomorphism difficulty (?)</li>
+            <li>Labeled Merge Tree Case</li>
+          </ul>
+        </li>
+      </ul>
+      <note> What does this distance mean and why is it hard to compute? </note>
+      <div class="section"><div class="title">Future Direction and Proposed Work</div></div>
+      <ul>
+        <li>Approximations to Interleaving distance (?)</li>
+        <li>Usefulness with Mapper Graphs</li> 
+        <li>Machine learning for metric learning of Reeb Graphs</li>
+      <ul>
+      <note>I need a timeline for what I'm doing with my work, and what we plan to do</note>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+      
