@@ -678,11 +678,15 @@ $controlsArrowAngleActive: 36deg;
 	height: 100%;
 }
 
+// Edited by Brian Bollen
+
 .reveal .slides>section.present,
 .reveal .slides>section>section.present {
-	display: block;
+	display: flex !important;
+	flex-direction:column;
 	z-index: 11;
 	opacity: 1;
+	height:100%;
 }
 
 .reveal .slides>section:empty,

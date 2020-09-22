@@ -1,0 +1,79 @@
+Notes As We Do Final Edits:
+
+> In proof of prop 2.15, we state that "a continuous bijection from a compact space to a hausdorff space is a homeomporphism". Just review this statement later. Comes straight from Categorified Reeb graphs, proof of prop 2.12
+
+> You better fucking know what the hell "deep learning" really means
+
+> Motivation needs to be there. I feel as if I haven't done a great job at motivating why the fuck Reeb graphs matter
+
+
+
+
+
+
+Outline for Talk
+
+> Scalar Fields and Motivating Problem (5 - 10 min)
+
+    > Create Rules of Engagement
+    > Make sure they understand our perspective and what problems we want to solve
+    > Take images from Structural Average Merge Trees paper, Progressive Wasserstein Paper, Edit Distance on Merge Trees Paper
+    > Slide 1: Why people use topology
+    > Slide 2: Showing images to compare multiple fields (For the most part, these are either in line with what we're doing or tangential)
+    > Slide 1 is the success of topology
+    > Slide 3 (?) : Topology gives us a summary of the structure where as geometry fails in certain aspects
+    
+
+    #-----------------------------------------------------------------------------------------------------------
+    #-----------------------------------------------Slide One---------------------------------------------------
+    #-----------------------------------------------------------------------------------------------------------
+
+    Why People Use Topology
+
+    > Simulations extremely complex so individual geometric observation is not as useful
+    > Toplogy provides visual summaries of the data (shapes) that we study
+    > Can easily provide us with information that would be too hard to extract without it
+    > Many different tools have been constructed to provide adequate toplogical summaries of data, such as Persistence Diagrams, Morse-Smale complex, and in particular, the Reeb graph
+
+    #-----------------------------------------------------------------------------------------------------------
+    #-----------------------------------------------Slide Two---------------------------------------------------
+    #-----------------------------------------------------------------------------------------------------------
+
+    Recently, the increase in computational power has lead to increasingly complex simulations that are able to be studied. Becuase of this, researchers are searching for new tools to study these simulations. Often, these simulations come in the form of multifacted data, where multiple pieces are interacting together to paint an entire picutre. In particular, researchers have grown interested in studying ensembles of scalar fields, where each scalar field has the same domain except with different values for a set of parameters. So, the question is how we actually study this ensemble. 
+
+    cite -- progressive wasserstein application, structural average of merge trees application 
+
+    #-----------------------------------------------------------------------------------------------------------
+    #-----------------------------------------------Slide Three-------------------------------------------------
+    #-----------------------------------------------------------------------------------------------------------
+
+> Interleaving Distance Paper (30 min)
+
+    > Category Theory Background (10 min)
+
+        > Categories
+        > Functors
+        > Natural Transformations
+
+    > Construction of Interleaving Distance (15 min)
+
+        ** Page 11 has some intuition that it would be good to try and capture in an image (Filtering) **
+
+        > Pre-Cosheafs
+        > Smoothing Functor
+        > Interleaving of Pre-Cosheafs
+        > Interleaving of Reeb graphs
+        > Thickening Functor 
+
+    > Computational Complexity (5 min)
+
+
+> Future Work (10 - 15 min)
+
+    > Milestone 0
+
+    > Milestone A
+
+    > Milestone B
+
+    > Milestone C
