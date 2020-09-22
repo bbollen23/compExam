@@ -20,7 +20,93 @@
 					<div>Analyzing Scalar Fields Through Topological Similarity</div>
 					<div style="font-size:0.6em;">Brian Bollen</div>
 				</section>
-				<section >Slide 2</section>
+				<section>
+					<div>Why Use Topology for Data Analysis</div>
+				</section>
+				<section>
+					<div>How Topology has been used for Multifaceted Data Analysis (and definition of multifaceted data)</div>
+				</section>
+				<section>
+					<div>Topological Metrics</div>
+				</section>
+				<section style="justify-content: space-between">
+					<div>Scalar Fields</div>
+					<div><b>Definition:</b> Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b></div>
+				</section>
+				<section>
+					<div>Definition of Reeb Graph</div>
+					<ul>
+						<li>Show images from our own paper</li>
+					</ul>
+				</section>
+				<section>
+					<div>Interleaving Distance Motivation (?)</div>
+				</section>
+				<section>
+					<div>Category Theory</div>
+					<ul>
+						<li>Objects</li>
+						<li>Morphisms</li>
+						<li>Functors</li>
+					</ul>
+				</section>
+				<section>
+					<div>Category Theory</div>
+					<ul>
+						<li>Natural Transformations (and isomorphisms)</li>
+					</ul>
+				</section>
+				<section>
+					<div>Category of Scalar Fields</div>
+					<li>
+						<ul>Function preserving maps between graphs</ul>
+					</li>
+				</section>
+				<section>
+					<div>Category of Pre-Cosheafs</div>
+				</section>
+				<section>
+					<div>Smoothing Functor and Interleaving on Pre-Cosheafs + filter motivation</div>
+				</section>
+				<section>
+					<div>Thickening Functor</div>
+				</section>
+				<section>
+					<div>Geometric Interpretation of Interleaving on Reeb Graphs</div>
+				</section>
+				<section>
+					<div>Revisit Topological Metrics</div>
+					<ul>
+						<li>Several Different Metrics comparing topological similarity</li>
+					</ul>
+				</section>
+				<section>
+					<div>Interleaving "failure" example</div>
+					<div>Given two scalar fields that are defined on the same domain and who are near isomorphic EXCEPT a single "hill" where one hill is $K$ higher than the other, the interleaving distance would be $K$ (or $K/2$).</div>
+					<div>Possibly, this interprets too much geometric information compared to what we might want</div>
+				</section>
+				<section>
+					<div>Provide another example of a metric not failing in certain contexts</div>
+				</section>
+				<section>
+					<div>Proposal for Milestone 0</div>
+					<div>We would like to conduct a survey / empirical study of the most prevelant topological metrics to examine their role in measuring similarity between scalar fields and /or their role in multifaceted data analysis in general. Furthermore, we would like to generate a comprehensive list of the computational complexities that each of these metrics have</div>
+				</section>
+				<section>
+					<div>Graph Convolutional Neural Networks</div>
+				</section>
+				<section>
+					<div>Learning Topological Similarity Metric Through Siamese Networks</div>
+				</section>
+				<section>
+					<div>Proposal for Milestone A</div>
+				</section>
+				<section>
+					<div>Proposal for Milestone B</div>
+				</section>
+				<section>
+					<div>Proposal for Milestone C</div>
+				</section>
 			</div>
 		</div>
 
@@ -28,15 +114,22 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-				center:false,
+				// center:false,
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				math: {
+					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					// pass other options into `MathJax.Hub.Config()`
+					TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
 			});
 		</script>
 	</body>

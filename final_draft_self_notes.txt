@@ -35,6 +35,9 @@ Outline for Talk
     > Can easily provide us with information that would be too hard to extract without it
     > Many different tools have been constructed to provide adequate toplogical summaries of data, such as Persistence Diagrams, Morse-Smale complex, and in particular, the Reeb graph
 
+
+    ****It's not really my job to be able to speak about the efficacy of using Geometry. My goal is to talk about how topology can be used in this particular instance of analysis****
+
     #-----------------------------------------------------------------------------------------------------------
     #-----------------------------------------------Slide Two---------------------------------------------------
     #-----------------------------------------------------------------------------------------------------------
@@ -46,6 +49,17 @@ Outline for Talk
     #-----------------------------------------------------------------------------------------------------------
     #-----------------------------------------------Slide Three-------------------------------------------------
     #-----------------------------------------------------------------------------------------------------------
+
+    Definition of  Scalar Field
+
+    #-----------------------------------------------------------------------------------------------------------
+    #-----------------------------------------------Slide Four--------------------------------------------------
+    #-----------------------------------------------------------------------------------------------------------
+
+    Definition of a Reeb graph
+
+    
+
 
 > Interleaving Distance Paper (30 min)
 

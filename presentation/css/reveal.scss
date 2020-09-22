@@ -682,11 +682,12 @@ $controlsArrowAngleActive: 36deg;
 
 .reveal .slides>section.present,
 .reveal .slides>section>section.present {
-	display: flex !important;
-	flex-direction:column;
+	// display: flex !important;
+	// flex-direction:column;
+	display:block;
 	z-index: 11;
 	opacity: 1;
-	height:100%;
+	// height:100%;
 }
 
 .reveal .slides>section:empty,
