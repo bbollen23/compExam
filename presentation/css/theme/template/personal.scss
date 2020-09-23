@@ -1,0 +1,32 @@
+.definition{
+  // border:1px solid black;
+  box-shadow: 1px 3px 3px #c4c4c4;
+  border-radius:4px;
+  width:100%;
+}
+
+.definition .content{
+  padding:10px;
+  font-size:0.75em;
+}
+
+.definition .header{
+  background-color:black;
+  color:white;
+  font-weight:500;
+  padding:5px 10px;
+  border-top-left-radius:4px;
+  border-top-right-radius:4px;
+}
+
+.img-container{
+  display:flex;
+  justify-content:center;
+  flex:1;
+  align-items: center;
+}
+
+.img-container img{
+  margin-top:5px;
+} 
+ 

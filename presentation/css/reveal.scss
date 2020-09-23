@@ -631,7 +631,8 @@ $controlsArrowAngleActive: 36deg;
 
 	overflow: visible;
 	z-index: 1;
-	text-align: center;
+	// text-align: center;
+	text-align:left;
 	perspective: 600px;
 	perspective-origin: 50% 40%;
 }
@@ -682,12 +683,11 @@ $controlsArrowAngleActive: 36deg;
 
 .reveal .slides>section.present,
 .reveal .slides>section>section.present {
-	// display: flex !important;
-	// flex-direction:column;
-	display:block;
 	z-index: 11;
 	opacity: 1;
-	// height:100%;
+	display: flex !important;
+	flex-direction:column;
+	height:100%;
 }
 
 .reveal .slides>section:empty,
@@ -1821,6 +1821,8 @@ $notesWidthPercent: 25%;
  * PRINT STYLES
  *********************************************/
 
+
+@import './personal.scss';
 @import 'print/pdf.scss';
 @import 'print/paper.scss';
 

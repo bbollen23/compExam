@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/myTheme.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
@@ -16,96 +16,178 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section style="justify-content:center;">
-					<div>Analyzing Scalar Fields Through Topological Similarity</div>
-					<div style="font-size:0.6em;">Brian Bollen</div>
+				<section style="margin-top:250px">
+					<h2>Analyzing Scalar Fields Through Topological Similarity</h2>
+					<div style="font-size:0.8em;margin-top:20px;">Brian Bollen</div>	
 				</section>
 				<section>
-					<div>Why Use Topology for Data Analysis</div>
+					<h3>Why Use Topology for Data Analysis</h3>
 				</section>
 				<section>
-					<div>How Topology has been used for Multifaceted Data Analysis (and definition of multifaceted data)</div>
+					<h3>How Topology has been used for Multifaceted Data Analysis (and definition of multifaceted data)</h3>
+					<div style="display:flex;flex-direction:row;height:100%;margin-top:60px;">
+						<div style="display:flex;flex-direction:column;flex:1;">
+							<div style="flex:0.7;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+								IMAGE 1
+							</div>
+							<div style="flex:0.3;flex:0.7;display: flex;justify-content: center;align-items:center;">
+								DESCRIPTION
+							</div>
+						</div>
+						<div style="display:flex;flex-direction:column;flex:1">
+							<div style="flex:0.7;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+								IMAGE 2
+							</div>
+							<div style="flex:0.3;flex:0.7;display: flex;justify-content: center;align-items:center;">
+								DESCRIPTION
+							</div>
+						</div>
+						<div style="display:flex;flex-direction:column;flex:1">
+							<div style="flex:0.7;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+								IMAGE 3
+							</div>
+							<div style="flex:0.3;flex:0.7;display: flex;justify-content: center;align-items:center;">
+								DESCRIPTION
+							</div>
+						</div>
+					</div>
 				</section>
 				<section>
-					<div>Topological Metrics</div>
-				</section>
-				<section style="justify-content: space-between">
-					<div>Scalar Fields</div>
-					<div><b>Definition:</b> Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b></div>
+					<h3>Topological Metrics</h3>
+					<div style="display:flex;flex-direction:row;height: 100%;">
+						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;">
+							LIST OF COMMON TOPOLOGICAL METRICS
+						</div>
+						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;flex-direction:column;">
+							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+								IMAGE 1
+							</div>
+							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+								IMAGE 2
+							</div>
+							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+								IMAGE 3
+							</div>
+						</div>
+					</div>
 				</section>
 				<section>
-					<div>Definition of Reeb Graph</div>
-					<ul>
-						<li>Show images from our own paper</li>
-					</ul>
+					<h3>Scalar Fields</h3>
+					<!-- <div><b>Definition:</b> Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b></div> -->
+					<div class="definition">
+						<div class="header">Definition</div>
+						<div class="content">
+							Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b>
+						</div>
+					</div>
+					<div class="img-container">
+						<div>IMAGE(S) OF SCALAR FIELD</div>
+					</div>
 				</section>
 				<section>
-					<div>Interleaving Distance Motivation (?)</div>
+					<h3 style="flex:0.2">Reeb Graphs</h3>
+					<div class="definition">
+						<div class="header">Definition</div>
+						<div class="content">
+							Let $(\mathbb{X},f)$ be a scalar field. We can define an equivalence relation on $\mathbb{X}$ by defining $x\sim y$ if $f(x) = f(y) = a$ (they belong to the same $a$-fiber) and if $x,y$ are in the same path connected component of the $a$-fiber. Then, the quotient space $\mathbb{X}_f := \mathbb{X}/\sim_f$ is called the <b>Reeb graph</b> of the scalar field $(\mathbb{X},f)$. We equip the Reeb graph with the function $\tilde{f}$ which is defined as $\tilde{f} \circ \rho = f$, where $\rho: \mathbb{X} \to \mathbb{X}_f$ is the quotient map defined by our equivalence relation. 
+						</div>
+					</div>
+					<div class="img-container">
+						<img src="figures/Reeb Graph.png"/>
+					</div>
 				</section>
 				<section>
-					<div>Category Theory</div>
+					<h3>Interleaving Distance Motivation (?)</h3>
+				</section>
+				<section>
+					<h3>Category Theory</h3>
+					<!-- <div style="position:relative;height:100%">
+						<div style="width:100%;height:100%;border:1px solid black;position:absolute;" class="fragment fade-in-then-out">
+							
+						</div>
+						<div style="width:100%;height:100%;border:1px solid red;position:absolute;top:20px;" class="fragment fade-in-then-out">
+						</div>	
+					</div> -->
+					
 					<ul>
 						<li>Objects</li>
 						<li>Morphisms</li>
 						<li>Functors</li>
+						<li>Natural Transformations (and isomorphisms)</li>
 					</ul>
+					<div style="color:red;margin-top:40px;">How much category theory should be presented?</div>
 				</section>
-				<section>
-					<div>Category Theory</div>
+				<!-- <section data-transition="none-in slide-out">
+					<h3>Category Theory</h3>
 					<ul>
 						<li>Natural Transformations (and isomorphisms)</li>
 					</ul>
-				</section>
+				</section> -->
 				<section>
-					<div>Category of Scalar Fields</div>
+					<h3>Category of Scalar Fields</h3>
 					<li>
 						<ul>Function preserving maps between graphs</ul>
 					</li>
 				</section>
 				<section>
-					<div>Category of Pre-Cosheafs</div>
+					<h3>Category of Pre-Cosheafs</h3>
+					<ul>
+						<li>Definition of Pre-cosheaf</li>
+						<li>General Definition of Pre-cosheafs (assignment of data to open sets)</li>
+						<li>Pre-Cosheafs relationship to Reeb graphs (Figure 3)</li>
+					</ul>
+					<div style="color:red;margin-top:40px;">Should I just put the actual definition of pre-cosheafs or the more general one? Both?</div>
 				</section>
 				<section>
-					<div>Smoothing Functor and Interleaving on Pre-Cosheafs + filter motivation</div>
+					<h3>Smoothing Functor and Interleaving on Pre-Cosheafs + filter motivation</h3>
 				</section>
 				<section>
 					<div>Thickening Functor</div>
-				</section>
-				<section>
-					<div>Geometric Interpretation of Interleaving on Reeb Graphs</div>
-				</section>
-				<section>
-					<div>Revisit Topological Metrics</div>
 					<ul>
-						<li>Several Different Metrics comparing topological similarity</li>
+						<li>Figure 4</li>
 					</ul>
 				</section>
 				<section>
-					<div>Interleaving "failure" example</div>
+					<h3>Geometric Interpretation of Interleaving on Reeb Graphs</h3>
+					<ul>
+						<li>Example (?)</li>
+						<div style="color:red;margin-top:40px;">I think a couple simple examples would be good here</div>
+					</ul>
+				</section>
+				<section>
+					<h3>Revisit Topological Metrics</h3>
+					<div style="color:red;margin-top:40px;">Duplicate of Original Topological Metric slide so that I can talk more about this</div>
+				</section>
+				<section>
+					<h3>Interleaving "failure" example</h3>
 					<div>Given two scalar fields that are defined on the same domain and who are near isomorphic EXCEPT a single "hill" where one hill is $K$ higher than the other, the interleaving distance would be $K$ (or $K/2$).</div>
 					<div>Possibly, this interprets too much geometric information compared to what we might want</div>
 				</section>
 				<section>
-					<div>Provide another example of a metric not failing in certain contexts</div>
+					<h3>Provide another example of a metric failing in certain contexts</h3>
 				</section>
 				<section>
-					<div>Proposal for Milestone 0</div>
+					<h3>Proposal for Milestone 0</h3>
 					<div>We would like to conduct a survey / empirical study of the most prevelant topological metrics to examine their role in measuring similarity between scalar fields and /or their role in multifaceted data analysis in general. Furthermore, we would like to generate a comprehensive list of the computational complexities that each of these metrics have</div>
 				</section>
 				<section>
-					<div>Graph Convolutional Neural Networks</div>
+					<h3>Graph Convolutional Neural Networks</h3>
 				</section>
 				<section>
-					<div>Learning Topological Similarity Metric Through Siamese Networks</div>
+					<h3>Learning Topological Similarity Metric Through Siamese Networks</h3>
+					<div style="color:red;margin-top:40px;">Going to construct an image for how this learning works in theory</div>
 				</section>
 				<section>
-					<div>Proposal for Milestone A</div>
+					<h3>Proposal for Milestone A</h3>
+					<div style="color:red;margin-top:40px;">Include list of different training sets?</div>
 				</section>
 				<section>
-					<div>Proposal for Milestone B</div>
+					<h3>Proposal for Milestone B</h3>
+					<div style="color:red;margin-top:40px;">Flush out interleaving example as much as possible before this</div>
 				</section>
 				<section>
-					<div>Proposal for Milestone C</div>
+					<h3>Proposal for Milestone C</h3>
+					<div style="color:red;margin-top:40px;">Create diagram of auto encoders</div>
 				</section>
 			</div>
 		</div>
@@ -116,12 +198,20 @@
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/math/math.js"></script>
 		<script>
+			Reveal.on('fragmentshown', event => {
+				if(event.fragment.classList.contains("remove")){
+					event.fragment.style.display = 'none';
+				}
+			})
+		</script>
+		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-				// center:false,
+				center:false,
+				width:1080, //Can edit the width and height and stuff here
 				// Learn about plugins: https://revealjs.com/plugins/
 				math: {
 					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
