@@ -108,44 +108,240 @@
 						<div style="width:100%;height:100%;border:1px solid red;position:absolute;top:20px;" class="fragment fade-in-then-out">
 						</div>	
 					</div> -->
-					
-					<ul>
-						<li>Objects</li>
-						<li>Morphisms</li>
-						<li>Functors</li>
-						<li>Natural Transformations (and isomorphisms)</li>
-					</ul>
-					<div style="color:red;margin-top:40px;">How much category theory should be presented?</div>
+					<div class="definition">
+						<div class="header">Definition</div>
+						<div class="content">
+							A <b>category</b> is a collection $\mathbf{C}$ of <b>objects</b> with <b>morphisms</b> that map between these objects. 
+						</div>
+					</div>
+					<div class="definition">
+						<div class="header">Definition</div>
+						<div class="content">
+							A <b>functor</b> $\mathsf{F}: \mathbf{C} \to \mathbf{D}$ is a mapping between two categories $\mathbf{C}$ and $\mathbf{D}$, such that it preseves fundamental properties of the categories.
+						</div>
+					</div>
+					<div class="definition">
+						<div class="header">Definition</div>
+						<div class="content">
+							A <b>natural transformation</b> $\eta: \mathsf{F} \Rightarrow \mathsf{G}$ is a mapping between two functors $\mathsf{F},\mathsf{G}:\mathbf{C}\ \to \mathbf{D}$ which consists of a family of maps $\eta_a : \mathsf{F}(a) \to \mathsf{G}(a)$ for each object $a$ in $\mathbf{C}$ which respects morphisms in $\mathbf{C}$.
+						</div>
+					</div>
+					<div class="img-container">
+						<img src="figures/naturalTransformation.png"/>
+					</div>
+					<!-- <div style="color:red;margin-top:40px;">How much category theory should be presented?</div> -->
 				</section>
-				<!-- <section data-transition="none-in slide-out">
-					<h3>Category Theory</h3>
-					<ul>
-						<li>Natural Transformations (and isomorphisms)</li>
-					</ul>
-				</section> -->
+				<section>
+					<h3>Category Theory Roadmap for Interleaving Distance</h3>
+				</section>
 				<section>
 					<h3>Category of Scalar Fields</h3>
-					<li>
-						<ul>Function preserving maps between graphs</ul>
-					</li>
+					<div class="definition">
+						<div class="header">Definition</div> 
+						<div class="content">
+							The <b>category of scalar fields</b>, denoted as $\mathbb{R}\text{-}\mathbf{Top}$, has scalar fields as objects and continuous, <b>function preserving maps</b> as morphisms.
+						</div>
+					</div>
+
+					<div class="img-container">
+						<img src="figures/functionPreserving.png"/>
+					</div>
+				</section>
+				<section>
+					<h3>Category of Reeb Graphs and the Reeb Functor</h3>
+					<!-- <div>The category of sc</div> -->
+					<div class="definition">
+						<div class="header">Definition</div>
+						<div class="content">
+							The <b>category of Reeb graphs</b>, denoted as $\mathbf{Reeb}$ has Reeb graphs as objects and continuous, <b>function preserving maps</b> as morphisms.
+						</div>
+					</div>
+					<div class="definition">
+						<div class="header">Definition</div> 
+						<div class="content">
+							The <b>Reeb functor</b>, denoted as $\mathcal{R} : \mathbb{R}\text{-}\mathbf{Top} \to \mathbf{Reeb}$, is defined by the formulas $\mathcal{R}(\mathbb{X},f) = (\mathbb{X}_f,\tilde{f})$ and $\mathcal{R}[\alpha] = \tilde{\alpha}$, where $\rho_g \circ \alpha = \tilde{\alpha} \circ \rho_f$.
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Pre-Cosheafs</h3>
+					<div class="main-point-alt" style="margin-top:40px">
+						<div>A pre-cosheaf is an assignment of data to open sets of a topological space $\mathbb{X}$ such that if $I \subseteq J$, then the data attached to $I$ maps to the data attached to $J$.</div>
+					</div>
+					<div class="img-container">
+						<img src="figures/PreCosheaf.png"/>
+					</div>
 				</section>
 				<section>
 					<h3>Category of Pre-Cosheafs</h3>
-					<ul>
+					<div style="flex-direction:row;display: flex;">
+						<div style="flex-direction:column;display:flex;flex:1">
+							<div class="definition">
+								<div class="header">Definition</div> 
+								<div class="content">
+									<div>We define the <b>category of pre-cosheaves</b>, denoted as $\mathbf{Pre}$, to be the category of functors from the category of intervals $\mathbf{Int}$ to the category of sets $\mathbf{Set}$. The morphisms in this category are then natural transformations.</div>
+									<!-- <div style="margin-top:30px">
+										In $\mathbf{Int}$, if $I \to J$, then $I \subseteq J$. In $\mathbf{Set}$, if $A \to B$, then there exists a $h:A \to B$
+									</div> -->
+								</div>
+							</div>
+							<div class="definition">
+								<div class="header">Definition</div> 
+								<div class="content">
+									We define the <b>Reeb cosheaf functor </b> $\mathcal{C}$ using the following formulas:
+									<ul style="margin:15px 0px 15px 45px">
+										<li>$\mathsf{F}(I) = \pi_0(f^{-1}(I))$</li>
+										<li>$\mathsf{F}[I\subseteq J] = \pi_0[f^{-1}(I)\subseteq f^{-1}(J)]$.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="img-container" style="flex:1;margin-top:-50px;">
+							<img src="figures/PreCosheafReeb.png"/>
+						</div>
+					</div>
+					
+
+					<!-- <ul>
 						<li>Definition of Pre-cosheaf</li>
 						<li>General Definition of Pre-cosheafs (assignment of data to open sets)</li>
 						<li>Pre-Cosheafs relationship to Reeb graphs (Figure 3)</li>
-					</ul>
-					<div style="color:red;margin-top:40px;">Should I just put the actual definition of pre-cosheafs or the more general one? Both?</div>
+					</ul> -->
+					<!-- <div style="color:red;margin-top:40px;">Should I just put the actual definition of pre-cosheafs or the more general one? Both?</div> -->
 				</section>
 				<section>
-					<h3>Smoothing Functor and Interleaving on Pre-Cosheafs + filter motivation</h3>
+					<h3>Interleaving on Pre-Cosheafs</h3>
+					<!-- <div class="img-container" style="flex:1;">
+						<img src="figures/PreCosheafInterleaving2.png"/>
+					</div>
+					<div style="width:100%;position:absolute;left:500px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="1"></div>
+					<div style="width:100%;position:absolute;left:700px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="2"></div> -->
+
+
+					<div style="position:relative;height:100%">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="3">
+							<div class="img-container" style="flex:1;">
+								<img src="figures/PreCosheafInterleaving2.png"/>
+							</div>
+							<div style="width:100%;position:absolute;left:500px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="1"></div>
+							<div style="width:100%;position:absolute;left:700px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="2"></div>
+						</div>
+						<div style="position:absolute;width:100%;display:flex;justify-content: center;align-content:center;"  class="fragment fade-in" data-fragment-index="3">
+							<div class="main-point-alt" style="margin-top:100px;">
+								<div>The Interleaving distance quantifies the distance between pre-cosheafs
+								by finding the minimum filter size $ε$ that we need to pass one pre-cosheaf
+								through in order to make it isomorphic to another pre-cosheaf.</div>
+							</div>									
+						</div>
+					</div>
+
+				</section>
+				
+				<section>
+					<h3>Smoothing Functor</h3>
+					<div style="position:relative;height:100%">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="1">
+							<div class="definition">
+								<div class="header">Definition</div> 
+								<div class="content">
+									We define the $\varepsilon$-<b>expansion functor</b> $\Omega_{\varepsilon} : \mathbf{Int} \to \mathbf{Int}$ by the formulas $\Omega_{\varepsilon}(I) = I^{\varepsilon}$, where $I = (a,b)$ and $I = (a-\varepsilon,b+\varepsilon)$, and $\Omega_{\varepsilon}[I\subseteq J] = I^{\varepsilon} \subseteq J^{\varepsilon}$.
+								</div>
+							</div>
+							<div class="definition">
+								<div class="header">Definition</div> 
+								<div class="content">
+									We define the $\varepsilon$-<b>smoothing functor</b> $\mathcal{S}_{\varepsilon}:\mathbf{Pre} \to \mathbf{Pre}$ by the formulas $\mathcal{S}_{\varepsilon}(\mathsf{F}) = \mathsf{F}\Omega_{\varepsilon}$ and $\mathcal{S}_{\varepsilon}[\mathsf{F} \Rightarrow \mathsf{G}]  := \mathsf{F}\Omega_{\varepsilon} \Rightarrow \mathsf{G}\Omega_{\varepsilon}$
+								</div>
+							</div>
+							<div class="img-container" style="flex:1;margin-top:40px;" >
+								<img src="figures/SmoothingFunctorPre.png"/>
+							</div>
+						</div>
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="1">
+							<div class="img-container" style="flex:1;">
+								<img src="figures/Smoothing.png"/>
+							</div>
+						</div>	
+					</div>
 				</section>
 				<section>
-					<div>Thickening Functor</div>
-					<ul>
-						<li>Figure 4</li>
-					</ul>
+					<h3>Interleavings between Reeb Graphs</h3>
+					<div class="definition">
+						<div class="header">Definition</div> 
+						<div class="content">
+							Let $f := (\mathbb{X},f)$ and $g := (\mathbb{Y},g)$ be two Reeb graphs. We say that $f$ and $g$ are $\varepsilon$<b>-interleaved</b> if there exists maps $\varphi:\mathcal{C}(f) \Rightarrow \mathcal{S}_{\varepsilon}\mathcal{C}(g)$ $\psi:\mathcal{C}(g) \Rightarrow \mathcal{S}_{\varepsilon}\mathcal{C}(f)$ such that the following diagrams commute:
+						</div>
+					</div>
+					<div class="img-container" style="flex:1;">
+						<img src="figures/interleavingSmoothingDgm.png"/>
+					</div>
+				</section>
+				<section>
+					<h3>Interleaving Distance</h3>
+					<div class="definition" style="margin-top:100px">
+						<div class="header">Definition</div> 
+						<div class="content">
+							Let $f := (\mathbb{X},f)$ and $g := (\mathbb{Y},g)$ be two Reeb graphs. The <b>interleaving distance</b> between $f$ and $g$ is 
+							\[d_I(f,g) = \inf\{\varepsilon | \text{there exists an $\varepsilon$-interleaving between $f$ and $g$}\}\]
+						</div>
+					</div>
+				</section>
+
+
+				<section>
+					<h3>Thickening Functor</h3>
+
+
+					<div style="position:relative;height:100%">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="1">
+							<div class="definition">
+								<div class="header">Definition</div> 
+								<div class="content">
+									Let $f := (\mathbb{X},f)$ be a Reeb graph. We define the $\varepsilon$-<b>thickening functor</b> $\mathcal{T}_{\varepsilon} : \mathbf{Reeb} \to \mathbf{Reeb}$ by the following formulas:
+									<ul style="margin-left:40px;margin-top:10px;">
+										<li>
+											$\mathcal{T}_{\varepsilon}(\mathbb{X},f) := (\mathbb{X}_\varepsilon,f_{\varepsilon})$, where $\mathbb{X}_{\varepsilon} := \mathbb{X} \times [-\varepsilon,\varepsilon]$ and $f_{\varepsilon}:\mathbb{X}_{\varepsilon} \to \mathbb{R}$ is defined asy $f_{\varepsilon}(x,t) := f(x) + t$
+										</li>
+										<li>
+											$\mathcal{T}_{\varepsilon}[\alpha]: (\mathbb{X}_\varepsilon,f_{\varepsilon}) \to (\mathbb{Y}_\varepsilon,g_{\varepsilon})$ is defined by $(x,t) \mapsto (\alpha(x),t)$, where $\alpha: (\mathbb{X},f) \to (\mathbb{Y},g)$. 
+										</li>
+									</ul> 
+								</div>
+							</div>
+							<div class="definition">
+								<div class="header thm">Theorem</div> 
+								<div class="content">
+									The functors $\mathcal{C}\mathcal{R}\mathcal{T}_{\varepsilon}$ and $\mathcal{S}_{\varepsilon}\mathcal{C}$ are naturally isomorphic.
+								</div>
+							</div>
+							<!-- <div class="definition">
+								<div class="header">Definition</div> 
+								<div class="content">
+									We define the $\varepsilon$-<b>smoothing functor</b> $\mathcal{S}_{\varepsilon}:\mathbf{Pre} \to \mathbf{Pre}$ by the formulas $\mathcal{S}_{\varepsilon}(\mathsf{F}) = \mathsf{F}\Omega_{\varepsilon}$ and $\mathcal{S}_{\varepsilon}[\mathsf{F} \Rightarrow \mathsf{G}]  := \mathsf{F}\Omega_{\varepsilon} \Rightarrow \mathsf{G}\Omega_{\varepsilon}$
+								</div>
+							</div> -->
+							<!-- <div class="img-container" style="flex:1;margin-top:40px;" >
+								<img src="figures/SmoothingFunctorPre.png"/>
+							</div> -->
+						</div>
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="1">
+							<div class="img-container" style="flex:1;">
+								<img src="figures/ThickeningNew.png"/>
+							</div>
+						</div>	
+					</div>
+				</section>
+				<section>
+					<h3>Interleaving of Reeb Graphs</h3>
+					<div class="definition">
+						<div class="header">Definition</div> 
+						<div class="content">
+							Let $\mathcal{U}_{\varepsilon} : \mathcal{R}\mathcal{T}_{\varepsilon}$ and let $f := (\mathbb{X},f)$ and $g := (\mathbb{Y},g)$ be two Reeb graphs. We say that $f$ and $g$ are $\varepsilon$<b>-interleaved</b> if there exists maps $\alpha:f \to \mathcal{U}_{\varepsilon}(g)$ and $\beta:g \to \mathcal{U}_{\varepsilon}(f)$ such that the following diagrams commute:
+						</div>
+					</div>
+					<div class="img-container" style="flex:1;">
+						<img src="figures/interleavingThickening.png"/>
+					</div>
 				</section>
 				<section>
 					<h3>Geometric Interpretation of Interleaving on Reeb Graphs</h3>
@@ -154,10 +350,29 @@
 						<div style="color:red;margin-top:40px;">I think a couple simple examples would be good here</div>
 					</ul>
 				</section>
+
+
 				<section>
-					<h3>Revisit Topological Metrics</h3>
-					<div style="color:red;margin-top:40px;">Duplicate of Original Topological Metric slide so that I can talk more about this</div>
+					<h3>Topological Metrics (Revisit)</h3>
+					<div style="display:flex;flex-direction:row;height: 100%;">
+						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;">
+							LIST OF COMMON TOPOLOGICAL METRICS
+						</div>
+						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;flex-direction:column;">
+							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+								IMAGE 1
+							</div>
+							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+								IMAGE 2
+							</div>
+							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+								IMAGE 3
+							</div>
+						</div>
+					</div>
 				</section>
+
+
 				<section>
 					<h3>Interleaving "failure" example</h3>
 					<div>Given two scalar fields that are defined on the same domain and who are near isomorphic EXCEPT a single "hill" where one hill is $K$ higher than the other, the interleaving distance would be $K$ (or $K/2$).</div>
@@ -168,7 +383,9 @@
 				</section>
 				<section>
 					<h3>Proposal for Milestone 0</h3>
-					<div>We would like to conduct a survey / empirical study of the most prevelant topological metrics to examine their role in measuring similarity between scalar fields and /or their role in multifaceted data analysis in general. Furthermore, we would like to generate a comprehensive list of the computational complexities that each of these metrics have</div>
+					<div class="main-point-alt" style="font-family:'Montserrat',sans-serif;margin-top:100px;">
+						<div>We would like to conduct a survey / empirical study of the most prevelant topological metrics to examine their role in measuring similarity between scalar fields and /or their role in multifaceted data analysis in general. Furthermore, we would like to generate a comprehensive list of the computational complexities that each of these metrics have.</div>
+					</div>
 				</section>
 				<section>
 					<h3>Graph Convolutional Neural Networks</h3>

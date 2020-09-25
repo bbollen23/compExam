@@ -91,3 +91,42 @@ Outline for Talk
     > Milestone B
 
     > Milestone C
+
+
+
+
+
+#---------------------------------------------------------------------
+
+Notes 09/23/20
+
+> Bringing up too much specific motivation before any mathematical definitions might be awkward
+
+> -- Interleaving Distance Motivation Slide:
+
+    "We are going to focus on one distance: interleaving distance" -- not motivation necessarily, just explanation
+
+    > Might be an order issue for where this slide is located
+
+
+> For category theory, we want to be able to talk about enough category theory to motivate the rest
+
+> Should figure out how long we have by flushing out rest
+
+> Bring up why studying Reeb graphs through category theory is mathematically interesting
+
+> Might be able to shortcut category theory a bit by motivating with pre-cosheafs (attaching data to intervals)
+
+**Why pre-cosheafs and not cosheafs**
+
+> BACKUP SLIDES (for definitions I don't put into the original talk)
+
+> interleaving "failure" change to sensitive/insensitive
+
+> How do we transition from Milestone 0 to machine learning / GCNN 
+
+** MIGHT HAVE TO DEFEND WHY WE'D TAKE A MACHINE LEARNING APPROACH **
+
+> Bring up computational complexity in a high level sense 
+
+> On scalar field slide, bring up a "reasonable class" called morse functions, making constructible scalar fields
