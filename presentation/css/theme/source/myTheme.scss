@@ -19,16 +19,20 @@
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400);
+@import url(https://fonts.googleapis.com/css2?family=Secular+One);
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600);
 
 
 // Override theme settings (see ../template/settings.scss)
 $mainFont: 'Lato', sans-serif;
 $mainColor: #000;
 $mainFontSize:25px;
+// $headingFont:'Roboto Slab', sans-serif;
 $headingFont: 'News Cycle', Impact, sans-serif;
 // $headingFont: 'Montserrat',sans-serif;
-$headingFontWeight:300;
-$headingColor: #000;
+$headingFontWeight:400;
+// $headingColor: #000;
+$headingColor:$text-blue-alt;
 $headingTextShadow: none;
 $headingTextTransform: none;
 $backgroundColor: #fff;
