@@ -62,7 +62,13 @@
 					<h3>Topological Metrics</h3>
 					<div style="display:flex;flex-direction:row;height: 100%;">
 						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;">
-							LIST OF COMMON TOPOLOGICAL METRICS
+							<div class="metric-list">
+								<div>Bottleneck Distance [cite]</div>
+								<div>Wasserstein Distance [cite]</div>
+								<div>Functional Distortion Distance [cite]</div>
+								<div>Reeb Graph Edit Distance [cite]</div>
+								<div>Interleaving Distance [cite]</div>
+							</div>
 						</div>
 						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;flex-direction:column;">
 							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
@@ -80,19 +86,21 @@
 				<section>
 					<h3>Scalar Fields</h3>
 					<!-- <div><b>Definition:</b> Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b></div> -->
-					<div class="definition">
+
+					<div class="importance-box def">
 						<div class="header">Definition</div>
 						<div class="content">
 							Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b>
 						</div>
 					</div>
+
 					<div class="img-container">
 						<div>IMAGE(S) OF SCALAR FIELD</div>
 					</div>
 				</section>
 				<section>
 					<h3 style="flex:0.2">Reeb Graphs</h3>
-					<div class="definition">
+					<div class="importance-box def">
 						<div class="header">Definition</div>
 						<div class="content">
 							Let $(\mathbb{X},f)$ be a scalar field. We can define an equivalence relation on $\mathbb{X}$ by defining $x\sim y$ if $f(x) = f(y) = a$ (they belong to the same $a$-fiber) and if $x,y$ are in the same path connected component of the $a$-fiber. Then, the quotient space $\mathbb{X}_f := \mathbb{X}/\sim_f$ is called the <b>Reeb graph</b> of the scalar field $(\mathbb{X},f)$. We equip the Reeb graph with the function $\tilde{f}$ which is defined as $\tilde{f} \circ \rho = f$, where $\rho: \mathbb{X} \to \mathbb{X}_f$ is the quotient map defined by our equivalence relation. 
@@ -114,19 +122,19 @@
 						<div style="width:100%;height:100%;border:1px solid red;position:absolute;top:20px;" class="fragment fade-in-then-out">
 						</div>	
 					</div> -->
-					<div class="definition">
+					<div class="importance-box def">
 						<div class="header">Definition</div>
 						<div class="content">
 							A <b>category</b> is a collection $\mathbf{C}$ of <b>objects</b> with <b>morphisms</b> that map between these objects. 
 						</div>
 					</div>
-					<div class="definition">
+					<div class="importance-box def">
 						<div class="header">Definition</div>
 						<div class="content">
 							A <b>functor</b> $\mathsf{F}: \mathbf{C} \to \mathbf{D}$ is a mapping between two categories $\mathbf{C}$ and $\mathbf{D}$, such that it preseves fundamental properties of the categories.
 						</div>
 					</div>
-					<div class="definition">
+					<div class="importance-box def">
 						<div class="header">Definition</div>
 						<div class="content">
 							A <b>natural transformation</b> $\eta: \mathsf{F} \Rightarrow \mathsf{G}$ is a mapping between two functors $\mathsf{F},\mathsf{G}:\mathbf{C}\ \to \mathbf{D}$ which consists of a family of maps $\eta_a : \mathsf{F}(a) \to \mathsf{G}(a)$ for each object $a$ in $\mathbf{C}$ which respects morphisms in $\mathbf{C}$.
@@ -142,7 +150,7 @@
 				</section>
 				<section>
 					<h3>Category of Scalar Fields</h3>
-					<div class="definition">
+					<div class="importance-box def">
 						<div class="header">Definition</div> 
 						<div class="content">
 							The <b>category of scalar fields</b>, denoted as $\mathbb{R}\text{-}\mathbf{Top}$, has scalar fields as objects and continuous, <b>function preserving maps</b> as morphisms.
@@ -156,13 +164,13 @@
 				<section>
 					<h3>Category of Reeb Graphs and the Reeb Functor</h3>
 					<!-- <div>The category of sc</div> -->
-					<div class="definition">
+					<div class="importance-box def">
 						<div class="header">Definition</div>
 						<div class="content">
 							The <b>category of Reeb graphs</b>, denoted as $\mathbf{Reeb}$ has Reeb graphs as objects and continuous, <b>function preserving maps</b> as morphisms.
 						</div>
 					</div>
-					<div class="definition">
+					<div class="importance-box def">
 						<div class="header">Definition</div> 
 						<div class="content">
 							The <b>Reeb functor</b>, denoted as $\mathcal{R} : \mathbb{R}\text{-}\mathbf{Top} \to \mathbf{Reeb}$, is defined by the formulas $\mathcal{R}(\mathbb{X},f) = (\mathbb{X}_f,\tilde{f})$ and $\mathcal{R}[\alpha] = \tilde{\alpha}$, where $\rho_g \circ \alpha = \tilde{\alpha} \circ \rho_f$.
@@ -182,7 +190,7 @@
 					<h3>Category of Pre-Cosheafs</h3>
 					<div style="flex-direction:row;display: flex;">
 						<div style="flex-direction:column;display:flex;flex:1">
-							<div class="definition">
+							<div class="importance-box def">
 								<div class="header">Definition</div> 
 								<div class="content">
 									<div>We define the <b>category of pre-cosheaves</b>, denoted as $\mathbf{Pre}$, to be the category of functors from the category of intervals $\mathbf{Int}$ to the category of sets $\mathbf{Set}$. The morphisms in this category are then natural transformations.</div>
@@ -191,7 +199,7 @@
 									</div> -->
 								</div>
 							</div>
-							<div class="definition">
+							<div class="importance-box def">
 								<div class="header">Definition</div> 
 								<div class="content">
 									We define the <b>Reeb cosheaf functor </b> $\mathcal{C}$ using the following formulas:
@@ -247,13 +255,13 @@
 					<h3>Smoothing Functor</h3>
 					<div style="position:relative;height:100%">
 						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="1">
-							<div class="definition">
+							<div class="importance-box def">
 								<div class="header">Definition</div> 
 								<div class="content">
 									We define the $\varepsilon$-<b>expansion functor</b> $\Omega_{\varepsilon} : \mathbf{Int} \to \mathbf{Int}$ by the formulas $\Omega_{\varepsilon}(I) = I^{\varepsilon}$, where $I = (a,b)$ and $I = (a-\varepsilon,b+\varepsilon)$, and $\Omega_{\varepsilon}[I\subseteq J] = I^{\varepsilon} \subseteq J^{\varepsilon}$.
 								</div>
 							</div>
-							<div class="definition">
+							<div class="importance-box def">
 								<div class="header">Definition</div> 
 								<div class="content">
 									We define the $\varepsilon$-<b>smoothing functor</b> $\mathcal{S}_{\varepsilon}:\mathbf{Pre} \to \mathbf{Pre}$ by the formulas $\mathcal{S}_{\varepsilon}(\mathsf{F}) = \mathsf{F}\Omega_{\varepsilon}$ and $\mathcal{S}_{\varepsilon}[\mathsf{F} \Rightarrow \mathsf{G}]  := \mathsf{F}\Omega_{\varepsilon} \Rightarrow \mathsf{G}\Omega_{\varepsilon}$
@@ -272,7 +280,7 @@
 				</section>
 				<section>
 					<h3>Interleavings between Reeb Graphs</h3>
-					<div class="definition">
+					<div class="importance-box def">
 						<div class="header">Definition</div> 
 						<div class="content">
 							Let $f := (\mathbb{X},f)$ and $g := (\mathbb{Y},g)$ be two Reeb graphs. We say that $f$ and $g$ are $\varepsilon$<b>-interleaved</b> if there exists maps $\varphi:\mathcal{C}(f) \Rightarrow \mathcal{S}_{\varepsilon}\mathcal{C}(g)$ $\psi:\mathcal{C}(g) \Rightarrow \mathcal{S}_{\varepsilon}\mathcal{C}(f)$ such that the following diagrams commute:
@@ -284,7 +292,7 @@
 				</section>
 				<section>
 					<h3>Interleaving Distance</h3>
-					<div class="definition" style="margin-top:100px">
+					<div class="importance-box def" style="margin-top:100px">
 						<div class="header">Definition</div> 
 						<div class="content">
 							Let $f := (\mathbb{X},f)$ and $g := (\mathbb{Y},g)$ be two Reeb graphs. The <b>interleaving distance</b> between $f$ and $g$ is 
@@ -300,7 +308,7 @@
 
 					<div style="position:relative;height:100%">
 						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="1">
-							<div class="definition">
+							<div class="importance-box def">
 								<div class="header">Definition</div> 
 								<div class="content">
 									Let $f := (\mathbb{X},f)$ be a Reeb graph. We define the $\varepsilon$-<b>thickening functor</b> $\mathcal{T}_{\varepsilon} : \mathbf{Reeb} \to \mathbf{Reeb}$ by the following formulas:
@@ -314,7 +322,7 @@
 									</ul> 
 								</div>
 							</div>
-							<div class="definition">
+							<div class="importance-box thm">
 								<div class="header thm">Theorem</div> 
 								<div class="content">
 									The functors $\mathcal{C}\mathcal{R}\mathcal{T}_{\varepsilon}$ and $\mathcal{S}_{\varepsilon}\mathcal{C}$ are naturally isomorphic.
@@ -362,7 +370,13 @@
 					<h3>Topological Metrics (Revisit)</h3>
 					<div style="display:flex;flex-direction:row;height: 100%;">
 						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;">
-							LIST OF COMMON TOPOLOGICAL METRICS
+							<div class="metric-list">
+								<div>Bottleneck Distance [cite]</div>
+								<div>Wasserstein Distance [cite]</div>
+								<div>Functional Distortion Distance [cite]</div>
+								<div>Reeb Graph Edit Distance [cite]</div>
+								<div>Interleaving Distance [cite]</div>
+							</div>
 						</div>
 						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;flex-direction:column;">
 							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
@@ -380,12 +394,10 @@
 
 
 				<section>
-					<h3>Interleaving "failure" example</h3>
-					<div>Given two scalar fields that are defined on the same domain and who are near isomorphic EXCEPT a single "hill" where one hill is $K$ higher than the other, the interleaving distance would be $K$ (or $K/2$).</div>
-					<div>Possibly, this interprets too much geometric information compared to what we might want</div>
+					<h3>Interleaving Example of Sensitivty/Insensitivity</h3>
 				</section>
 				<section>
-					<h3>Provide another example of a metric failing in certain contexts</h3>
+					<h3>Other metric Example of Sensitivty/Insensitivity</h3>
 				</section>
 				<section>
 					<h3>Proposal for Milestone 0</h3>
@@ -395,7 +407,7 @@
 				</section>
 				<section>
 					<h3>Graph Convolutional Neural Networks</h3>
-
+					<div style="color:red;margin-top:40px;">Going to construct an image for how GCNNs work</div>
 				</section>
 				<section>
 					<h3>Learning Topological Similarity Metric Through Siamese Networks</h3>
@@ -421,6 +433,7 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/math/math.js"></script>
+		<script src="plugin/chalkboard/plugin.js"></script>
 		<script>
 			Reveal.on('fragmentshown', event => {
 				if(event.fragment.classList.contains("remove")){
@@ -443,7 +456,7 @@
 					// pass other options into `MathJax.Hub.Config()`
 					TeX: { Macros: { RR: "{\\bf R}" } }
 				},
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath,RevealChalkboard ]
 			});
 		</script>
 	</body>

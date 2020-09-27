@@ -130,3 +130,9 @@ Notes 09/23/20
 > Bring up computational complexity in a high level sense 
 
 > On scalar field slide, bring up a "reasonable class" called morse functions, making constructible scalar fields
+
+#---------------------------------------------------------------------
+
+Notes 09/25/20
+
+> Need to make sure the Reeb graph idea follows through the entire pre-cosheaf example

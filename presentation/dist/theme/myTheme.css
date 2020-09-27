@@ -39,7 +39,6 @@
 .img-container img {
   margin-top: 5px; }
 
-<<<<<<< HEAD
 .main-point {
   width: 340px;
   height: 324px;
@@ -62,37 +61,53 @@
   text-align: center;
   width: 80%;
   align-self: center;
-  box-shadow: 0px 4px 4px #C4C4C4;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
   background-color: #0E8BFF;
   padding: 40px;
   font-weight: 700;
   color: white;
-  border-radius: 6px; }
-=======
-.importance-box {
+  border-radius: 3px; }
+
+.importance-box.thm,
+.importance-box.def {
+  margin: 7px 5px;
   box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   display: flex;
   flex-direction: column; }
 
+.importance-box.def .header {
+  background-color: salmon; }
+
 .importance-box .header {
   font-family: 'Montserrat',sans-serif;
   font-style: italic;
   padding: 5px 10px;
-  font-size: 0.9em;
-  background-color: salmon;
+  font-size: 0.8em;
   border-radius: 4px;
   width: auto;
   color: white;
   margin: 5px 5px; }
+
+.importance-box.def .header {
+  background-color: #FA8072; }
+
+.importance-box.thm .header {
+  background-color: #F79E02; }
 
 .importance-box .content {
   font-weight: 300;
   font-style: italic;
   font-family: 'Montserrat',sans-serif;
   margin: 5px 10px 10px 10px;
-  font-size: 0.75em; }
->>>>>>> ed3df3adc2a940f725b415998a3d35f9ba8c8656
+  font-size: 0.6em; }
+
+.metric-list {
+  font-family: 'Montserrat',sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 75%; }
 
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
   color: #fff; }
