@@ -30,19 +30,22 @@
 					</ul>
 				</section>
 				<section>
-					<h3>How Topology has been used for Multifaceted Data Analysis (and definition of multifaceted data)</h3>
+					<h3>Topology on Multifaceted Data</h3>
 					<div style="display:flex;flex-direction:row;height:100%;margin-top:60px;">
 						<div style="display:flex;flex-direction:column;flex:1;">
-							<div style="flex:0.7;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
-								IMAGE 1
+							<div class="img-container alt">
+								<img src="figures/progressiveWasserstein.jpg"/>
 							</div>
 							<div style="flex:0.3;flex:0.7;display: flex;justify-content: center;align-items:center;">
 								DESCRIPTION
 							</div>
 						</div>
 						<div style="display:flex;flex-direction:column;flex:1">
-							<div style="flex:0.7;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+							<!-- <div style="flex:0.7;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
 								IMAGE 2
+							</div> -->
+							<div class="img-container alt">
+								<img src="figures/labeledMergeTree.jpg"/>	
 							</div>
 							<div style="flex:0.3;flex:0.7;display: flex;justify-content: center;align-items:center;">
 								DESCRIPTION
@@ -169,14 +172,14 @@
 							</div>		
 						</div>
 					</div>
-					<div class="img-container">
-						<img src="figures/naturalTransformation.png"/>
+					<div class="img-container" >
+						<img src="figures/naturalTransformation.png" style="width:80%;"/>
 					</div>
 					<!-- <div style="color:red;margin-top:40px;">How much category theory should be presented?</div> -->
 				</section>
-				<section>
+				<!-- <section>
 					<h3>Category Theory Roadmap for Interleaving Distance</h3>
-				</section>
+				</section> -->
 				<section>
 					<h3>Category of Scalar Fields</h3>
 					<div class="importance-box def">
@@ -309,12 +312,17 @@
 					<h3>Smoothing Functor</h3>
 					<div style="position:relative;height:100%">
 						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="1">
-							<!-- <div class="importance-box def">
-								<div class="header">Definition</div> 
-								<div class="content">
-									We define the $\varepsilon$-<b>expansion functor</b> $\Omega_{\varepsilon} : \mathbf{Int} \to \mathbf{Int}$ by the formulas $\Omega_{\varepsilon}(I) = I^{\varepsilon}$, where $I = (a,b)$ and $I = (a-\varepsilon,b+\varepsilon)$, and $\Omega_{\varepsilon}[I\subseteq J] = I^{\varepsilon} \subseteq J^{\varepsilon}$.
+							<div class="importance-box def">
+								<div class="header">
+									<div class="bullet"></div>
+									<div class="label">Definition</div>
+								</div> 		
+								<div class="text-area">
+									<div class="content">
+										We define the $\varepsilon$-<b>expansion functor</b> $\Omega_{\varepsilon} : \mathbf{Int} \to \mathbf{Int}$ by the formulas $\Omega_{\varepsilon}(I) = I^{\varepsilon}$, where $I = (a,b)$ and $I = (a-\varepsilon,b+\varepsilon)$, and $\Omega_{\varepsilon}[I\subseteq J] = I^{\varepsilon} \subseteq J^{\varepsilon}$.
+									</div>	
 								</div>
-							</div> -->
+							</div>
 							<div class="importance-box def">
 								<div class="header">
 									<div class="bullet"></div>
@@ -449,9 +457,13 @@
 					</ul>
 				</section>
 
-
+				<section>
+					<h3>Computational Complexity of Interleaving Distance</h3>
+					<div style="color:red;margin-top:40px">Give a description for why computing this is NP hard</div>
+				</section>
 				<section>
 					<h3>Topological Metrics (Revisit)</h3>
+					<div style="color:red;margin-top:40px">State which metrics are difficult to compute</div>
 					<div style="display:flex;flex-direction:row;height: 100%;">
 						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;">
 							<div class="metric-list">
@@ -485,21 +497,34 @@
 				</section>
 				<section>
 					<h3>Proposal for Milestone 0</h3>
-					<div class="main-point-alt" style="font-family:'Montserrat',sans-serif;margin-top:100px;">
+					<div class="main-point-alt" style="margin-top:100px;">
 						<div>We would like to conduct a survey / empirical study of the most prevelant topological metrics to examine their role in measuring similarity between scalar fields and /or their role in multifaceted data analysis in general. Furthermore, we would like to generate a comprehensive list of the computational complexities that each of these metrics have.</div>
 					</div>
 				</section>
 				<section>
 					<h3>Graph Convolutional Neural Networks</h3>
 					<div style="color:red;margin-top:40px;">Going to construct an image for how GCNNs work</div>
+					<ul>
+						<li>The input is a Graph $G = (V,E)$ as well as a matrix of node feature vectors $\mathbf{X}$.</li>
+						<li>Just as in CNNs, we define a receptive field which is the set of node in the graph which contribute information to a target node</li>
+						<li>At each layer, we sweep through the graph to update the state of each node (so each node is at some point the target node for a receptive field)</li>
+						<li>The final output is a matrix of <i>hidden feature vectors</i> $\mathbf{H}$. We can add a final layer to this GCNN which aggregates $\mathbf{H}$ to give a single readout, which will calssify the graph as a whole instead of the individual nodes.</li>
+					</ul>
 				</section>
 				<section>
 					<h3>Learning Topological Similarity Metric Through Siamese Networks</h3>
 					<div style="color:red;margin-top:40px;">Going to construct an image for how this learning works in theory</div>
+					<ul>
+						<li>A Siamese network consists of two neural networks with the same weight matrix at every step</li>
+						<li>Positive pairs and negative pairs are fed into the system (known to be close or far)</li>
+						<li>The weights are adjusted based on a metric which will be minimized for positive pairs and maximized on negative pairs [cite paper, even use image, perhaps]</li>
+					</ul>
 				</section>
 				<section>
 					<h3>Proposal for Milestone A</h3>
-					<div style="color:red;margin-top:40px;">Include list of different training sets?</div>
+					<div class="main-point-alt" style="margin-top:100px;">
+						We propose using the Siamese network architecture couple with spatial GCNNs to learn a similarity metric on Reeb graphs. To train this data in a supervised manner, we will the data set using various topological metrics found in Milestone 0. This is dependent on both the type of similarity we are learning as well as the computational difficulties that we might face for various metrics.
+					</div>
 				</section>
 				<section>
 					<h3>Proposal for Milestone B</h3>
@@ -507,7 +532,9 @@
 				</section>
 				<section>
 					<h3>Proposal for Milestone C</h3>
-					<div style="color:red;margin-top:40px;">Create diagram of auto encoders</div>
+					<div style="color:red;margin-top:40px;">
+
+					</div>
 				</section>
 			</div>
 		</div>
