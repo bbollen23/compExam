@@ -176,3 +176,89 @@ Slide 4
 Slide ? -- Category of Reb Graphs and Reeb Functor
 
 > Possible picutre showing function preserving maps
+
+
+
+#---------------------------------------------------------
+
+Slide 1:
+
+** Both boxes of text need some further explanation -- perhaps pictures or bullet POINTS
+
+
+**Slide 1.5**
+
+> Two types of data that is often seen -- scalar field data and point cloud data. We focus on scalar fields here.
+
+Slide 4:
+
+** Change title most likely
+
+** Add citation
+
+> Describe this Reeb graph
+
+Slide 5:
+
+> Introduce multifaceted data
+
+> Highlight that here we will refer back to this multirun situation since the domains of each simulation are automatically the same
+
+** Need to add citations and be ready to talk about both figures **
+
+Slide 6:
+
+** Get rid of Reeb graph edit distance ** 
+** Add citations **
+** Add images **
+
+> We use topological metrics to compare two topological structures
+> Naturally, if we believe that topology is good for sumamrizing data, we should ask ourselves how to compare topological summaries just as we would ask how to compare the data itself
+
+Slide 9 -- Category of Reeb Graphs and Reeb Functor
+
+** Add image of function preserving map for Reeb graphs **
+
+Slide 18 -- Geometric Interpretation of Interleaving
+
+** Need to make a small example **
+
+Slide 19
+
+** Make this look nice, perhaps iteration style like the smoothing algorithm iteration stuff **
+
+Slide 20
+
+** Copy first top metrics slide **
+
+** Also, add discussion about computational complexity for Reeb graph distances **
+
+** State bounds for bottleneck distance and functional distortion distance which are important **
+
+Slide 21
+
+** Need to make a simple example for this **
+
+** Two examples **
+
+Slide 22 -- Other example of Metric Insensitivity/Sensitivity
+
+** Probably just remove slide **
+
+******Slide 23.5*******
+
+---->> Need to talk about motivation for machine learning and why we introduce these networks
+
+    > Computational complexity
+    > Variation in what these metrics detect
+
+Slide 24 -- GCNN
+
+** Make Pretty **
+
+Slide 25 -- Siamese
+
+** Get image from brain paper for how this stuff works **
+
+Slide 27 & 28 -- FIGURE IT OUT BITCH
+

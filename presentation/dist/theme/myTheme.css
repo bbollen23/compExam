@@ -25,25 +25,14 @@
   margin: 5px;
   width: 90%; }
 
-.main-point {
-  width: 340px;
-  height: 324px;
-  border-radius: 50%;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  justify-self: center;
-  box-shadow: 0px 4px 4px #C4C4C4;
-  background-color: #F6F9F9;
-  text-align: center;
-  padding: 40px;
-  font-size: 0.8em;
-  border: 3px solid black;
-  margin-top: 30px; }
+.img-container.fixed {
+  flex: none; }
 
-.main-point-alt {
+.img-alt {
+  border-radius: 5px;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12); }
+
+.main-point {
   text-align: center;
   width: 80%;
   align-self: center;
@@ -56,6 +45,21 @@
   border-left: 6px solid;
   border-color: #0E8Bff;
   font-size: 0.8em; }
+
+.main-point.small {
+  font-size: 0.65em;
+  padding: 25px; }
+
+.main-point.circ {
+  border: none;
+  width: 375px;
+  height: 75px;
+  font-size: 0.7em;
+  border: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 4px solid #0E8Bff; }
 
 .metric-list {
   font-family: 'Montserrat',sans-serif;
@@ -93,9 +97,9 @@
   margin-left: 2px; }
 
 .importance-box .bullet {
-  height: 9px;
-  width: 9px;
-  border-radius: 4.5px;
+  height: 8px;
+  width: 8px;
+  border-radius: 4px;
   background-color: #d500f9;
   position: relative;
   top: 1px; }

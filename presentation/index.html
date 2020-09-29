@@ -25,16 +25,111 @@
 				</section>
 				<section>
 					<h3>Why Use Topology for Data Analysis</h3>
-					<ul>
+					<div style="display:flex;flex-direction:row;justify-content: space-between;margin:50px 75px;">
+						<div class="main-point circ fragment small fade-up" style="margin:10px 0px;font-weight:400">
+							Provides structural summaries of data with natural ways to scale data appropriately.
+						</div>
+						<div class="main-point circ fragment small fade-up" style="margin:10px 0px;font-weight:400">
+							Computationally robust due to discrete nature and readily available to map to visual features.
+						</div>									
+					</div>
+					<!-- <ul>
 						<li>Topology can be used as a summary of the structure of data</li>
 						<li>It is particularly insensitive to small variations in the geometry of the data</li>
 						<li>Depending on the structure used, it is sensitive to the connectedness of the data, as well as existence of structures such as holes (homology).</li>
 						<li>Couple examples of it being used? Maybe just images for the whole slide?</li>
-					</ul>
+					</ul> -->
 				</section>
+
+				<section>
+						<h3>Scalar Fields</h3>
+						<!-- <div><b>Definition:</b> Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b></div> -->
+	
+						<div class="importance-box def">
+							<div class="header">
+								<div class="bullet"></div> 							
+								<div class="label">Definition</div> 						
+							</div>
+							<div class="underline"></div>
+							<div class="text-area">
+								<div class="content">
+									Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b>
+								</div>			
+							</div>
+						</div>
+						<div class="importance-box def">
+							<div class="header">
+								<div class="bullet"></div> 							
+								<div class="label">Definition</div> 						
+							</div>
+							<div class="underline"></div>
+							<div class="text-area">
+								<div class="content">
+									Let $U \subseteq \mathbb{X}$ be such that $f(x) = f(y) = a$ for all $a \in U$. We say that $U$ is the $a$-<i>fiber</i> or $a$-<i>levelset</i> of the scalar field $(\mathbb{X},f)$.
+								</div>			
+							</div>
+						</div>
+						<div class="img-container">
+							<img src="figures/ScalarField.png"/>
+						</div>
+	
+	
+					</section>
+					<section>
+						<h3 style="flex:0.2">Reeb Graphs</h3>
+						<div class="importance-box def">
+							<div class="header">
+								<div class="bullet"></div> 							
+								<div class="label">Definition</div> 						
+							</div>
+							<div class="underline"></div>
+							<div class="text-area">
+								<div class="content">
+									Let $(\mathbb{X},f)$ be a scalar field. We can define an equivalence relation on $\mathbb{X}$ by defining $x\sim y$ if $f(x) = f(y) = a$ (they belong to the same $a$-fiber) and if $x,y$ are in the same path connected component of the $a$-fiber. Then, the quotient space $\mathbb{X}_f := \mathbb{X}/\sim_f$ is called the <b>Reeb graph</b> of the scalar field $(\mathbb{X},f)$. We equip the Reeb graph with the function $\tilde{f}$ which is defined as $\tilde{f} \circ \rho = f$, where $\rho: \mathbb{X} \to \mathbb{X}_f$ is the quotient map defined by our equivalence relation. 
+								</div>		
+							</div>
+						</div>
+						<div class="img-container">
+							<img src="figures/Reeb Graph.png"/>
+						</div>
+					</section>
+					<section>
+						<h3>Scalar Fields and Reeb Graphs</h3>
+						<div style="display:flex;flex-direction:column;align-items: center;">
+							<div style="display:flex;flex-direction:row;">
+								<div class="img-container" style="flex:1;">
+									<img src="figures/dragonScalarField.png" class="img-alt" />
+								</div>
+								<div class="img-container" style="flex:1;">
+									<img src="figures/dragonScalarFieldContour.png" class="img-alt"/>
+								</div>	
+							</div>
+							<div style="font-size:0.6em;margin-top:20px;"> cite / description</div>
+						</div>
+					</section>
+
+
 				<section>
 					<h3>Topology on Multifaceted Data</h3>
-					<div style="display:flex;flex-direction:row;height:100%;margin-top:60px;">
+					<div class="main-point small" style="margin-top:10px">
+						<div>Multifaceted data includes data types such as a <b>simulation run multiple times with varying parameters to determine variation and uncertainty (multirun)</b>, multivariate data which come from multiple sources (multimodal), and multiphysics simulations (multimodel)</div>
+					</div>
+
+					<div style="display:flex;flex-direction:row;justify-content:space-between;margin:100px 150px 0px 150px;">
+						<div class="img-container fixed" style="display:flex;flex-direction:column;width:350px">
+							<img src="figures/progressiveWasserstein.jpg" />
+							<div style="font-size:0.6em;margin-top:20px;"> cite / description</div>
+						</div>
+						<div class="img-container fixed" style="display:flex;flex-direction:column;width:300px">
+							<img src="figures/labeledMergeTree.jpg"/>
+							<div style="font-size:0.6em;margin-top:20px;"> cite / description</div>
+						</div>	
+					</div>
+
+
+
+
+					<!-- <div style="display:flex;flex-direction:row;height:100%;margin-top:60px;">
 						<div style="display:flex;flex-direction:column;flex:1;">
 							<div class="img-container alt">
 								<img src="figures/progressiveWasserstein.jpg"/>
@@ -44,9 +139,6 @@
 							</div>
 						</div>
 						<div style="display:flex;flex-direction:column;flex:1">
-							<!-- <div style="flex:0.7;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
-								IMAGE 2
-							</div> -->
 							<div class="img-container alt">
 								<img src="figures/labeledMergeTree.jpg"/>	
 							</div>
@@ -54,15 +146,8 @@
 								DESCRIPTION
 							</div>
 						</div>
-						<div style="display:flex;flex-direction:column;flex:1">
-							<div style="flex:0.7;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
-								IMAGE 3
-							</div>
-							<div style="flex:0.3;flex:0.7;display: flex;justify-content: center;align-items:center;">
-								DESCRIPTION
-							</div>
-						</div>
-					</div>
+
+					</div> -->
 				</section>
 				<section>
 					<h3>Topological Metrics</h3>
@@ -89,55 +174,10 @@
 						</div>
 					</div>
 				</section>
-				<section>
-					<h3>Scalar Fields</h3>
-					<!-- <div><b>Definition:</b> Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b></div> -->
 
-					<div class="importance-box def">
-						<div class="header">
-							<div class="bullet"></div> 							
-							<div class="label">Definition</div> 						
-						</div>
-						<div class="underline"></div>
-						<div class="text-area">
-							<div class="content">
-								Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b>
-							</div>			
-						</div>
-					</div>
-
-					<div style="display:flex;flex-direction:row;">
-						<div class="img-container" style="flex:1;flex-direction:column;">
-							<img src="figures/dragonScalarField.png" style="border-radius:5px;box-shadow:0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);"/>
-							<div style="font-size:0.5em;"> cite / description</div>
-						</div>
-						<div class="img-container" style="flex:1;flex-direction:column;">
-							<img src="figures/dragonScalarFieldContour.png" style="border-radius:5px;box-shadow:0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);"/>
-							<div style="font-size:0.5em;"> cite / description</div>
-						</div>	
-					</div>
-				</section>
-				<section>
-					<h3 style="flex:0.2">Reeb Graphs</h3>
-					<div class="importance-box def">
-						<div class="header">
-							<div class="bullet"></div> 							
-							<div class="label">Definition</div> 						
-						</div>
-						<div class="underline"></div>
-						<div class="text-area">
-							<div class="content">
-								Let $(\mathbb{X},f)$ be a scalar field. We can define an equivalence relation on $\mathbb{X}$ by defining $x\sim y$ if $f(x) = f(y) = a$ (they belong to the same $a$-fiber) and if $x,y$ are in the same path connected component of the $a$-fiber. Then, the quotient space $\mathbb{X}_f := \mathbb{X}/\sim_f$ is called the <b>Reeb graph</b> of the scalar field $(\mathbb{X},f)$. We equip the Reeb graph with the function $\tilde{f}$ which is defined as $\tilde{f} \circ \rho = f$, where $\rho: \mathbb{X} \to \mathbb{X}_f$ is the quotient map defined by our equivalence relation. 
-							</div>		
-						</div>
-					</div>
-					<div class="img-container">
-						<img src="figures/Reeb Graph.png"/>
-					</div>
-				</section>
-				<section>
+				<!-- <section>
 					<h3>Interleaving Distance Motivation (?)</h3>
-				</section>
+				</section> -->
 				<section>
 					<h3>Category Theory</h3>
 					<!-- <div style="position:relative;height:100%">
@@ -236,7 +276,7 @@
 				</section>
 				<section>
 					<h3>Pre-Cosheafs</h3>
-					<div class="main-point-alt" style="margin-top:40px">
+					<div class="main-point" style="margin-top:40px">
 						<div>A pre-cosheaf is an assignment of data to open sets of a topological space $\mathbb{X}$ such that if $I \subseteq J$, then the data attached to $I$ maps to the data attached to $J$.</div>
 					</div>
 					<div class="img-container">
@@ -308,7 +348,7 @@
 							<div style="width:100%;position:absolute;left:700px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="2"></div>
 						</div>
 						<div style="position:absolute;width:100%;display:flex;justify-content: center;align-content:center;"  class="fragment fade-in" data-fragment-index="3">
-							<div class="main-point-alt" style="margin-top:100px;">
+							<div class="main-point" style="margin-top:100px;">
 								<div>The Interleaving distance quantifies the distance between pre-cosheafs
 								by finding the minimum filter size $ε$ that we need to pass one pre-cosheaf
 								through in order to make it isomorphic to another pre-cosheaf.</div>
@@ -515,7 +555,7 @@
 				</section>
 				<section>
 					<h3>Proposal for Milestone 0</h3>
-					<div class="main-point-alt" style="margin-top:100px;">
+					<div class="main-point" style="margin-top:100px;">
 						<div>We would like to conduct a survey / empirical study of the most prevelant topological metrics to examine their role in measuring similarity between scalar fields and /or their role in multifaceted data analysis in general. Furthermore, we would like to generate a comprehensive list of the computational complexities that each of these metrics have.</div>
 					</div>
 				</section>
@@ -540,7 +580,7 @@
 				</section>
 				<section>
 					<h3>Proposal for Milestone A</h3>
-					<div class="main-point-alt" style="margin-top:100px;">
+					<div class="main-point" style="margin-top:100px;">
 						We propose using the Siamese network architecture couple with spatial GCNNs to learn a similarity metric on Reeb graphs. To train this data in a supervised manner, we will the data set using various topological metrics found in Milestone 0. This is dependent on both the type of similarity we are learning as well as the computational difficulties that we might face for various metrics.
 					</div>
 				</section>
