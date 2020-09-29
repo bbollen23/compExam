@@ -136,3 +136,43 @@ Notes 09/23/20
 Notes 09/25/20
 
 > Need to make sure the Reeb graph idea follows through the entire pre-cosheaf example
+
+
+Notes 09/29/20
+
+Slide 1 -- Why Use Topology for Data Analysis
+
+> Topology allows us to adjust scale at which we look at data
+
+> Topology describes connectedness and homology (3rd bullet ellaborates on second bullet)
+
+> Compute these topologies quite robustly -- mapped to visual primitive (integer computations, not up to some numerical tolerance)
+
+> Each structural element gets mapped to a visual element
+
+** Grab couple pictures from top community (showing features visually) ** 
+
+> TWO MAIN POINTS:
+
+    *** Structural Summaries and describing specific attributes (mathematical) ***
+    *** Computationally Robust and mapping to visual primitives (computational/visually)***
+
+Slide 2
+
+> Julien Reeb space for third one (if possible), but 2 might be fine
+
+Slide 3 
+
+> No Reeb graph edit distance if I haven't looked it over
+
+> Want people to walk away with the fact that there are multiple different metrics to study multifaceted data
+
+Slide 4
+
+>  Take two dragons after Reeb Graphs
+
+**********ALWAYS ASK WHAT THEY NEED TO UNDERSTAND AFTER THIS SLIDE*****************
+
+Slide ? -- Category of Reb Graphs and Reeb Functor
+
+> Possible picutre showing function preserving maps
