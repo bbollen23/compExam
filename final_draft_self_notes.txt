@@ -186,23 +186,10 @@ Slide 1:
 ** Both boxes of text need some further explanation -- perhaps pictures or bullet POINTS
 
 
-**Slide 1.5**
-
-> Two types of data that is often seen -- scalar field data and point cloud data. We focus on scalar fields here.
-
-Slide 4:
-
-** Change title most likely
-
-** Add citation
-
-> Describe this Reeb graph
 
 Slide 5:
 
-> Introduce multifaceted data
 
-> Highlight that here we will refer back to this multirun situation since the domains of each simulation are automatically the same
 
 ** Need to add citations and be ready to talk about both figures **
 
@@ -212,8 +199,7 @@ Slide 6:
 ** Add citations **
 ** Add images **
 
-> We use topological metrics to compare two topological structures
-> Naturally, if we believe that topology is good for sumamrizing data, we should ask ourselves how to compare topological summaries just as we would ask how to compare the data itself
+
 
 Slide 9 -- Category of Reeb Graphs and Reeb Functor
 
@@ -262,3 +248,17 @@ Slide 25 -- Siamese
 
 Slide 27 & 28 -- FIGURE IT OUT BITCH
 
+
+
+
+#---------------------------------------------
+
+Things to review:
+
+Contour, merge (join), and split trees
+
+Functional Distortion distance
+
+Wasserstein Distance
+
+Bottleneck Distance

@@ -45,7 +45,7 @@
 						<h3>Scalar Fields</h3>
 						<!-- <div><b>Definition:</b> Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b></div> -->
 	
-						<div class="importance-box def">
+						<div class="importance-box def fragment fade-left">
 							<div class="header">
 								<div class="bullet"></div> 							
 								<div class="label">Definition</div> 						
@@ -57,7 +57,7 @@
 								</div>			
 							</div>
 						</div>
-						<div class="importance-box def">
+						<div class="importance-box def fragment fade-left">
 							<div class="header">
 								<div class="bullet"></div> 							
 								<div class="label">Definition</div> 						
@@ -69,15 +69,20 @@
 								</div>			
 							</div>
 						</div>
-						<div class="img-container">
+						<div class="img-container fragment fade-up">
 							<img src="figures/ScalarField.png"/>
 						</div>
 	
-	
+						<aside class="notes">
+							<ul>
+								<li>First, bring up that there are two types of data usually studied in TDA -- point cloud data and scalar field data. Here, we focus on scalar field data.</li>
+								<li>Introduce Scalar Fields and Level sets</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h3 style="flex:0.2">Reeb Graphs</h3>
-						<div class="importance-box def">
+						<div class="importance-box def fragment fade-left">
 							<div class="header">
 								<div class="bullet"></div> 							
 								<div class="label">Definition</div> 						
@@ -89,7 +94,7 @@
 								</div>		
 							</div>
 						</div>
-						<div class="img-container">
+						<div class="img-container fragment fade-up">
 							<img src="figures/Reeb Graph.png"/>
 						</div>
 					</section>
@@ -104,18 +109,18 @@
 									<img src="figures/dragonScalarFieldContour.png" class="img-alt"/>
 								</div>	
 							</div>
-							<div style="font-size:0.6em;margin-top:20px;"> cite / description</div>
+							<div style="font-size:0.6em;margin-top:20px;width:80%"> On the left, we have an example of a scalar field whose topological space is the surface of the dragon shape, and the function is its height (shown via color). On the right, we have the Reeb graph (contour tree) embedded within the dragon, whose opacity has been decreased. Image generated from [dragon.pvsm in TTK]</div>
 						</div>
 					</section>
 
 
 				<section>
 					<h3>Topology on Multifaceted Data</h3>
-					<div class="main-point small" style="margin-top:10px">
+					<div class="main-point small fragment fade-up" style="margin-top:10px">
 						<div>Multifaceted data includes data types such as a <b>simulation run multiple times with varying parameters to determine variation and uncertainty (multirun)</b>, multivariate data which come from multiple sources (multimodal), and multiphysics simulations (multimodel)</div>
 					</div>
 
-					<div style="display:flex;flex-direction:row;justify-content:space-between;margin:100px 150px 0px 150px;">
+					<div class="fragment fade-up" style="display:flex;flex-direction:row;justify-content:space-between;margin:100px 150px 0px 150px;">
 						<div class="img-container fixed" style="display:flex;flex-direction:column;width:350px">
 							<img src="figures/progressiveWasserstein.jpg" />
 							<div style="font-size:0.6em;margin-top:20px;"> cite / description</div>
@@ -126,28 +131,13 @@
 						</div>	
 					</div>
 
+					<aside class="notes">
+						<ul>
+							<li>"Increase in computational power has lead to more complex simulations"</li>
+							<li>Bolded Multirun simulation because that will be a common example we come back to since the spaces that we talk about between the scalar fields and Reeb graphs are automatically the same</li>
+						</ul>
+					</aside>
 
-
-
-					<!-- <div style="display:flex;flex-direction:row;height:100%;margin-top:60px;">
-						<div style="display:flex;flex-direction:column;flex:1;">
-							<div class="img-container alt">
-								<img src="figures/progressiveWasserstein.jpg"/>
-							</div>
-							<div style="flex:0.3;flex:0.7;display: flex;justify-content: center;align-items:center;">
-								DESCRIPTION
-							</div>
-						</div>
-						<div style="display:flex;flex-direction:column;flex:1">
-							<div class="img-container alt">
-								<img src="figures/labeledMergeTree.jpg"/>	
-							</div>
-							<div style="flex:0.3;flex:0.7;display: flex;justify-content: center;align-items:center;">
-								DESCRIPTION
-							</div>
-						</div>
-
-					</div> -->
 				</section>
 				<section>
 					<h3>Topological Metrics</h3>
@@ -157,24 +147,42 @@
 								<div>Bottleneck Distance [cite]</div>
 								<div>Wasserstein Distance [cite]</div>
 								<div>Functional Distortion Distance [cite]</div>
-								<div>Reeb Graph Edit Distance [cite]</div>
 								<div>Interleaving Distance [cite]</div>
 							</div>
 						</div>
 						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;flex-direction:column;">
-							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
+							<!-- <div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
 								IMAGE 1
+							</div> -->
+							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
+								<div class="img-container" style="flex:0.3">
+									<img src="figures/bottleneckDistance.png" style="width:70%"/>
+								</div>
+								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance [stabOfPersDgms]</div>
 							</div>
-							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
-								IMAGE 2
+							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
+								<div class="img-container" style="flex:0.3">
+									<img src="figures/bottleneckDistance.png" style="width:70%"/>
+								</div>
+								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance</div>
 							</div>
-							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
-								IMAGE 3
+							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
+								<div class="img-container" style="flex:0.3">
+									<img src="figures/bottleneckDistance.png" style="width:70%"/>
+								</div>
+								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance</div>
 							</div>
 						</div>
 					</div>
 				</section>
-
+				<aside class="notes">
+					<ul>
+						<li>We use topological metrics to compare two topological structures</li>
+						<li>Naturally, if we believe that topology is good for sumamrizing data, we should ask ourselves how to compare topological summaries just as we would ask how to compare the data itself</li>
+						<li>We focus on interleaving distance here, which has its roots in category theory</li>
+						<li>We will show how interlreaving distance is designed on Pre-cosheafs (an abstraction of data attached to an open cover of a topological space) and how it links to Reeb graphs</li>
+					</ul>
+				</aside>
 				<!-- <section>
 					<h3>Interleaving Distance Motivation (?)</h3>
 				</section> -->
@@ -187,7 +195,7 @@
 						<div style="width:100%;height:100%;border:1px solid red;position:absolute;top:20px;" class="fragment fade-in-then-out">
 						</div>	
 					</div> -->
-					<div class="importance-box def">
+					<div class="importance-box def fragment fade-left" style="margin-bottom:5px;margin-top:5px;" >
 						<div class="header">
 							<div class="bullet"></div> 							
 							<div class="label">Definition</div> 						
@@ -199,7 +207,7 @@
 								</div>			
 						</div>
 					</div>
-					<div class="importance-box def">
+					<div class="importance-box def fragment fade-left" style="margin-bottom:5px;margin-top:5px;">
 						<div class="header">
 							<div class="bullet"></div> 							
 							<div class="label">Definition</div> 						
@@ -210,7 +218,7 @@
 							</div>		
 						</div>
 					</div>
-					<div class="importance-box def">
+					<div class="importance-box def fragment fade-left" style="margin-bottom:5px;margin-top:5px;">
 						<div class="header">
 							<div class="bullet"></div> 							
 							<div class="label">Definition</div> 						
@@ -222,7 +230,7 @@
 							</div>		
 						</div>
 					</div>
-					<div class="img-container" >
+					<div class="img-container fragment fade-up" >
 						<img src="figures/naturalTransformation.png" style="width:80%;"/>
 					</div>
 					<!-- <div style="color:red;margin-top:40px;">How much category theory should be presented?</div> -->
@@ -231,63 +239,85 @@
 					<h3>Category Theory Roadmap for Interleaving Distance</h3>
 				</section> -->
 				<section>
-					<h3>Category of Scalar Fields</h3>
-					<div class="importance-box def">
-						<div class="header">
-							<div class="bullet"></div> 							
-							<div class="label">Definition</div> 						
+					<h3>Category of Scalar Fields and Reeb Graphs</h3>
+					<div style="display:flex;flex-direction:row;flex:1;">
+
+						<div style="flex:1;display:flex;flex-direction:column;justify-content: center;">
+
+							<div class="importance-box def fragment fade-left" data-fragment-index="1">
+								<div class="header">
+									<div class="bullet"></div> 							
+									<div class="label">Definition</div> 						
+								</div>
+								<div class="text-area">
+									<div class="content">
+										The <b>category of scalar fields</b>, denoted as $\mathbb{R}\text{-}\mathbf{Top}$, has scalar fields as objects and continuous, <b>function preserving maps</b> as morphisms.
+									</div>		
+								</div>
+							</div>
+							<div class="importance-box def fragment fade-left" data-fragment-index="3">
+								<div class="header">
+									<div class="bullet"></div> 							
+									<div class="label">Definition</div> 						
+								</div>
+								<div class="text-area">
+									<div class="content">
+										The <b>category of Reeb graphs</b>, denoted as $\mathbf{Reeb}$ has Reeb graphs as objects and continuous, <b>function preserving maps</b> as morphisms.
+									</div>		
+								</div>
+							</div>
+							<div class="importance-box def fragment fade-left" data-fragment-index="4">
+								<div class="header">
+									<div class="bullet"></div>
+									<div class="label">Definition</div>
+								</div> 
+								<div class="text-area">
+									<div class="content">
+										The <b>Reeb functor</b>, denoted as $\mathcal{R} : \mathbb{R}\text{-}\mathbf{Top} \to \mathbf{Reeb}$, is defined by the formulas $\mathcal{R}(\mathbb{X},f) = (\mathbb{X}_f,\tilde{f})$ and $\mathcal{R}[\alpha] = \tilde{\alpha}$, where $\rho_g \circ \alpha = \tilde{\alpha} \circ \rho_f$.
+									</div>		
+								</div>
+							</div>
+				
+
 						</div>
-						<div class="text-area">
-							<div class="content">
-								The <b>category of scalar fields</b>, denoted as $\mathbb{R}\text{-}\mathbf{Top}$, has scalar fields as objects and continuous, <b>function preserving maps</b> as morphisms.
-							</div>		
+
+						<div style="display:flex;flex-direction:column;justify-content: space-between;flex:1">
+							<div class="img-container fragment fade-up" style="flex:1;" data-fragment-index="2">
+								<img src="figures/functionPreserving.png" style="max-width:none;width:150%;position:relative;"/>
+							</div>			
+							<div class="img-container fragment fade-up" style="flex:1;" data-fragment-index="5">
+								<div style="width:400px;font-size:0.6em;margin-left:40px;text-align:center;">IMAGE OF MAPPING A SIMPLE GRAPH TO ANOTHER STRAIGHT ACROSS</div>
+								<!-- <img src="figures/functionPreserving.png" style="max-width:none;width:150%;position:relative;"/> -->
+							</div>				
 						</div>
+
+
 					</div>
 
-					<div class="img-container">
-						<img src="figures/functionPreserving.png"/>
-					</div>
 				</section>
-				<section>
-					<h3>Category of Reeb Graphs and the Reeb Functor</h3>
-					<!-- <div>The category of sc</div> -->
-					<div class="importance-box def">
-						<div class="header">
-							<div class="bullet"></div> 							
-							<div class="label">Definition</div> 						
-						</div>
-						<div class="text-area">
-							<div class="content">
-								The <b>category of Reeb graphs</b>, denoted as $\mathbf{Reeb}$ has Reeb graphs as objects and continuous, <b>function preserving maps</b> as morphisms.
-							</div>		
-						</div>
-					</div>
-					<div class="importance-box def">
-						<div class="header">
-							<div class="bullet"></div>
-							<div class="label">Definition</div>
-						</div> 
-						<div class="text-area">
-							<div class="content">
-								The <b>Reeb functor</b>, denoted as $\mathcal{R} : \mathbb{R}\text{-}\mathbf{Top} \to \mathbf{Reeb}$, is defined by the formulas $\mathcal{R}(\mathbb{X},f) = (\mathbb{X}_f,\tilde{f})$ and $\mathcal{R}[\alpha] = \tilde{\alpha}$, where $\rho_g \circ \alpha = \tilde{\alpha} \circ \rho_f$.
-							</div>		
-						</div>
-					</div>
-				</section>
+
 				<section>
 					<h3>Pre-Cosheafs</h3>
-					<div class="main-point" style="margin-top:40px">
+					<div class="main-point fragment fade-up" style="margin-top:40px" >
 						<div>A pre-cosheaf is an assignment of data to open sets of a topological space $\mathbb{X}$ such that if $I \subseteq J$, then the data attached to $I$ maps to the data attached to $J$.</div>
 					</div>
-					<div class="img-container">
+					<div class="img-container fragment fade-up">
 						<img src="figures/PreCosheaf.png"/>
 					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Use population as simple example, where the arrows mean inequalities</li>
+						</ul>
+					</aside>
 				</section>
+
+
 				<section>
 					<h3>Category of Pre-Cosheafs</h3>
 					<div style="flex-direction:row;display: flex;">
 						<div style="flex-direction:column;display:flex;flex:1">
-							<div class="importance-box def">
+							<div class="importance-box def fragment fade-left">
 								<div class="header">
 									<div class="bullet"></div>
 									<div class="label">Definition</div>
@@ -301,7 +331,7 @@
 									</div> -->
 								</div>
 							</div>
-							<div class="importance-box def">
+							<div class="importance-box def fragment fade-left">
 								<div class="header">
 									<div class="bullet"></div>
 									<div class="label">Definition</div>
@@ -317,18 +347,17 @@
 								</div> 
 							</div>
 						</div>
-						<div class="img-container" style="flex:1;margin-top:-50px;">
+						<div class="img-container fragment fade-up" style="flex:1;margin-top:-50px;">
 							<img src="figures/PreCosheafReeb.png"/>
 						</div>
 					</div>
-					
 
-					<!-- <ul>
-						<li>Definition of Pre-cosheaf</li>
-						<li>General Definition of Pre-cosheafs (assignment of data to open sets)</li>
-						<li>Pre-Cosheafs relationship to Reeb graphs (Figure 3)</li>
-					</ul> -->
-					<!-- <div style="color:red;margin-top:40px;">Should I just put the actual definition of pre-cosheafs or the more general one? Both?</div> -->
+					<aside class="notes">
+						<ul>
+							<li>Here, our pre-cosheafs are specifically using intervals of the real line as the open cover</li>
+						</ul>
+					</aside>
+
 				</section>
 				<section>
 					<h3>Interleaving on Pre-Cosheafs</h3>
@@ -339,21 +368,25 @@
 					<div style="width:100%;position:absolute;left:700px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="2"></div> -->
 
 
-					<div style="position:relative;height:100%">
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="3">
+					<div style="position:relative;height:100%" class="fragment fade-up" data-fragment-index="1">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="4">
 							<div class="img-container" style="flex:1;">
 								<img src="figures/PreCosheafInterleaving2.png"/>
 							</div>
-							<div style="width:100%;position:absolute;left:500px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="1"></div>
-							<div style="width:100%;position:absolute;left:700px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="2"></div>
+							<div style="width:100%;position:absolute;left:500px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="2"></div>
+							<div style="width:100%;position:absolute;left:700px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="3"></div>
 						</div>
-						<div style="position:absolute;width:100%;display:flex;justify-content: center;align-content:center;"  class="fragment fade-in" data-fragment-index="3">
+
+
+						<div style="position:absolute;width:100%;display:flex;justify-content: center;align-content:center;"  class="fragment fade-in" data-fragment-index="4">
 							<div class="main-point" style="margin-top:100px;">
 								<div>The Interleaving distance quantifies the distance between pre-cosheafs
-								by finding the minimum filter size $ε$ that we need to pass one pre-cosheaf
+								by finding the minimum filter size $ε$ that we need to pass each pre-cosheaf
 								through in order to make it isomorphic to another pre-cosheaf.</div>
 							</div>									
 						</div>
+
+						
 					</div>
 
 				</section>
@@ -361,8 +394,8 @@
 				<section>
 					<h3>Smoothing Functor</h3>
 					<div style="position:relative;height:100%">
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="1">
-							<div class="importance-box def">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="4">
+							<div class="importance-box def fragment fade-left" data-fragment-index="1">
 								<div class="header">
 									<div class="bullet"></div>
 									<div class="label">Definition</div>
@@ -373,7 +406,7 @@
 									</div>	
 								</div>
 							</div>
-							<div class="importance-box def">
+							<div class="importance-box def fragment fade-left" data-fragment-index="2">
 								<div class="header">
 									<div class="bullet"></div>
 									<div class="label">Definition</div>
@@ -384,11 +417,11 @@
 										</div>		
 								</div>
 							</div>
-							<div class="img-container" style="flex:1;margin-top:40px;" >
+							<div class="img-container fragment fade-up" style="flex:1;margin-top:40px;" data-fragment-index="3" >
 								<img src="figures/SmoothingFunctorPre.png"/>
 							</div>
 						</div>
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="1">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="4">
 							<div class="img-container" style="flex:1;">
 								<img src="figures/Smoothing.png"/>
 							</div>
@@ -397,7 +430,7 @@
 				</section>
 				<section>
 					<h3>Interleavings between Reeb Graphs</h3>
-					<div class="importance-box def">
+					<div class="importance-box def fragment fade-left">
 						<div class="header">
 							<div class="bullet"></div>
 							<div class="label">Definition</div>
@@ -408,13 +441,13 @@
 							</div>		
 						</div>
 					</div>
-					<div class="img-container" style="flex:1;">
+					<div class="img-container fragment fade-up" style="flex:1;">
 						<img src="figures/interleavingSmoothingDgm.png"/>
 					</div>
 				</section>
 				<section>
 					<h3>Interleaving Distance</h3>
-					<div class="importance-box def" style="margin-top:100px">
+					<div class="importance-box def fragment fade-left" style="margin-top:100px">
 						<div class="header">
 							<div class="bullet"></div>
 							<div class="label">Definition</div>
@@ -432,10 +465,9 @@
 				<section>
 					<h3>Thickening Functor</h3>
 
-
 					<div style="position:relative;height:100%">
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="1">
-							<div class="importance-box def">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="3">
+							<div class="importance-box def fragment fade-left" data-fragment-index="1">
 								<div class="header">
 									<div class="bullet"></div>
 									<div class="label">Definition</div>
@@ -454,7 +486,7 @@
 									</div>		
 								</div>
 							</div>
-							<div class="importance-box thm">
+							<div class="importance-box thm fragment fade-left" data-fragment-index="2">
 								<div class="header">
 									<div class="bullet"></div>
 									<div class="label">Theorem</div>
@@ -465,17 +497,8 @@
 									</div>		
 								</div>
 							</div>
-							<!-- <div class="definition">
-								<div class="header">Definition</div> 
-								<div class="content">
-									We define the $\varepsilon$-<b>smoothing functor</b> $\mathcal{S}_{\varepsilon}:\mathbf{Pre} \to \mathbf{Pre}$ by the formulas $\mathcal{S}_{\varepsilon}(\mathsf{F}) = \mathsf{F}\Omega_{\varepsilon}$ and $\mathcal{S}_{\varepsilon}[\mathsf{F} \Rightarrow \mathsf{G}]  := \mathsf{F}\Omega_{\varepsilon} \Rightarrow \mathsf{G}\Omega_{\varepsilon}$
-								</div>
-							</div> -->
-							<!-- <div class="img-container" style="flex:1;margin-top:40px;" >
-								<img src="figures/SmoothingFunctorPre.png"/>
-							</div> -->
 						</div>
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="1">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="3">
 							<div class="img-container" style="flex:1;">
 								<img src="figures/ThickeningNew.png"/>
 							</div>
@@ -484,7 +507,7 @@
 				</section>
 				<section>
 					<h3>Interleaving of Reeb Graphs</h3>
-					<div class="importance-box def">
+					<div class="importance-box def fragment fade-left">
 						<div class="header">
 							<div class="bullet"></div>
 							<div class="label">Definition</div>
@@ -495,64 +518,119 @@
 							</div>		
 						</div>
 					</div>
-					<div class="img-container" style="flex:1;">
+					<div class="img-container fragment fade-up" style="flex:1;">
 						<img src="figures/interleavingThickening.png"/>
 					</div>
 				</section>
 				<section>
 					<h3>Geometric Interpretation of Interleaving on Reeb Graphs</h3>
-					<ul>
-						<li>Example (?)</li>
-						<div style="color:red;margin-top:40px;">I think a couple simple examples would be good here</div>
-					</ul>
 				</section>
 
 				<section>
 					<h3>Computational Complexity of Interleaving Distance</h3>
-					<div style="color:red;margin-top:40px">Give a description for why computing this is NP hard</div>
-					<ul style="font-size:0.9em;">
+					<!-- <div class="main-point small fragment fade-up" style="align-items: flex-start">
+						<div style="font-size:1.1em;margin-right:20px"><b>Question:</b></div>
+						<div></div>
+						"Can $(\mathbb{X},f)$ and $(\mathbb{Y},g)$ be $\varepsilon$-interleaved?"
+					</div> -->
+					<div style="display:flex;flex-direction:column;flex:1;">
+						<div class="importance-box def fragment fade-up" style="padding-bottom:20px;">
+							<div class="header">
+								<div class="bullet" style="background-color:red;"></div>
+								<div class="label">Question</div>
+							</div>
+							<div class="text-area">
+								<div class="content">
+									Let $(\mathbb{X},f)$ and $(\mathbb{Y},g)$ be two Reeb graphs. Can $(\mathbb{X},f)$ and $(\mathbb{Y},g)$ be $\varepsilon$-interleaved?
+								</div>		
+							</div>
+						</div>
+						<div style="display:flex;flex-direction:row;flex:0.4;margin-top:10px;">
+							<div class="iteration-step fragment fade-left">
+								<div class="label">Step 1:</div>
+								<div class="content">
+									Construct $\mathcal{U}_{\varepsilon}f$, $\mathcal{U}_{\varepsilon}g$, $\mathcal{U}_{2\varepsilon}f$, $\mathcal{U}_{2\varepsilon}g$.
+								</div>
+							</div>
+							<div class="iteration-step fragment fade-left">
+								<div class="label">Step 2:</div>
+								<div class="content">
+									Construct $\zeta^{2\varepsilon}_f$ and $\zeta^2{\varepsilon}$.
+								</div>
+							</div>
+							<div class="iteration-step fragment fade-left">
+								<div class="label">Step 3:</div>
+								<div class="content">
+									Construct each candidate of maps $\alpha: f \to \mathcal{U}_{\varepsilon}g$ and $\beta:g \to \mathcal{U}_{\varepsilon}f$
+								</div>
+							</div>
+							<div class="iteration-step fragment fade-left">
+								<div class="label">Step 4:</div>
+								<div class="content">
+									We answer "yes" if $\alpha^{\varepsilon}_{2\varepsilon} \circ \beta = \zeta^{2\varepsilon}_g$ and $\beta^{\varepsilon}_{2\varepsilon} \circ \alpha = \zeta^{2\varepsilon}_f$
+								</div>
+							</div>
+						</div>	
+						<div class="statement fragment fade-up">
+							All steps can be done in polynomial time, so this problem is in $\mathbf{NP}$.
+						</div>
+					</div>
+					<!-- <ul style="font-size:0.9em;">
 						<li>"Can $(\mathbb{X},f)$ and $(\mathbb{Y},g)$ be $\varepsilon$-interleaved?" is $\mathbf{NP}$</li>
 						<li>Need to construct $\mathcal{U}_{\varepsilon}f$,$\mathcal{U}_{\varepsilon}g$,$\mathcal{U}_{2\varepsilon}f$,$\mathcal{U}_{2\varepsilon}g$.</li>
 						<li>Need to construct $\zeta^{2\varepsilon}_f$ and $\zeta^2{\varepsilon}$.</li>
 						<li>Each candidate is a pair of maps $\alpha: f \to \mathcal{U}_{\varepsilon}g$ and $\beta:g \to \mathcal{U}_{\varepsilon}f$</li>
 						<li>We answer "yes" if $\alpha^{\varepsilon}_{2\varepsilon} \circ \beta = \zeta^{2\varepsilon}_g$ and $\beta^{\varepsilon}_{2\varepsilon} \circ \alpha = \zeta^{2\varepsilon}_f$</li>
 						<li>Smoothing and all other constructions can be done in polynomial time</li>
-					</ul>
+					</ul> -->
 				</section>
 				<section>
 					<h3>Topological Metrics (Revisit)</h3>
-					<div style="color:red;margin-top:40px">State which metrics are difficult to compute</div>
+
+
+
 					<div style="display:flex;flex-direction:row;height: 100%;">
 						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;">
 							<div class="metric-list">
 								<div>Bottleneck Distance [cite]</div>
 								<div>Wasserstein Distance [cite]</div>
 								<div>Functional Distortion Distance [cite]</div>
-								<div>Reeb Graph Edit Distance [cite]</div>
 								<div>Interleaving Distance [cite]</div>
 							</div>
 						</div>
 						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;flex-direction:column;">
-							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
-								IMAGE 1
+
+							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
+								<div class="img-container" style="flex:0.3">
+									<img src="figures/bottleneckDistance.png" style="width:70%"/>
+								</div>
+								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance [stabOfPersDgms]</div>
 							</div>
-							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
-								IMAGE 2
+							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
+								<div class="img-container" style="flex:0.3">
+									<img src="figures/bottleneckDistance.png" style="width:70%"/>
+								</div>
+								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance</div>
 							</div>
-							<div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
-								IMAGE 3
+							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
+								<div class="img-container" style="flex:0.3">
+									<img src="figures/bottleneckDistance.png" style="width:70%"/>
+								</div>
+								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance</div>
 							</div>
 						</div>
 					</div>
+
+
+
+
 				</section>
 
 
 				<section>
 					<h3>Interleaving Example of Sensitivty/Insensitivity</h3>
 				</section>
-				<section>
-					<h3>Other metric Example of Sensitivty/Insensitivity</h3>
-				</section>
+
 				<section>
 					<h3>Proposal for Milestone 0</h3>
 					<div class="main-point" style="margin-top:100px;">
@@ -561,7 +639,6 @@
 				</section>
 				<section>
 					<h3>Graph Convolutional Neural Networks</h3>
-					<div style="color:red;margin-top:40px;">Going to construct an image for how GCNNs work</div>
 					<ul>
 						<li>The input is a Graph $G = (V,E)$ as well as a matrix of node feature vectors $\mathbf{X}$.</li>
 						<li>Just as in CNNs, we define a receptive field which is the set of node in the graph which contribute information to a target node</li>
@@ -571,11 +648,13 @@
 				</section>
 				<section>
 					<h3>Learning Topological Similarity Metric Through Siamese Networks</h3>
-					<div style="color:red;margin-top:40px;">Going to construct an image for how this learning works in theory</div>
 					<ul>
 						<li>A Siamese network consists of two neural networks with the same weight matrix at every step</li>
 						<li>Positive pairs and negative pairs are fed into the system (known to be close or far)</li>
 						<li>The weights are adjusted based on a metric which will be minimized for positive pairs and maximized on negative pairs [cite paper, even use image, perhaps]</li>
+						<div clas="img-container">
+							<img src="figures/brainNetwork.png"/>
+						</div>
 					</ul>
 				</section>
 				<section>
@@ -586,12 +665,13 @@
 				</section>
 				<section>
 					<h3>Proposal for Milestone B</h3>
-					<div style="color:red;margin-top:40px;">Flush out interleaving example as much as possible before this</div>
+					<div class="main-point" style="margin-top:100px;">
+						Use machine learning to aid in the computation of specific modules for various topological metrics which are known to be difficult to compute.</div>
 				</section>
 				<section>
 					<h3>Proposal for Milestone C</h3>
-					<div style="color:red;margin-top:40px;">
-
+					<div class="main-point" style="margin-top:100px;">
+						<div>Leverage Graph Autoencoders to perform unsupervised training on the Siamese network to learn a similarity metric.</div>
 					</div>
 				</section>
 			</div>
