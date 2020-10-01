@@ -77,6 +77,10 @@
   margin: 10px 7px;
   padding: 7px 7px 20px 7px; }
 
+.importance-box.thm.small,
+.importance-box.def.small {
+  padding: 5px 7px 10px 7px; }
+
 .importance-box .header {
   margin: 5px 10px 0px 10px;
   padding: 0px;
@@ -91,6 +95,9 @@
   letter-spacing: 0.03em;
   font-weight: 500;
   margin-left: 10px; }
+
+.importance-box.small .header .label {
+  font-size: 0.75em; }
 
 .importance-box .header .label:after {
   content: ":";
@@ -163,6 +170,9 @@
   text-align: center;
   justify-content: center;
   align-items: center; }
+
+ol.notes-list {
+  font-size: 0.4em; }
 
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
   color: #fff; }

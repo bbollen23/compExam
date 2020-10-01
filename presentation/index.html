@@ -166,14 +166,22 @@
 
 
 					<aside class="notes">
-						<ol>
-							<li>Naturally, we don't always have just one scalar field, but multiple scalar fields, which introduced "multifaceted data".</li>
-							<li>Increase in computational power has lead to increase in complexity of simulations</li>
+						<ol style="font-size:0.8em;">
+							<li>Due to the increase in computational power in recent years, simulations that we can create have also increased in complexity.</li>
+							<li>Often, these simulations use multiple facets of data instead of just one</li>
+							<li style="color:blue;">Click</li>
+							<li style="color:red;">Read slide</li>
 							<li>Bolded Multirun simulation because that will be a common example we come back to since the spaces that we talk about between the scalar fields and Reeb graphs are automatically the same</li>
-							<li>If we believe these topological summaries are useful for studying scalar fields, then we can ask ourselves how we compare two scalar fields using the topological summaries</li>
-							<li>Naturally, if we believe that topology is good for sumamrizing data, we should ask ourselves how to compare topological summaries just as we would ask how to compare the data itself</li>
-							<li>We focus on interleaving distance here, which has its roots in category theory</li>
-							<li>We will show how interlreaving distance is designed on Pre-cosheafs (an abstraction of data attached to an open cover of a topological space) and how it links to Reeb graphs</li>
+							<li style="color:blue;">Click</li>
+							<li style="color:red;">Read slide</li>
+							<li>Multiple different metrics that have been created to compare topological structures</li>
+							<li style="color:blue;">Click</li>
+							<li style="color:red;">Read slide</li>
+							<li>Latter two are metrics defined on Reeb graphs</li>
+							<li>We'll come back to this slide</li>
+							<li>But while there are a multitude of different metrics which have been created to compare top structures, there's limited work on how they work from a data analysis perspective</li>
+							<li style="color:blue;">Click</li>
+							<li>Here, we focus on the interlreaving distance, which is rooted in category theory.</li>
 						</ol>
 					</aside>
 
@@ -182,70 +190,208 @@
 
 
 
-
-
-
-
-				
-
-
-
-				<!-- <section>
-					<h3>Interleaving Distance Motivation (?)</h3>
-				</section> -->
 				<section>
 					<h3>Category Theory</h3>
-					<!-- <div style="position:relative;height:100%">
-						<div style="width:100%;height:100%;border:1px solid black;position:absolute;" class="fragment fade-in-then-out">
-							
-						</div>
-						<div style="width:100%;height:100%;border:1px solid red;position:absolute;top:20px;" class="fragment fade-in-then-out">
-						</div>	
-					</div> -->
-					<div class="importance-box def fragment fade-left" style="margin-bottom:5px;margin-top:5px;" >
+
+					<div class="importance-box def small fragment fade-left" style="margin-bottom:5px;margin-top:5px;" data-fragment-index="1">
 						<div class="header">
 							<div class="bullet"></div> 							
 							<div class="label">Definition</div> 						
 						</div>
 						<div class="underline"></div>
 						<div class="text-area">
-							<div class="content">
-									A <b>category</b> is a collection $\mathbf{C}$ of <b>objects</b> with <b>morphisms</b> that map between these objects. 
-								</div>			
+							<div class="content"  style="font-size:0.5em;" >
+								A <b>category</b> is a collection $\mathbf{C}$ of <b>objects</b> with <b>morphisms</b> that map between these objects. 
+							</div>			
 						</div>
 					</div>
-					<div class="importance-box def fragment fade-left" style="margin-bottom:5px;margin-top:5px;">
+					<div class="importance-box def small fragment fade-left" data-fragment-index="2" style="margin-bottom:5px;margin-top:5px;">
 						<div class="header">
 							<div class="bullet"></div> 							
 							<div class="label">Definition</div> 						
 						</div>
 						<div class="text-area">
-							<div class="content">
-								A <b>functor</b> $\mathsf{F}: \mathbf{C} \to \mathbf{D}$ is a mapping between two categories $\mathbf{C}$ and $\mathbf{D}$, such that it preseves fundamental properties of the categories.
+							<div class="content" style="font-size:0.5em;">
+								A <b>functor</b> $\mathsf{F}: \mathbf{C} \to \mathbf{D}$ is a mapping between two categories $\mathbf{C}$ and $\mathbf{D}$, such that for every object $a \in \mathbf{C}$ and every morphism $\alpha \in \mathbf{C}$, we have a corresponding object $\mathsf{F}(a)$ and corresponding morphism $\mathsf{F}[\alpha]$. Functors respect composition and the identity morphism.
 							</div>		
 						</div>
 					</div>
-					<div class="importance-box def fragment fade-left" style="margin-bottom:5px;margin-top:5px;">
+					<div class="importance-box def small fragment fade-left" data-fragment-index="3" style="margin-bottom:5px;margin-top:5px;">
 						<div class="header">
 							<div class="bullet"></div> 							
 							<div class="label">Definition</div> 						
 						</div>
 
 						<div class="text-area">
-							<div class="content">
-								A <b>natural transformation</b> $\eta: \mathsf{F} \Rightarrow \mathsf{G}$ is a mapping between two functors $\mathsf{F},\mathsf{G}:\mathbf{C}\ \to \mathbf{D}$ which consists of a family of maps $\eta_a : \mathsf{F}(a) \to \mathsf{G}(a)$ for each object $a$ in $\mathbf{C}$ which respects morphisms in $\mathbf{C}$.
+							<div class="content"  style="font-size:0.5em;">
+								A <b>natural transformation</b> $\eta: \mathsf{F} \Rightarrow \mathsf{G}$ is a mapping between two functors $\mathsf{F},\mathsf{G}:\mathbf{C}\ \to \mathbf{D}$ which consists of a family of maps $\eta_a : \mathsf{F}(a) \to \mathsf{G}(a)$ for each object $a \in \mathbf{C}$ such that the diagram below commutes:
 							</div>		
 						</div>
 					</div>
-					<div class="img-container fragment fade-up" >
+					<div class="img-container fragment fade-up" data-fragment-index="3" >
 						<img src="figures/naturalTransformation.png" style="width:80%;"/>
 					</div>
 					<!-- <div style="color:red;margin-top:40px;">How much category theory should be presented?</div> -->
 				</section>
-				<!-- <section>
-					<h3>Category Theory Roadmap for Interleaving Distance</h3>
-				</section> -->
+
+
+
+
+
+
 				<section>
+					<h3>Pre-Cosheafs</h3>
+					<div class="importance-box def small fragment fade-up">
+						<div class="header">
+							<div class="bullet"></div>
+							<div class="label">Definition</div>	
+						</div>
+						<div class="text-area">
+							<div class="content">
+								Let $\mathbf{Open}(\mathcal{X})$ be the category of open sets on the topological space $\mathcal{X}$, where $I \to J$ if $I \subseteq J$. A <b>pre-cosheaf</b> is a functor $\mathsf{F}: \mathbf{Open}(\mathcal{X}) \to \mathbf{D}$, where $\mathbf{D}$ is some category.
+							</div>
+						</div>
+					</div>
+
+					<!-- <div class="main-point fragment fade-up" style="margin-top:40px" >
+						<div>A pre-cosheaf is an assignment of data to open sets of a topological space $\mathcal  {X}$ such that if $I \subseteq J$, then the data attached to $I$ maps to the data attached to $J$.</div>
+					</div> -->
+
+
+					<div class="statement fragment fade-up"  style="margin:40px 100px 20px 100px;text-align:center;">A pre-cosheaf is an assignment of data to open sets of a topological space $\mathcal  {X}$ such that if $I \subseteq J$, then the data attached to $I$ maps to the data attached to $J$.</div>
+
+
+
+					<div class="img-container fragment fade-up">
+						<img src="figures/PreCosheaf.png"/>
+					</div>
+
+
+					<aside class="notes">
+						<ul>
+							<li>Use population as simple example, where the arrows mean inequalities</li>
+						</ul>
+					</aside>
+				</section>
+
+
+
+
+				<section>
+					<h3>Comparing two Pre-Cosheafs</h3>
+
+
+
+					<div style="position:relative;height:100%" class="fragment fade-up" data-fragment-index="1">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="4">
+							<div class="img-container" style="flex:1;">
+								<img src="figures/PreCosheafInterleaving2.png"/>
+							</div>
+							<div style="width:100%;position:absolute;left:500px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="2"></div>
+							<div style="width:100%;position:absolute;left:700px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="3"></div>
+						</div>
+
+
+						<div style="position:absolute;width:100%;display:flex;justify-content: center;align-content:center;"  class="fragment fade-in" data-fragment-index="4">
+							<div class="main-point" style="margin-top:100px;">
+								<div>The Interleaving distance quantifies the distance between pre-cosheafs
+								by finding the minimum filter size $ε$ that we need to pass each pre-cosheaf
+								through in order to make it isomorphic to another pre-cosheaf.</div>
+							</div>									
+						</div>
+
+						
+					</div>
+
+				</section>
+
+
+
+				
+				<section>
+					<h3>Smoothing Functor</h3>
+					<div style="position:relative;height:100%">
+						<div style="width:100%;height:100%;position:absolute;">
+							<div class="importance-box def fragment fade-left" data-fragment-index="1">
+								<div class="header">
+									<div class="bullet"></div>
+									<div class="label">Definition</div>
+								</div> 		
+								<div class="text-area">
+									<div class="content">
+										We define the $\varepsilon$-<b>expansion functor</b> $\Omega_{\varepsilon} : \mathbf{Int} \to \mathbf{Int}$ by the formulas $\Omega_{\varepsilon}(I) = I^{\varepsilon}$, where $I = (a,b)$ and $I = (a-\varepsilon,b+\varepsilon)$, and $\Omega_{\varepsilon}[I\subseteq J] = I^{\varepsilon} \subseteq J^{\varepsilon}$.
+									</div>	
+								</div>
+							</div>
+							<div class="importance-box def fragment fade-left" data-fragment-index="2">
+								<div class="header">
+									<div class="bullet"></div>
+									<div class="label">Definition</div>
+								</div> 		
+								<div class="text-area">
+										<div class="content">
+											We define the $\varepsilon$-<b>smoothing functor</b> $\mathcal{S}_{\varepsilon}:\mathbf{Pre} \to \mathbf{Pre}$ by the formulas $\mathcal{S}_{\varepsilon}(\mathsf{F}) = \mathsf{F}\Omega_{\varepsilon}$ and $\mathcal{S}_{\varepsilon}[\mathsf{F} \Rightarrow \mathsf{G}]  := \mathsf{F}\Omega_{\varepsilon} \Rightarrow \mathsf{G}\Omega_{\varepsilon}$
+										</div>		
+								</div>
+							</div>
+							<div class="img-container fragment fade-up" style="flex:1;margin-top:40px;" data-fragment-index="3" >
+								<img src="figures/SmoothingFunctorPre.png"/>
+							</div>
+						</div>
+
+						<!-- <div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="4">
+							<div class="img-container" style="flex:1;">
+								<img src="figures/Smoothing.png"/>
+							</div>
+						</div>	 -->
+
+
+					</div>
+				</section>
+
+
+
+
+
+
+
+				<section>
+					<h3>Interleavings between Pre-Cosheafs</h3>
+					<div class="importance-box def fragment fade-left">
+						<div class="header">
+							<div class="bullet"></div>
+							<div class="label">Definition</div>
+						</div> 
+						<div class="text-area">
+							<div class="content">
+								Let $\mathsf{F}$ and $\mathsf{G}$ be two Pre-Cosheafs. We say that $f$ and $g$ are $\varepsilon$<b>-interleaved</b> if there exists maps $\varphi:\mathsf{F} \Rightarrow \mathcal{S}_{\varepsilon}(\mathsf{G})$ $\psi:\mathsf{G} \Rightarrow \mathcal{S}_{\varepsilon}(\mathsf{F})$ such that the following diagrams commute:
+							</div>		
+						</div>
+					</div>
+					<div class="img-container fragment fade-up" style="flex:1;margin-top:0px;position:relative;top:-10px;" >
+						<img src="figures/InterleavingPreCosheafs.png" style="margin-top:0px;"/>
+					</div>
+				</section>
+				<section>
+					<h3>Interleaving Distance</h3>
+					<div class="importance-box def fragment fade-left" style="margin-top:100px">
+						<div class="header">
+							<div class="bullet"></div>
+							<div class="label">Definition</div>
+						</div> 
+						<div class="text-area">
+							<div class="content">
+								Let $\mathsf{F}$ and $\mathsf{G}$ be two pre-cosheafs. The <b>interleaving distance</b> between $\mathsf{F}$ and $\mathsf{G}$ is 
+								\[d_I(\mathsf{F},\mathsf{G}) = \inf\{\varepsilon | \text{there exists an $\varepsilon$-interleaving between $\mathsf{F}$ and $\mathsf{G}$}\}\]
+							</div>		
+						</div> 
+					</div>
+				</section>
+
+
+
+				<section>
+
 					<h3>Category of Scalar Fields and Reeb Graphs</h3>
 					<div style="display:flex;flex-direction:row;flex:1;">
 
@@ -301,44 +447,37 @@
 
 					</div>
 
-				</section>
-
-				<section>
-					<h3>Pre-Cosheafs</h3>
-					<div class="main-point fragment fade-up" style="margin-top:40px" >
-						<div>A pre-cosheaf is an assignment of data to open sets of a topological space $\mathbb{X}$ such that if $I \subseteq J$, then the data attached to $I$ maps to the data attached to $J$.</div>
-					</div>
-					<div class="img-container fragment fade-up">
-						<img src="figures/PreCosheaf.png"/>
-					</div>
-
 					<aside class="notes">
-						<ul>
-							<li>Use population as simple example, where the arrows mean inequalities</li>
-						</ul>
+						<ol>
+							<li>To build interleaving distance on Reeb graphs, we begin by constructing the category of scalar fields and then creating the category of Reeb graphs from it.</li>
+
+						</ol>
 					</aside>
+
+
 				</section>
 
 
+
 				<section>
-					<h3>Category of Pre-Cosheafs</h3>
+					<h3>Turning Reeb Graphs into Pre-Cosheafs</h3>
 					<div style="flex-direction:row;display: flex;">
 						<div style="flex-direction:column;display:flex;flex:1">
-							<div class="importance-box def fragment fade-left">
+							<div class="importance-box def fragment fade-left" data-fragment-index="1">
 								<div class="header">
 									<div class="bullet"></div>
 									<div class="label">Definition</div>
 								</div> 
 								<div class="text-area">
 									<div class="content">
-										<div>We define the <b>category of pre-cosheaves</b>, denoted as $\mathbf{Pre}$, to be the category of functors from the category of intervals $\mathbf{Int}$ to the category of sets $\mathbf{Set}$. The morphisms in this category are then natural transformations.</div>		
+										<div>Let $\mathbf{Int}$ be the category of intervals on the real line, where $I\to J$ if $I\subseteq J$. Let $\mathbf{Set}$ be the category of $\mathbf{Sets}$, where $A \to B$ if there exists a function between $A$ and $B$. We create a <b>category of pre-cosheaves</b>, denoted as $\mathbf{Pre}$, to be the category consisting of functors from $\mathbf{Int}$ to $\mathbf{Set}$</div>		
 									</div>
 									<!-- <div style="margin-top:30px">
 										In $\mathbf{Int}$, if $I \to J$, then $I \subseteq J$. In $\mathbf{Set}$, if $A \to B$, then there exists a $h:A \to B$
 									</div> -->
 								</div>
 							</div>
-							<div class="importance-box def fragment fade-left">
+							<div class="importance-box def fragment fade-left" data-fragment-index="2">
 								<div class="header">
 									<div class="bullet"></div>
 									<div class="label">Definition</div>
@@ -353,8 +492,11 @@
 									</div>		
 								</div> 
 							</div>
+							<div class="statement fragment fade-up" data-fragment-index="4" style="font-size:0.7em;margin:50px 50px 0px 50px;text-align:center;">
+								Thus, we can replace each $\mathsf{F}$ in the previous definitions with $\mathcal{C}(f)$.
+							</div>
 						</div>
-						<div class="img-container fragment fade-up" style="flex:1;margin-top:-50px;">
+						<div class="img-container fragment fade-up" data-fragment-index="3" style="flex:1;margin-top:-50px;">
 							<img src="figures/PreCosheafReeb.png"/>
 						</div>
 					</div>
@@ -366,114 +508,14 @@
 					</aside>
 
 				</section>
-				<section>
-					<h3>Interleaving on Pre-Cosheafs</h3>
-					<!-- <div class="img-container" style="flex:1;">
-						<img src="figures/PreCosheafInterleaving2.png"/>
-					</div>
-					<div style="width:100%;position:absolute;left:500px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="1"></div>
-					<div style="width:100%;position:absolute;left:700px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="2"></div> -->
 
-
-					<div style="position:relative;height:100%" class="fragment fade-up" data-fragment-index="1">
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="4">
-							<div class="img-container" style="flex:1;">
-								<img src="figures/PreCosheafInterleaving2.png"/>
-							</div>
-							<div style="width:100%;position:absolute;left:500px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="2"></div>
-							<div style="width:100%;position:absolute;left:700px;top:-100px;height:100%;background-color: white;" class="fragment fade-out" data-fragment-index="3"></div>
-						</div>
-
-
-						<div style="position:absolute;width:100%;display:flex;justify-content: center;align-content:center;"  class="fragment fade-in" data-fragment-index="4">
-							<div class="main-point" style="margin-top:100px;">
-								<div>The Interleaving distance quantifies the distance between pre-cosheafs
-								by finding the minimum filter size $ε$ that we need to pass each pre-cosheaf
-								through in order to make it isomorphic to another pre-cosheaf.</div>
-							</div>									
-						</div>
-
-						
-					</div>
-
-				</section>
-				
-				<section>
-					<h3>Smoothing Functor</h3>
-					<div style="position:relative;height:100%">
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="4">
-							<div class="importance-box def fragment fade-left" data-fragment-index="1">
-								<div class="header">
-									<div class="bullet"></div>
-									<div class="label">Definition</div>
-								</div> 		
-								<div class="text-area">
-									<div class="content">
-										We define the $\varepsilon$-<b>expansion functor</b> $\Omega_{\varepsilon} : \mathbf{Int} \to \mathbf{Int}$ by the formulas $\Omega_{\varepsilon}(I) = I^{\varepsilon}$, where $I = (a,b)$ and $I = (a-\varepsilon,b+\varepsilon)$, and $\Omega_{\varepsilon}[I\subseteq J] = I^{\varepsilon} \subseteq J^{\varepsilon}$.
-									</div>	
-								</div>
-							</div>
-							<div class="importance-box def fragment fade-left" data-fragment-index="2">
-								<div class="header">
-									<div class="bullet"></div>
-									<div class="label">Definition</div>
-								</div> 		
-								<div class="text-area">
-										<div class="content">
-											We define the $\varepsilon$-<b>smoothing functor</b> $\mathcal{S}_{\varepsilon}:\mathbf{Pre} \to \mathbf{Pre}$ by the formulas $\mathcal{S}_{\varepsilon}(\mathsf{F}) = \mathsf{F}\Omega_{\varepsilon}$ and $\mathcal{S}_{\varepsilon}[\mathsf{F} \Rightarrow \mathsf{G}]  := \mathsf{F}\Omega_{\varepsilon} \Rightarrow \mathsf{G}\Omega_{\varepsilon}$
-										</div>		
-								</div>
-							</div>
-							<div class="img-container fragment fade-up" style="flex:1;margin-top:40px;" data-fragment-index="3" >
-								<img src="figures/SmoothingFunctorPre.png"/>
-							</div>
-						</div>
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="4">
-							<div class="img-container" style="flex:1;">
-								<img src="figures/Smoothing.png"/>
-							</div>
-						</div>	
-					</div>
-				</section>
-				<section>
-					<h3>Interleavings between Reeb Graphs</h3>
-					<div class="importance-box def fragment fade-left">
-						<div class="header">
-							<div class="bullet"></div>
-							<div class="label">Definition</div>
-						</div> 
-						<div class="text-area">
-							<div class="content">
-								Let $f := (\mathbb{X},f)$ and $g := (\mathbb{Y},g)$ be two Reeb graphs. We say that $f$ and $g$ are $\varepsilon$<b>-interleaved</b> if there exists maps $\varphi:\mathcal{C}(f) \Rightarrow \mathcal{S}_{\varepsilon}\mathcal{C}(g)$ $\psi:\mathcal{C}(g) \Rightarrow \mathcal{S}_{\varepsilon}\mathcal{C}(f)$ such that the following diagrams commute:
-							</div>		
-						</div>
-					</div>
-					<div class="img-container fragment fade-up" style="flex:1;">
-						<img src="figures/interleavingSmoothingDgm.png"/>
-					</div>
-				</section>
-				<section>
-					<h3>Interleaving Distance</h3>
-					<div class="importance-box def fragment fade-left" style="margin-top:100px">
-						<div class="header">
-							<div class="bullet"></div>
-							<div class="label">Definition</div>
-						</div> 
-						<div class="text-area">
-							<div class="content">
-								Let $f := (\mathbb{X},f)$ and $g := (\mathbb{Y},g)$ be two Reeb graphs. The <b>interleaving distance</b> between $f$ and $g$ is 
-								\[d_I(f,g) = \inf\{\varepsilon | \text{there exists an $\varepsilon$-interleaving between $f$ and $g$}\}\]
-							</div>		
-						</div> 
-					</div>
-				</section>
 
 
 				<section>
 					<h3>Thickening Functor</h3>
 
 					<div style="position:relative;height:100%">
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-out" data-fragment-index="3">
+						<div style="width:100%;height:100%;position:absolute;display:flex;justify-content: flex-start;flex-direction:column;" class="fragment fade-out" data-fragment-index="4">
 							<div class="importance-box def fragment fade-left" data-fragment-index="1">
 								<div class="header">
 									<div class="bullet"></div>
@@ -504,8 +546,14 @@
 									</div>		
 								</div>
 							</div>
+							<!-- <div class="statement fragment fade-up" data-fragment-index="3">
+								This theorem implies that $\mathcal{C}\mathcal{R}\mathcal{T}_{\varepsilon}(f) = \mathcal{S}_{\varepsilon}\mathcal{C}(f)$
+							</div> -->
+							<div class="statement fragment fade-up" style="text-align:center;" data-fragment-index="3">
+								This theorem implies that we can choose to thicken the Reeb graph and use this for the pre-cosheafs rather than turning the Reeb graph into pre-cosheafs and then applying smoothing.
+							</div>
 						</div>
-						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="3">
+						<div style="width:100%;height:100%;position:absolute;" class="fragment fade-in" data-fragment-index="4">
 							<div class="img-container" style="flex:1;">
 								<img src="figures/ThickeningNew.png"/>
 							</div>
@@ -521,7 +569,7 @@
 						</div>
 						<div class="text-area">
 							<div class="content">
-								Let $\mathcal{U}_{\varepsilon} : \mathcal{R}\mathcal{T}_{\varepsilon}$ and let $f := (\mathbb{X},f)$ and $g := (\mathbb{Y},g)$ be two Reeb graphs. We say that $f$ and $g$ are $\varepsilon$<b>-interleaved</b> if there exists maps $\alpha:f \to \mathcal{U}_{\varepsilon}(g)$ and $\beta:g \to \mathcal{U}_{\varepsilon}(f)$ such that the following diagrams commute:
+								Let $\mathcal{U}_{\varepsilon} := \mathcal{R}\mathcal{T}_{\varepsilon}$ and let $f := (\mathbb{X},f)$ and $g := (\mathbb{Y},g)$ be two Reeb graphs. We call $\mathcal{U}_{\varepsilon}$ the <b>Reeb smoothing functor</b>. We say that $f$ and $g$ are $\varepsilon$<b>-interleaved</b> if there exists maps $\alpha:f \to \mathcal{U}_{\varepsilon}(g)$ and $\beta:g \to \mathcal{U}_{\varepsilon}(f)$ such that the following diagrams commute:
 							</div>		
 						</div>
 					</div>
@@ -578,7 +626,7 @@
 								</div>
 							</div>
 						</div>	
-						<div class="statement fragment fade-up">
+						<div class="statement fragment fade-up">  
 							All steps can be done in polynomial time, so this problem is in $\mathbf{NP}$.
 						</div>
 					</div>
@@ -591,58 +639,69 @@
 						<li>Smoothing and all other constructions can be done in polynomial time</li>
 					</ul> -->
 				</section>
-				<section>
-					<h3>Topological Metrics (Revisit)</h3>
-
-
-
-					<div style="display:flex;flex-direction:row;height: 100%;">
-						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;">
-							<div class="metric-list">
-								<div>Bottleneck Distance [cite]</div>
-								<div>Wasserstein Distance [cite]</div>
-								<div>Functional Distortion Distance [cite]</div>
-								<div>Interleaving Distance [cite]</div>
-							</div>
-						</div>
-						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;flex-direction:column;">
-
-							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
-								<div class="img-container" style="flex:0.3">
-									<img src="figures/bottleneckDistance.png" style="width:70%"/>
-								</div>
-								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance [stabOfPersDgms]</div>
-							</div>
-							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
-								<div class="img-container" style="flex:0.3">
-									<img src="figures/bottleneckDistance.png" style="width:70%"/>
-								</div>
-								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance</div>
-							</div>
-							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
-								<div class="img-container" style="flex:0.3">
-									<img src="figures/bottleneckDistance.png" style="width:70%"/>
-								</div>
-								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance</div>
-							</div>
-						</div>
-					</div>
-
-
-
-
-				</section>
-
 
 				<section>
 					<h3>Interleaving Example of Sensitivty/Insensitivity</h3>
 				</section>
 
 				<section>
+					<h3>Multifaceted Data and Topological Metrics (Revisit)</h3>
+
+					<div style="display:flex;flex-direction:column;">
+					
+						<div class="main-point small "   style="margin-top:10px">
+							<div>Multifaceted data includes data types such as a <b>simulation run multiple times with varying parameters to determine variation and uncertainty (multirun)</b>, multivariate data which come from multiple sources (multimodal), and multiphysics simulations (multimodel)</div>
+						</div>
+								
+						<div class="statement "  style="margin:40px 100px 50px 100px;text-align:center;">If topological summaries are useful for sudying single scalar fields, it is natural  to consider comparing multiple scalar fields using metrics on these topological structures.</div>
+
+						<div style="display:flex;flex-direction:row;width:90%;align-self:center;" data-fragment-index="3">
+
+							<div class="card center ">
+								<div class="content">
+									Bottleneck Distance
+								</div>
+							</div>
+							<div class="card center  ">
+								<div class="content">
+									Wasserstein Distance
+								</div>
+							</div>
+							<div class="card center  " >
+								<div class="content">
+									Functional Distortion Distance
+								</div>
+							</div>
+							<div class="card center " >
+								<div class="content " >
+									Interleaving Distance
+								</div>
+							</div>			
+						</div>
+					</div>
+
+
+					<aside class="notes">
+						<ol>
+							<li style="color:red;">NEED TO PAUSE BEFORE NEXT SLIDE</li>
+							<li>"This is what I'd like to do for my research"</li>
+						</ol>
+					</aside>
+
+				</section>
+
+
+
+
+
+
+				<section>
 					<h3>Proposal for Milestone 0</h3>
 					<div class="main-point" style="margin-top:100px;">
 						<div>We would like to conduct a survey / empirical study of the most prevelant topological metrics to examine their role in measuring similarity between scalar fields and /or their role in multifaceted data analysis in general. Furthermore, we would like to generate a comprehensive list of the computational complexities that each of these metrics have.</div>
 					</div>
+
+			
 				</section>
 				<section>
 					<h3>Graph Convolutional Neural Networks</h3>
@@ -665,21 +724,20 @@
 					</ul>
 				</section>
 				<section>
-					<h3>Proposal for Milestone A</h3>
-					<div class="main-point" style="margin-top:100px;">
-						We propose using the Siamese network architecture couple with spatial GCNNs to learn a similarity metric on Reeb graphs. To train this data in a supervised manner, we will the data set using various topological metrics found in Milestone 0. This is dependent on both the type of similarity we are learning as well as the computational difficulties that we might face for various metrics.
+					<h3>Proposal for Milestone A,B,C</h3>
+					<div class="main-point fragment fade-left" style="margin-top:20px;">
+						Construct a Siamese network achritecture with spatial GCNN's to learn a similarity metric on Reeb graphs in a supervised manner.
+					</div>
+					<div class="main-point fragment fade-left" style="margin-top:20px;">
+						Use machine learning to aid in the computation of specific modules for various topological metrics which are known to be difficult to compute.
+					</div>
+					<div class="main-point fragment fade-left  " style="margin-top:20px;">
+						Leverage Graph Autoencoders to perform unsupervised training on the Siamese network to learn a similarity metric.
 					</div>
 				</section>
+
 				<section>
-					<h3>Proposal for Milestone B</h3>
-					<div class="main-point" style="margin-top:100px;">
-						Use machine learning to aid in the computation of specific modules for various topological metrics which are known to be difficult to compute.</div>
-				</section>
-				<section>
-					<h3>Proposal for Milestone C</h3>
-					<div class="main-point" style="margin-top:100px;">
-						<div>Leverage Graph Autoencoders to perform unsupervised training on the Siamese network to learn a similarity metric.</div>
-					</div>
+					<h3>Conclusion</h3>
 				</section>
 			</div>
 		</div>

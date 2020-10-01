@@ -262,3 +262,13 @@ Functional Distortion distance
 Wasserstein Distance
 
 Bottleneck Distance
+
+
+
+
+
+
+
+
+<li style="color:blue;">Click</li>
+<li style="color:red;">Read slide</li>

@@ -110,6 +110,11 @@ $bullet-orange: #ff7d50;
   padding:7px 7px 20px 7px;
 }
 
+.importance-box.thm.small,
+.importance-box.def.small{
+  padding:5px 7px 10px 7px;
+}
+
 
 .importance-box .header{
   margin:5px 10px 0px 10px;
@@ -119,17 +124,22 @@ $bullet-orange: #ff7d50;
   align-items:center;
 }
 
+
+
 .importance-box .header .label{
   font-family: 'Roboto Slab', sans-serif;
   font-size:0.9em;
-  // color:black;
   color:$text-blue;
-  // color:#333;
   letter-spacing:0.03em;
   font-weight:500;
   margin-left:10px;
 
 }
+
+.importance-box.small .header .label{
+  font-size:0.75em; 
+} 
+
 
 .importance-box .header .label:after{
   content:":";
@@ -226,3 +236,8 @@ $bullet-orange: #ff7d50;
   align-items:center;
 }
 
+
+
+ol.notes-list{
+  font-size:0.4em;
+}
