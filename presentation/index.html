@@ -40,147 +40,156 @@
 				</section>
 
 				<section>
-						<h3>Scalar Fields</h3>
-						<!-- <div><b>Definition:</b> Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b></div> -->
-	
-						<div class="importance-box def fragment fade-left">
-							<div class="header">
-								<div class="bullet"></div> 							
-								<div class="label">Definition</div> 						
-							</div>
-							<div class="underline"></div>
-							<div class="text-area">
-								<div class="content">
-									Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b>
-								</div>			
-							</div>
-						</div>
-						<div class="importance-box def fragment fade-left">
-							<div class="header">
-								<div class="bullet"></div> 							
-								<div class="label">Definition</div> 						
-							</div>
-							<div class="underline"></div>
-							<div class="text-area">
-								<div class="content">
-									Let $U \subseteq \mathbb{X}$ be such that $f(x) = f(y) = a$ for all $a \in U$. We say that $U$ is the $a$-<i>fiber</i> or $a$-<i>levelset</i> of the scalar field $(\mathbb{X},f)$.
-								</div>			
-							</div>
-						</div>
-						<div class="img-container fragment fade-up">
-							<img src="figures/ScalarField.png"/>
-						</div>
-	
-						<aside class="notes">
-							<ul>
-								<li>First, bring up that there are two types of data usually studied in TDA -- point cloud data and scalar field data. Here, we focus on scalar field data.</li>
-								<li>Introduce Scalar Fields and Level sets</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h3 style="flex:0.2">Reeb Graphs</h3>
-						<div class="importance-box def fragment fade-left">
-							<div class="header">
-								<div class="bullet"></div> 							
-								<div class="label">Definition</div> 						
-							</div>
-							<div class="underline"></div>
-							<div class="text-area">
-								<div class="content">
-									Let $(\mathbb{X},f)$ be a scalar field. We can define an equivalence relation on $\mathbb{X}$ by defining $x\sim y$ if $f(x) = f(y) = a$ (they belong to the same $a$-fiber) and if $x,y$ are in the same path connected component of the $a$-fiber. Then, the quotient space $\mathbb{X}_f := \mathbb{X}/\sim_f$ is called the <b>Reeb graph</b> of the scalar field $(\mathbb{X},f)$. We equip the Reeb graph with the function $\tilde{f}$ which is defined as $\tilde{f} \circ \rho = f$, where $\rho: \mathbb{X} \to \mathbb{X}_f$ is the quotient map defined by our equivalence relation. 
-								</div>		
-							</div>
-						</div>
-						<div class="img-container fragment fade-up">
-							<img src="figures/Reeb Graph.png"/>
-						</div>
-					</section>
-					<section>
-						<h3>Scalar Fields and Reeb Graphs</h3>
-						<div style="display:flex;flex-direction:column;align-items: center;">
-							<div style="display:flex;flex-direction:row;">
-								<div class="img-container" style="flex:1;">
-									<img src="figures/dragonScalarField.png" class="img-alt" />
-								</div>
-								<div class="img-container" style="flex:1;">
-									<img src="figures/dragonScalarFieldContour.png" class="img-alt"/>
-								</div>	
-							</div>
-							<div style="font-size:0.6em;margin-top:20px;width:80%"> On the left, we have an example of a scalar field whose topological space is the surface of the dragon shape, and the function is its height (shown via color). On the right, we have the Reeb graph (contour tree) embedded within the dragon, whose opacity has been decreased. Image generated from [dragon.pvsm in TTK]</div>
-						</div>
-					</section>
+					<h3>Scalar Fields</h3>
+					<!-- <div><b>Definition:</b> Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b></div> -->
 
-
-				<section>
-					<h3>Topology on Multifaceted Data</h3>
-					<div class="main-point small fragment fade-up" style="margin-top:10px">
-						<div>Multifaceted data includes data types such as a <b>simulation run multiple times with varying parameters to determine variation and uncertainty (multirun)</b>, multivariate data which come from multiple sources (multimodal), and multiphysics simulations (multimodel)</div>
+					<div class="importance-box def fragment fade-left">
+						<div class="header">
+							<div class="bullet"></div> 							
+							<div class="label">Definition</div> 						
+						</div>
+						<div class="underline"></div>
+						<div class="text-area">
+							<div class="content">
+								Let $\mathbb{X}$ be a topological space and let $f:\mathbb{X} \to \mathbb{R}$ be a continuous, real-valued function. The pair $(\mathbb{X},f)$ is called a <b>scalar field</b>
+							</div>			
+						</div>
 					</div>
-
-					<div class="fragment fade-up" style="display:flex;flex-direction:row;justify-content:space-between;margin:100px 150px 0px 150px;">
-						<div class="img-container fixed" style="display:flex;flex-direction:column;width:350px">
-							<img src="figures/progressiveWasserstein.jpg" />
-							<div style="font-size:0.6em;margin-top:20px;"> cite / description</div>
+					<div class="importance-box def fragment fade-left">
+						<div class="header">
+							<div class="bullet"></div> 							
+							<div class="label">Definition</div> 						
 						</div>
-						<div class="img-container fixed" style="display:flex;flex-direction:column;width:300px">
-							<img src="figures/labeledMergeTree.jpg"/>
-							<div style="font-size:0.6em;margin-top:20px;"> cite / description</div>
-						</div>	
+						<div class="underline"></div>
+						<div class="text-area">
+							<div class="content">
+								Let $U \subseteq \mathbb{X}$ be such that $f(x) = f(y) = a$ for all $a \in U$. We say that $U$ is the $a$-<i>fiber</i> or $a$-<i>levelset</i> of the scalar field $(\mathbb{X},f)$.
+							</div>			
+						</div>
+					</div>
+					<div class="img-container fragment fade-up">
+						<img src="figures/ScalarField.png"/>
 					</div>
 
 					<aside class="notes">
-						<ul>
-							<li>"Increase in computational power has lead to more complex simulations"</li>
-							<li>Bolded Multirun simulation because that will be a common example we come back to since the spaces that we talk about between the scalar fields and Reeb graphs are automatically the same</li>
-						</ul>
+						<ol>
+							<li>Scalar Field Topology</li>
+							<li>Level set topology</li>
+							<li>Read Definitions</li>
+						</ol>
 					</aside>
+
 
 				</section>
 				<section>
-					<h3>Topological Metrics</h3>
-					<div style="display:flex;flex-direction:row;height: 100%;">
-						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;">
-							<div class="metric-list">
-								<div>Bottleneck Distance [cite]</div>
-								<div>Wasserstein Distance [cite]</div>
-								<div>Functional Distortion Distance [cite]</div>
-								<div>Interleaving Distance [cite]</div>
-							</div>
+					<h3 style="flex:0.2">Reeb Graphs</h3>
+					<div class="importance-box def fragment fade-left">
+						<div class="header">
+							<div class="bullet"></div> 							
+							<div class="label">Definition</div> 						
 						</div>
-						<div style="height: 100%;flex:0.5;display:flex;justify-content: center;align-items: center;flex-direction:column;">
-							<!-- <div style="flex:0.3;display: flex;justify-content: center;align-items:center;border:1px solid black;margin:5px;width:90%">
-								IMAGE 1
-							</div> -->
-							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
-								<div class="img-container" style="flex:0.3">
-									<img src="figures/bottleneckDistance.png" style="width:70%"/>
-								</div>
-								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance [stabOfPersDgms]</div>
-							</div>
-							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
-								<div class="img-container" style="flex:0.3">
-									<img src="figures/bottleneckDistance.png" style="width:70%"/>
-								</div>
-								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance</div>
-							</div>
-							<div style="flex:0.3;display:flex;flex-direction:column;align-items:center;">
-								<div class="img-container" style="flex:0.3">
-									<img src="figures/bottleneckDistance.png" style="width:70%"/>
-								</div>
-								<div style="font-size:0.5em; position:relative;top:-10px;font-weight:700;">Bottlneck Distance</div>
-							</div>
+						<div class="underline"></div>
+						<div class="text-area">
+							<div class="content">
+								Let $(\mathbb{X},f)$ be a scalar field. We can define an equivalence relation on $\mathbb{X}$ by defining $x\sim y$ if $f(x) = f(y) = a$ (they belong to the same $a$-fiber) and if $x,y$ are in the same path connected component of the $a$-fiber. Then, the quotient space $\mathbb{X}_f := \mathbb{X}/\sim_f$ is called the <b>Reeb graph</b> of the scalar field $(\mathbb{X},f)$. We equip the Reeb graph with the function $\tilde{f}$ which is defined as $\tilde{f} \circ \rho = f$, where $\rho: \mathbb{X} \to \mathbb{X}_f$ is the quotient map defined by our equivalence relation. 
+							</div>		
 						</div>
 					</div>
+					<div class="img-container fragment fade-up">
+						<img src="figures/Reeb Graph.png"/>
+					</div>
+
+
+
 				</section>
-				<aside class="notes">
-					<ul>
-						<li>We use topological metrics to compare two topological structures</li>
-						<li>Naturally, if we believe that topology is good for sumamrizing data, we should ask ourselves how to compare topological summaries just as we would ask how to compare the data itself</li>
-						<li>We focus on interleaving distance here, which has its roots in category theory</li>
-						<li>We will show how interlreaving distance is designed on Pre-cosheafs (an abstraction of data attached to an open cover of a topological space) and how it links to Reeb graphs</li>
-					</ul>
-				</aside>
+				<section>
+					<h3>Scalar Fields and Reeb Graphs</h3>
+					<div style="display:flex;flex-direction:column;align-items: center;">
+						<div style="display:flex;flex-direction:row;">
+							<div class="img-container" style="flex:1;">
+								<img src="figures/dragonScalarField.png" class="img-alt" />
+							</div>
+							<div class="img-container" style="flex:1;">
+								<img src="figures/dragonScalarFieldContour.png" class="img-alt"/>
+							</div>	
+						</div>
+						<div style="font-size:0.6em;margin-top:20px;width:80%"> On the left, we have an example of a scalar field whose topological space is the surface of the dragon shape, and the function is its height (shown via color). On the right, we have the Reeb graph (contour tree) embedded within the dragon, whose opacity has been decreased. Image generated from [dragon.pvsm in TTK]</div>
+					</div>
+
+					<aside class="notes">
+						<ol>
+							<li>Left is a scalar field with color describing the function (just the height)</li>
+							<li>Reeb graph on the right with decreased opacity of the dragon</li>
+							<li>Level set topology highlights the relationship between the topological space and the function</li>
+							<li>Leafs of this Reeb graph correspond to specific features of the scalar field such as the feet, tail, and horns</li>
+						</ol>
+					</aside>
+
+				</section>
+
+
+				<section>
+					<h3>Multifaceted Data and Topological Metrics</h3>
+
+					<div style="display:flex;flex-direction:column;">
+					
+						<div class="main-point small fragment fade-up"  data-fragment-index="1" style="margin-top:10px">
+							<div>Multifaceted data includes data types such as a <b>simulation run multiple times with varying parameters to determine variation and uncertainty (multirun)</b>, multivariate data which come from multiple sources (multimodal), and multiphysics simulations (multimodel)</div>
+						</div>
+								
+						<div class="statement fragment fade-up" data-fragment-index="2" style="margin:40px 100px 50px 100px;text-align:center;">If topological summaries are useful for sudying single scalar fields, it is natural  to consider comparing multiple scalar fields using metrics on these topological structures.</div>
+
+						<div class="fragment fade-up"  style="display:flex;flex-direction:row;width:90%;align-self:center;" data-fragment-index="3">
+
+							<div class="card center " data-fragment-index="4">
+								<div class="content">
+									Bottleneck Distance
+								</div>
+							</div>
+							<div class="card center  " data-fragment-index="4">
+								<div class="content">
+									Wasserstein Distance
+								</div>
+							</div>
+							<div class="card center  " data-fragment-index="4">
+								<div class="content">
+									Functional Distortion Distance
+								</div>
+							</div>
+							<div class="card center fragment grow" data-fragment-index="4">
+								<div class="content fragment highlight-red" data-fragment-index="4">
+									Interleaving Distance
+								</div>
+							</div>			
+						</div>
+					</div>
+
+
+					<aside class="notes">
+						<ol>
+							<li>Naturally, we don't always have just one scalar field, but multiple scalar fields, which introduced "multifaceted data".</li>
+							<li>Increase in computational power has lead to increase in complexity of simulations</li>
+							<li>Bolded Multirun simulation because that will be a common example we come back to since the spaces that we talk about between the scalar fields and Reeb graphs are automatically the same</li>
+							<li>If we believe these topological summaries are useful for studying scalar fields, then we can ask ourselves how we compare two scalar fields using the topological summaries</li>
+							<li>Naturally, if we believe that topology is good for sumamrizing data, we should ask ourselves how to compare topological summaries just as we would ask how to compare the data itself</li>
+							<li>We focus on interleaving distance here, which has its roots in category theory</li>
+							<li>We will show how interlreaving distance is designed on Pre-cosheafs (an abstraction of data attached to an open cover of a topological space) and how it links to Reeb graphs</li>
+						</ol>
+					</aside>
+
+				</section>
+
+
+
+
+
+
+
+
+				
+
+
+
 				<!-- <section>
 					<h3>Interleaving Distance Motivation (?)</h3>
 				</section> -->
